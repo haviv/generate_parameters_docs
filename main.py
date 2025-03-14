@@ -4,6 +4,7 @@ import subprocess
 from typing import List
 from openai import OpenAI
 from dotenv import load_dotenv
+import sys
 
 def find_param_references(code_folder: str, param_name: str) -> List[dict]:
     """
@@ -132,10 +133,33 @@ def generate_doc(code_folder: str, param_names: List[str], output_folder: str):
         
         print(f"Documentation generated for {param_name}: {output_file}")
 
+def read_params_from_file(file_path: str) -> List[str]:
+    """
+    Read parameter names from a file, one parameter per line.
+    Empty lines and lines starting with # are ignored.
+    """
+    params = []
+    try:
+        with open(file_path, 'r') as f:
+            for line in f:
+                # Strip whitespace and skip empty lines or comments
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    params.append(line)
+    except FileNotFoundError:
+        print(f"Error: Parameters file not found: {file_path}")
+        sys.exit(1)
+    
+    return params
+
 if __name__ == "__main__":
-    # Example usage
+    # Read parameters from file
     code_folder = "/Users/haviv_rosh/work/PathlockGRC/"
-    param_names = ["CheckProcessQueueEvery"]
+    params_file = "params.txt"
     output_folder = "docs/"
+    
+    # Read parameters from file
+    param_names = read_params_from_file(params_file)
+    print(f"Found {len(param_names)} parameters to process")
     
     generate_doc(code_folder, param_names, output_folder) 
