@@ -12,6 +12,9 @@ def find_param_references(code_folder: str, param_name: str) -> List[dict]:
     Returns a list of dictionaries containing file paths and relevant code snippets.
     """
     results = []
+    MAX_CONTEXT_LENGTH = 500  # Maximum characters per context
+    CONTEXT_LINES = 10  # Number of lines before and after the match
+    
     try:
         # Use grep to search for parameter references recursively in .cs files only
         param_name = param_name
@@ -30,18 +33,31 @@ def find_param_references(code_folder: str, param_name: str) -> List[dict]:
                     # Find the line number of the match
                     for i, line_content in enumerate(file_content):
                         if param_name in line_content:
-                            # Get context (5 lines before and after)
-                            start = max(0, i - 5)
-                            end = min(len(file_content), i + 6)
+                            # Get context (3 lines before and after)
+                            start = max(0, i - CONTEXT_LINES)
+                            end = min(len(file_content), i + CONTEXT_LINES + 1)
                             context = ''.join(file_content[start:end])
+                            
+                            # Truncate context if it's too long
+                            if len(context) > MAX_CONTEXT_LENGTH:
+                                context = context[:MAX_CONTEXT_LENGTH] + "..."
                             
                             results.append({
                                 'file_path': file_path,
                                 'context': context
                             })
+                            
+                            # Only take the first occurrence in each file to reduce context
+                            break
     except subprocess.CalledProcessError:
         # No matches found
         pass
+    
+    # Limit the number of files if we found too many
+    MAX_FILES = 5
+    if len(results) > MAX_FILES:
+        print(f"Found {len(results)} files, limiting to {MAX_FILES} for token management")
+        results = results[:MAX_FILES]
     
     return results
 
@@ -70,6 +86,8 @@ def generate_param_documentation(param_name: str, references: List[dict]) -> str
     prompt = f"""Based on the following code references, generate comprehensive markdown documentation for the parameter '{param_name}'.
     go over the code and then understand what is the purposes of the param so you can create a documentation for end user that wants to use this param in this format. it has to be in markdown format - this is super important!
 make sure you generate a valid markdown file. dont add ```markdown at the beginning or at the end of the file.
+For context, these params are part of the Pathlock Cloud GRC platform. Pathlock is a cloud-based GRC platform that helps organizations manage their security, risk, and compliance.
+When you give examples, make sure to give examples that are relevant to the business impact of the param.
     Generate the next format:
 Category:
 Default Value:
