@@ -42,4 +42,4 @@ Documentation will be generated in the `docs/` folder.
 ## Note
 - Only searches in `.cs` files
 - Requires OpenAI API key
-- Set `code_folder` to the root of your C# project 
+- Set `code_folder` to the root of your C# project
