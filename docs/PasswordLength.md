@@ -1,38 +1,36 @@
-# PasswordLength Parameter Documentation
+# Password Length
 
-## Category
-Security Configuration
-
-## Default Value
-The default value for `PasswordLength` is defined within the Pathlock GRC platform's common settings. It is not explicitly mentioned in the provided code excerpts.
-
-## Impact Level
-High
+**Technical Name:** PasswordLength  
+**Category:** Security  
+**Default Value:** Varies (based on system configuration)  
+**Impact Level:** High  
 
 ## Description
-The `PasswordLength` parameter specifies the minimum length requirement for user passwords within the Pathlock Cloud GRC platform. It plays a crucial role in enforcing password complexity and security standards across the organization.
+The `PasswordLength` parameter defines the minimum and maximum length of passwords created within the Pathlock Cloud GRC platform. This parameter is crucial for enforcing password security policies across user accounts, ensuring that passwords are of sufficient complexity and length to protect against unauthorized access.
 
 ## Business Impact
-Configuring the `PasswordLength` appropriately can significantly reduce the risk of unauthorized access due to weak passwords. A longer password length requirement encourages the creation of complex passwords, thereby increasing the resilience of user accounts against brute force and dictionary attacks. This is vital for protecting sensitive compliance and risk management information handled by the Pathlock Cloud GRC platform.
+Setting an appropriate `PasswordLength` directly influences the security posture of an organization's IT environment. Longer passwords are generally more secure, reducing the risk of brute force attacks and unauthorized access to sensitive information. This, in turn, aids in compliance with various regulatory requirements that mandate specific standards for password security.
 
 ## Technical Impact when configured
-- **Increased Security:** Enforcing a minimum password length can deter attackers by making it computationally more challenging to crack passwords.
-- **Compliance:** Meets various regulatory and compliance standards that dictate specific minimum password length requirements.
-- **User Impact:** May increase the difficulty for users to remember passwords, potentially leading to a higher rate of password reset requests unless complemented with user education and possibly the use of password managers.
+- **Enhanced Security:** Enforcing a minimum password length ensures that users create passwords that are harder to guess or crack.
+- **Compliance:** Helps organizations meet security standards and compliance requirements that specify minimum password lengths.
+- **User Management:** Affects how user passwords are generated and changed, impacting both automated system processes and manual user actions.
 
-## Example Scenario
-Imagine a scenario where an organization must comply with ISO/IEC 27001 standards, which includes implementing strong access control measures. By configuring the `PasswordLength` to a robust value, say 12 characters, the organization can ensure that the passwords used within the Pathlock Cloud GRC platform meet this requirement, contributing to the overall security posture and compliance.
+## Examples Scenario
+- **Scenario:** An organization must comply with the PCI DSS requirements, which specify that passwords must be at least 7 characters long. By setting the `PasswordLength` parameter to a minimum of 7, the organization ensures that all user passwords meet this requirement, thereby maintaining PCI DSS compliance.
 
 ## Related Settings
-- PasswordComplexityRequirements: Defines additional password complexity rules such as the inclusion of uppercase, lowercase, digits, and special characters.
-- PasswordExpirationPolicy: Determines how frequently passwords must be changed.
-- AccountLockoutThreshold: Specifies the number of failed login attempts allowed before locking the account.
+- PasswordComplexity
+- PasswordExpirationPeriod
+- PasswordHistory
+
+## Applicable Workflow Actions
+- ChangeUserPassword
+- CreateNewUser
 
 ## Best Practices
-- **Configure When:**
-  - The organization is required to comply with industry regulations that dictate specific password lengths.
-  - Enhancing the security posture of the Pathlock GRC platform is a priority.
-- **Avoid When:**
-  - Users struggle significantly with password memorability, leading to increased risk of passwords being written down or reused across platforms. Consider using supplemental security measures like multi-factor authentication in such cases.
+- **Configure when:** Establishing or updating security policies related to user authentication and access control. It is recommended to set this parameter at the onset of using the Pathlock platform to ensure all user accounts are created with secure passwords from the start.
+- **Avoid when:** There is no specific scenario where you should avoid configuring `PasswordLength`, as it is a fundamental security measure. However, avoid setting it to a value that might be considered too lenient or too restrictive without considering the usability impact and user compliance.
 
-Given the role of `PasswordLength` in securing sensitive GRC data, organizations should carefully consider their specific risk profile and compliance requirements when configuring this parameter. Regular user education on the importance of secure password practices, coupled with the enforcement of robust password policies, can significantly mitigate the risk of data breaches.
+## Context
+This parameter is found in workflow actions related to changing user passwords and creating new user accounts. It is instrumental in ensuring that the passwords generated or updated through these processes meet the organization's security requirements.

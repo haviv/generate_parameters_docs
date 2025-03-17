@@ -1,10 +1,2 @@
-EnableAdvancedWorkflowTrace
-SystemWideSystemId
-CreateNewDoctorSapSystemId
-CreateNewDoctorUsernamePatternForVMA
-CreateNewUserUpdateImmediately
-NewUserAccountHeader
-NewUserAccountPassword
-NewUserAccountUsernameInSystem
-PasswordLength
-SendPasswordViewMail
+# Format: DisplayName,ParamName
+Password Length,PasswordLength
