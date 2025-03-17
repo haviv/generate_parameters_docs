@@ -153,6 +153,7 @@ Based on the following code references, generate comprehensive markdown document
 Go over the code and then understand what is the purposes of the param so you can create a documentation for end user that wants to use this param in this format. It has to be in markdown format - this is super important!
 For context, these params are part of the Pathlock Cloud GRC platform. Pathlock is a cloud-based GRC platform that helps organizations manage their security, risk, and compliance.
 When you give examples, make sure to give examples that are relevant to the business impact of the param.
+when you reference someting, only do it if you are sure that the reference is relevant to the param and that it exist.
 
 Generate the next format:
 Header with the parameter display name: {param_info['display_name']}
@@ -165,10 +166,11 @@ Description:
 Business Impact:
 Technical Impact: when configured
 Examples Scenario:
-Related Settings:
-Applicable Workflows Actions: (list the specific workflows actions relevant here, take them from the Context section - workflow_action attribute) 
+Related Settings: (add related settings only if you saw them in the code references. Dont add them unless you are sure)
+Applicable Workflows Actions: (list the specific workflows actions relevant here, take them from the Context section only - workflow_action attribute, dont add this attribute if there are no relevant workflow actions) 
 Best Practices: configure when, avoid when 
-Context:
+
+the next are the code references:
 {context}
 
 generate a valid markdown file. dont add ```markdown at the beginning or at the end of the file."""
