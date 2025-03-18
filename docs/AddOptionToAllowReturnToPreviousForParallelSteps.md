@@ -4,26 +4,26 @@
 
 **Category:** Workflow
 
-**Default Value:** True
+**Default Value:** Not Applicable
 
 **Impact Level:** Medium
 
-**Description:** This parameter enables or disables the ability for users to return to previous steps in parallel workflows within the Pathlock Cloud GRC platform. When set to `True`, users can navigate back to a previous step in a workflow to review or modify their inputs or decisions before final submission. 
+**Description:**
 
-**Business Impact:** Allowing users to return to previous steps in parallel workflows can significantly improve the decision-making process by ensuring that all decisions are made with the most accurate and up-to-date information. This capability can reduce errors and rework, leading to a more efficient process and better overall compliance and risk management.
+This setting enables a workflow configuration where users can return to previous steps in parallel workflows. Specifically, it allows users in a decision-making position, such as approvers, the flexibility to revisit and potentially revise their decisions before the final execution of the workflow.
 
-**Technical Impact when configured:** When enabled, this feature impacts the workflow engine by introducing potential revisits to earlier workflow steps, which may affect process time and resource consumption. System administrators should consider the complexity and length of the workflows when configuring this option to prevent potential delays or performance issues.
+**Business Impact:**
 
-**Examples Scenario:** In a scenario where a user is part of a parallel approval process for a high-value transaction, enabling this feature allows the user to revisit their approval decision after reviewing new compliance reports or risk assessments provided by another user in a different parallel step. This ensures that decisions are made with the most comprehensive information available, enhancing the company's risk management practices.
+Implementing this feature can significantly enhance the decision-making process in critical business operations by introducing a level of review and revision that was not previously possible. It supports thorough governance by allowing decision-makers to reconsider their actions, ensuring that all decisions are made with the greatest amount of available information and oversight.
 
-**Related Settings:** N/A
+**Technical Impact when configured:**
 
-**Applicable Workflows Actions:** 
-- Approve
-- Decline
+Once enabled, workflow processes that involve parallel steps will have the capability for users to move backwards to a previous step. This adds a layer of complexity to the workflow management, as the system must now handle the state management and data consistency across these reversible actions.
 
-**Best Practices:** 
-- Configure when workflows involve complex decisions requiring inputs from multiple sources or when there is a high chance of receiving new information after the initial decision has been made.
-- Avoid when workflows are straightforward or when revisiting decisions could cause significant delays in process completion.
+**Examples Scenario:**
 
-**Context:** The `AddOptionToAllowReturnToPreviousForParallelSteps` parameter is crucial for businesses looking to enhance their governance, risk, and compliance (GRC) strategies by enabling more flexible and thorough decision-making processes in their workflows.
+An example scenario involves a multi-department approval process for financial expenditure. With this feature enabled, if an approver realizes additional information or context is needed after moving past their decision point, they can return to their previous decision step to re-evaluate their choice in light of new information.
+
+**Related Settings:** Not Applicable
+
+**Best Practices:** Configure this option in workflows where decisions have significant impact and may require revision. Avoid using in workflows where decisions are straightforward or do not benefit from revisitation to streamline the process and reduce complexity.

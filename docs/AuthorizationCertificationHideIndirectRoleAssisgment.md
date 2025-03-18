@@ -1,33 +1,22 @@
-# Documentation for `AuthorizationCertificationHideIndirectRoleAssisgment`
+**Authorization Certification Hide Indirect Role Assignment**
 
-## Category:
-Security Configuration
+**Technical Name:** AuthorizationCertificationHideIndirectRoleAssisgment
 
-## Default Value:
-False
+**Category:** Configuration
 
-## Impact Level:
-System-Wide
+**Default Value:** Not Specified
 
-## Description:
-The `AuthorizationCertificationHideIndirectRoleAssisgment` parameter is used to control the visibility of indirectly assigned roles during the authorization certification process. When enabled, it filters out roles that users have been granted indirectly through composite roles, focusing the certification process solely on directly assigned roles.
+**Impact Level:** Medium
 
-## Business Impact:
-Enabling this parameter can streamline the authorization review process by focusing on directly assigned roles, potentially reducing the complexity and time required for certifiers to review and validate user access. It may enhance the clarity and relevance of the certification process, ensuring that emphasis is placed on explicit role assignments.
+**Description:** This parameter controls the visibility of indirect role assignments during the authorization certification process within the Pathlock Cloud GRC platform. When enabled, it hides the roles that are assigned to a user indirectly through their organizational structure or inherited permissions.
 
-## Technical Impact:
-When configured to `True`, this setting filters out indirect role assignments from the authorization certification process. This can lead to a more simplified and focused certification scope, where only direct role assignments are considered, potentially decreasing load times and improving the efficiency of the certification process due to fewer roles being processed.
+**Business Impact:** Enabling this setting can streamline the certification process by focusing reviewers on direct role assignments, potentially reducing complexity and the time required for certification. However, it may also lead to overlooked risks associated with indirect roles if not carefully managed.
 
-## Example Scenario:
-Imagine an organization with a complex role structure where users are granted access through a mixture of direct role assignments and indirect assignments via composite roles. By setting `AuthorizationCertificationHideIndirectRoleAssisgment` to `True`, during authorization certification, administrators and reviewers will only see the roles directly assigned to a user, omitting those inherited indirectly. This can significantly simplify the review process, especially in scenarios where the focus is on auditing direct permissions granted to users for compliance purposes.
+**Technical Impact when configured:** When enabled, the system filters out indirect role assignments from the certification review interface. This can simplify the review process but requires that reviewers have a clear understanding of the implications of indirect roles on access permissions.
 
-## Related Settings:
-- Composite Role Definition Settings
-- Direct Role Assignment Visibility Settings
+**Examples Scenario:** In a scenario where an employee has been granted access to sensitive financial records both directly, through explicit role assignment, and indirectly, through inheritance from a departmental role, activating this parameter would hide the indirect role assignments during certification. This could be beneficial in focusing the review on direct access permissions, but may require separate consideration of indirect permissions for a comprehensive security posture.
 
-## Best Practices:
-- **Configure when:** A streamlined review process is desired or when focus is needed on directly assigned roles for compliance or audit purposes. It is especially useful in complex environments where indirect role assignments might obscure the review process.
-- **Avoid when:** A comprehensive view of all direct and indirect role assignments is required for a thorough authorization review. In cases where understanding a user's complete authorization scope (including indirect role assignments) is necessary, keeping this setting disabled ensures that no assignment is overlooked.
+**Related Settings:** 
+- `AuthorizationReviewByRolesShowNumberOfActivities`
 
-## Context:
-The parameter `AuthorizationCertificationHideIndirectRoleAssisgment` is part of a broader set of security settings aimed at enhancing the manageability and clarity of the authorization process within applications leveraged by PathlockGRC software. As roles and responsibilities within an organization evolve, managing how access is granted, either directly or indirectly, becomes crucial for maintaining security and compliance. This parameter provides flexibility in how the certification process can be tailored to meet organizational needs.
+**Best Practices:** configure when the certification process needs streamlining and the implications of indirect roles are well-understood and managed through other means; avoid when full visibility of both direct and indirect role assignments is crucial for maintaining security and compliance.

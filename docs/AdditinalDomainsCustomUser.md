@@ -1,35 +1,37 @@
-# Documentation for `AdditinalDomainsCustomUser` Parameter
+# Additional Domains Custom User
 
-## Category:
-Authentication / Active Directory Integration
+**Technical Name:** AdditinalDomainsCustomUser
 
-## Default Value:
-*(There is no explicit default value given in the provided code references. It is likely dependent on system or user configuration.)*
+**Category:** User Management
 
-## Impact Level:
-Moderate to High
+**Default Value:** None
 
-## Description:
-The `AdditinalDomainsCustomUser` parameter specifies the username for a custom user account that has permissions to access and query additional Active Directory (AD) domains beyond the primary domain. This user account is used when the system needs to authenticate, fetch, or interact with user data across specified additional domains.
+**Impact Level:** High
 
-## Business Impact:
-Utilizing the `AdditinalDomainsCustomUser` parameter enables organizations to extend their user management and authentication processes across multiple domains efficiently. This is particularly useful in environments where users are spread across different domains but need to be managed centrally. Leveraging a specific user account for this task can help in minimizing permissions and access issues, thereby improving security and operational efficiency.
+**Description:**
 
-## Technical Impact when configured:
-- Enables access to multiple AD domains from the primary domain using a single specified user account.
-- Facilitates user data retrieval and authentication requests across domains without the need for multiple domain-specific configurations.
-- Reduces potential security risks by using a dedicated account with controlled permissions, as opposed to utilizing broader administrative credentials.
+A configuration parameter designed to enable the integration of multiple Active Directory domains within the Pathlock Cloud GRC platform. This parameter is critical for organizations operating across various domains who need to manage access, compliance, and security across all user accounts seamlessly.
 
-## Example Scenario:
-In an organization that has recently acquired another company, users from both the original and acquired company's domains need to be managed. By configuring the `AdditinalDomainsCustomUser` parameter with a user account that has been granted read access across both domains, the organization can efficiently manage user authentication and data retrieval without significant alterations to existing systems or security policies.
+**Business Impact:**
 
-## Related Settings:
-- `AdditinalDomains`: Specifies the additional domains to be accessed.
-- `AdditinalDomainsCustomPassword`: The password for the `AdditinalDomainsCustomUser`.
+The correct configuration of this parameter ensures that user accounts across different Active Directory domains are properly identified and managed, supporting compliance and security policies. It enables the organization to extend its GRC capabilities across all operational domains, enhancing visibility and control over user access and activities.
 
-## Best Practices:
-- **Configure when:** There are multiple AD domains within the organization that require centralized access or management through a single application or service.
-- **Avoid when:** There is no need to access or manage users across multiple domains, or if using a single domain account poses a significant security risk due to excessive permissions.
-  
-### Context:
-The `AdditinalDomainsCustomUser` parameter is crucial for environments with multiple AD domains where central management or cross-domain authentication is required. Its proper configuration ensures secure and efficient access to necessary user data across domains.
+**Technical Impact when configured:**
+
+- Enables the Active Directory provider within Pathlock to iterate over multiple domains.
+- Facilitates the addition of users from additional domains not primarily configured in the Pathlock system.
+- Ensures comprehensive coverage and control of user access and activities across multiple domains.
+
+**Examples Scenario:**
+
+An organization operates across three different domains – North America, Europe, and Asia. Each domain has its own set of user accounts managed under separate Active Directory instances. By configuring the `AdditinalDomainsCustomUser` parameter, the organization can manage GRC policies across all user accounts from a centralized platform, ensuring compliance and security standards are uniformly applied.
+
+**Related Settings:**
+
+- `AdditinalDomains`
+- `AdditinalDomainsCustomPassword`
+
+**Best Practices:** 
+
+- **Configure when:** You are managing a multi-domain environment and need centralized GRC management across all user accounts.
+- **Avoid when:** Your organization operates under a single domain or does not require integration of multiple Active Directory instances.

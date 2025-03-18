@@ -8,28 +8,24 @@
 
 **Impact Level:** Medium
 
-**Description:** This parameter enables the Pathlock platform to handle Excel files that are protected. When enabled, it allows users to upload, download, and work with Excel files that have been protected with a password. This is particularly useful for organizations that use Excel documents for reporting, data transfer, or record-keeping but need to maintain confidentiality and data integrity.
+**Description:**
 
-**Business Impact:** Enabling support for protected Excel files ensures that sensitive data contained within these files remains secure while being processed or analyzed through the Pathlock platform. It supports compliance with data protection regulations by ensuring that only authorized personnel can access or modify the protected files. This feature is crucial for businesses that rely on Excel for critical financial analysis, risk assessment, or compliance reporting.
+This parameter enables the Pathlock Cloud GRC platform to handle and process Excel files that are protected by passwords or encryption. When enabled, users can upload, analyze, and report on data contained in protected Excel documents as part of their governance, risk, and compliance activities.
 
-**Technical Impact:** When configured, the Pathlock platform will prompt for passwords to access protected Excel files, or it will use stored credentials securely. This ensures that all file interactions—be it data import/export or other batch processing tasks—are conducted securely without compromising the file's integrity or accessibility by unauthorized users.
+**Business Impact:**
 
-**Example Scenario:**
-- **Scenario:** A financial analyst needs to upload a series of password-protected Excel files containing sensitive budget information for processing within the Pathlock platform.
-- **Requirement:** The AddSupportForExcelProtectedFile parameter must be enabled to allow the analyst to upload and work with the protected files seamlessly.
-- **Outcome:** With the parameter enabled, the analyst uploads the protected Excel files, the platform prompts for the necessary passwords, and the data is processed securely, maintaining the confidentiality of the information.
+Enabling support for Excel protected files will allow organizations to ensure that sensitive data contained within protected spreadsheets can be securely managed and included in compliance and audit reporting. This is particularly important for businesses that regularly deal with confidential financial, personnel, or operational data in Excel format.
 
-**Related Settings:** 
-- ExcelFileProcessingMode (determines how Excel files are processed, which may relate to how protected files are handled once this parameter is enabled)
-- SecureCredentialStorage (controls how passwords or credentials for accessing protected files are stored and managed within the platform)
+**Technical Impact: when configured**
 
-**Applicable Workflow Actions:** 
-- ImportData
-- ExportData
-- AnalyzeData
+Upon configuration, the system will have the capability to ingest, decrypt, and process Excel files that are protected. This means that workflows which involve the uploading or analysis of Excel documents will be able to accept files that were previously inaccessible due to protection.
 
-**Best Practices:** 
-- **Configure When:** Handling of protected Excel files is a regular part of your data processing or reporting workflows, and the security of the contained data is paramount.
-- **Avoid When:** Your organization does not use Excel for sensitive information, or there are no requirements to interact with password-protected files, to minimize complexity.
+**Examples Scenario:**
 
-**Context:** This parameter is crucial for businesses that manage sensitive data within Excel documents, ensuring that security and data integrity are maintained across GRC (Governance, Risk Management, and Compliance) initiatives within the Pathlock Cloud platform.
+A financial analyst needs to upload an annual budget report housed in a password-protected Excel file to the Pathlock Cloud GRC platform for audit trail purposes and compliance review. With the AddSupportForExcelProtectedFile parameter enabled, they can upload this document directly without having to remove the password protection, thus maintaining the security of sensitive financial data.
+
+**Related Settings:**
+
+- ShowRoleOwnersInRoleQuery
+
+**Best Practices:** Enable this setting when dealing with sensitive data within protected Excel files that need to be included in GRC processes. Avoid enabling it if your organization rarely encounters protected Excel documents in governance, risk, and compliance activities, to minimize unnecessary processing overhead.

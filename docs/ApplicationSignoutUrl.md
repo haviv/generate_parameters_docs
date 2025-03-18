@@ -1,38 +1,32 @@
-# Documentation for `ApplicationSignoutUrl` Parameter
+# Application Signout Url
 
-## Category:
-Security Configuration
+**Technical Name:** ApplicationSignoutUrl
 
-## Default Value:
-"~/ApplicationSignout.aspx"
+**Category:** Configuration
 
-## Impact Level:
-Medium
+**Default Value:** None Provided
 
-## Description:
-The `ApplicationSignoutUrl` parameter specifies the URL to which a user is redirected upon signing out of the Pathlock Cloud GRC platform. This URL is used to ensure that users are directed to a designated page that can provide further instructions, confirm sign out, or offer additional resources post-signout. By default, the system redirects users to a page named `ApplicationSignout.aspx` located in the root directory.
+**Impact Level:** Medium
 
-## Business Impact:
-Proper configuration of the `ApplicationSignoutUrl` ensures that users experience a seamless transition when signing out of the Pathlock Cloud GRC platform, enhancing user experience and maintaining the security posture by directing users away from potentially sensitive areas upon logout. It can also be used for tracking logout activities when integrated with web analytics.
+**Description:**
 
-## Technical Impact when configured:
-When configured, this setting:
-- Redirects users to a predefined page after logout, preventing unauthorized access to the last accessed page due to browser caching.
-- Enables customization of the logout experience, allowing organizations to provide specific messages or actions post-logout.
-- Can be utilized to enhance security by directing users to a page that automatically clears browser cache or provides security reminders.
+The Application Signout Url parameter specifies the URL to which users will be redirected when they sign out from the Pathlock Cloud GRC platform. This setting is crucial for enhancing the user management and signout experience, ensuring a smooth transition out of the application.
 
-## Example Scenario:
-An organization wishes to direct its users to a custom "Logout Successful" page that includes links to helpdesk information, user survey, and a login page for users to sign back into the platform. By setting the `ApplicationSignoutUrl` to the URL of this custom page (e.g., "~/CustomLogout.aspx"), organizations can enhance user experience and gather feedback from users post-logout.
+**Business Impact:**
 
-## Related Settings:
-- `SessionTimeoutUrl`: Specifies the URL to redirect users in case of session timeout.
-- `LoginPageUrl`: URL for the custom login page.
+Configuring the Application Signout Url has a direct impact on user experience and security. It ensures that users are directed to a predetermined location after signout, which can help in reinforcing the security posture by preventing redirection to potentially hazardous sites. Additionally, it can be leveraged to redirect users to other relevant corporate resources, enhancing the overall user experience and maintaining engagement.
 
-## Best Practices:
-- **Configure when**:
-  - Customization of the logout page is needed to improve user experience, provide specific logout confirmations, or offer additional resources.
-  - Enhanced security measures are desired to clear session data or display security reminders upon logout.
-- **Avoid when**:
-  - Default signout behavior and redirection to the `ApplicationSignout.aspx` page meets organizational requirements and user expectations.
+**Technical Impact when configured:**
 
-By customizing the `ApplicationSignoutUrl`, organizations can tailor the logout process to meet their specific needs, reinforcing both security practices and user engagement.
+When properly configured, the Application Signout Url ensures that all users exiting the Pathlock platform are redirected to a specified URL. This can be particularly useful for directing users towards corporate portals, compliance pages, or other applications within the organization’s ecosystem, thus maintaining a controlled and consistent cybersecurity environment.
+
+**Examples Scenario:**
+
+An organization utilizes Pathlock Cloud GRC for managing its compliance requirements. The IT department configures the Application Signout Url parameter to redirect users to the company’s internal portal upon signout. This move aims to streamline access to other compliance resources and keep users within the secure environment of the corporate network.
+
+**Related Settings:** None
+
+**Best Practices:** configure when, avoid when
+
+- **Configure when:** You want to maintain a controlled navigation flow for users exiting the application, especially to enhance security measures by preventing redirection to potentially malicious sites.
+- **Avoid when:** There is no clear need or benefit in redirecting users to a specific URL post-signout. If the redirection could lead to confusion or if users should not be directed to any particular site after signing out.

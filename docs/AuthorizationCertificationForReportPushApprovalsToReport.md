@@ -1,36 +1,34 @@
-# AuthorizationCertificationForReportPushApprovalsToReport Parameter Documentation
+# Authorization Certification For Report Push Approvals To Report
 
-## Category
-- Security/Authorization
+**Technical Name:** AuthorizationCertificationForReportPushApprovalsToReport
 
-## Default Value
-- `False`
+**Category:** Workflow
 
-## Impact Level
-- Application Behavior Modification
+**Default Value:**
 
-## Description
-The `AuthorizationCertificationForReportPushApprovalsToReport` parameter is a configuration setting that controls whether approval data keys are stored and pushed to reports during the authorization certification process. When enabled, the system captures approval decisions made during the review processes, stores them, and then includes this data within designated reports. This feature is particularly useful for audit trails, compliance reporting, and enhancing transparency in the approval process.
+**Impact Level:** Medium
 
-## Business Impact
-Enabling this setting ensures that decision-making during the authorization certification process is fully documented and reportable. This can aid organizations in meeting compliance requirements and provides an audit trail that can be reviewed for accuracy, fraud detection, and regulatory compliance.
+**Description:**
 
-## Technical Impact when configured
-- With this setting enabled, every approval made during the authorization certification process is recorded.
-- The system generates and maintains a dictionary of approval data keys, which are then pushed to reports.
-- It may increase the database and report generation load due to the additional data being processed and stored.
-- Enhances the detail level of reports related to authorization certification processes.
+The `AuthorizationCertificationForReportPushApprovalsToReport` parameter is used within the Pathlock Cloud GRC platform, specifically in the context of authorization certification workflow actions. It facilitates the process of pushing approval reports related to authorization certification to designated managers or responsible parties.
 
-## Examples Scenario
-- **Compliance Reporting:** In environments where tracking every approval decision is crucial for compliance reasons, enabling this setting will ensure that the necessary data is captured and made reportable.
-- **Audit Reviews:** To prepare for internal or external audits, organizations may enable this setting to have detailed reports showing approval flows and decisions within the certification process.
+**Business Impact:**
 
-## Related Settings
-- `ReviewElement` and `OriginalReportName` settings impact this parameter, as approvals are tied to specific review elements and reports.
+Implementing this parameter streamlines the process of reporting and certifying authorizations, thus enhancing the transparency and accountability of access controls within the organization. It ensures that managers are promptly informed about certification actions, which is critical for maintaining compliance standards and mitigating security risks associated with unauthorized access.
 
-## Best Practices
-- **Configure when:** There is a need for detailed reporting on approval decisions for compliance or auditing purposes.
-- **Avoid when:** The additional data storage and processing load is a concern, and there is no substantive requirement for detailed approval reporting.
+**Technical Impact when configured:**
 
-## Context
-The parameter is a part of the PathlockGRC suite and interacts closely with the authorization certification process, storing approvals made during the review stages and pushing this data to relevant reports. This process ensures that organizations can maintain and demonstrate a comprehensive audit trail of decision-making activities related to access and authorization.
+When this parameter is configured, it triggers the automated sending of bulk emails to managers with the details of the authorization certification reviews. This operation is part of the tail operations in the submission process of authorization certifications, ensuring that all relevant parties are kept informed about the status of authorization approvals.
+
+**Examples Scenario:**
+
+- In a scenario where an organization needs to certify that employees have the correct level of access to financial systems, the `AuthorizationCertificationForReportPushApprovalsToReport` can be configured. Following the review process, reports detailing the outcome of these certifications are automatically generated and pushed to the managers of those employees. This ensures that any discrepancies are quickly identified and remedied.
+
+**Related Settings:**
+
+**Applicable Workflows Actions:** AuthoirizationCertificationBO
+
+**Best Practices:** 
+
+- Configure when: There's a need for automated communication of authorization certification outcomes to enhance transparency and ensure timely updates.
+- Avoid when: The organizational workflow or compliance requirement does not mandate direct report push to managers or where manual reporting is preferred for specific cases.

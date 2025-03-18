@@ -1,37 +1,34 @@
-# ApprovedByAdminAnnotation Parameter Documentation
+**Approved By Admin Annotation**
 
-## Category
-- Configuration
+**Technical Name:** ApprovedByAdminAnnotation
 
-## Default Value
-- The default value is an empty string `""`.
+**Category:** Workflow
 
-## Impact Level
-- High
+**Default Value:** True
 
-## Description
-The `ApprovedByAdminAnnotation` parameter is designed to store a custom text annotation that is prepended to manager comments in workflow steps where actions have been approved by an administrator. This annotation acts as a marker or identifier indicating that the specific workflow step or action has received administrative approval.
+**Impact Level:** High
 
-## Business Impact
-The inclusion of the `ApprovedByAdminAnnotation` in workflow comments can significantly enhance the visibility and traceability of decisions made during the workflow. By clearly marking which actions were approved by administrators, organizations can ensure a higher level of auditing and compliance with internal or external governance and oversight requirements.
+**Description:**
 
-## Technical Impact when configured
-When the `ApprovedByAdminAnnotation` is set (other than its default empty value), the system will prepend this annotation to the manager's comments section for any workflow step that has been approved by an administrator. This will occur at runtime, dynamically adjusting the displayed comments to include the specified annotation. It allows for an immediate visual cue within the workflow management system that an administrative decision was involved.
+This parameter controls the annotation of administrative approval within specific workflow steps, particularly focusing on emergency access scenarios. It ensures that certain actions, especially those requiring expedited access, are duly noted and approved by authorized personnel before proceeding.
 
-## Examples Scenario
-- **In a corporate environment**, where approval workflows are critical for processing expense reports, having the `ApprovedByAdminAnnotation` set to "[Approved by Admin]" could help in quickly identifying which expense reports have been directly approved by a delegated admin, streamlining the auditing process.
-- **In a regulatory context**, for workflows managing document or policy approvals, this annotation can indicate to auditors and compliance managers at a glance which items have received direct administrative attention, aiding in compliance verification.
+**Business Impact:**
 
-## Related Settings
-- `ApprovedByDelegateAnnotation` - Similar to `ApprovedByAdminAnnotation`, but used for approvals made by delegated authorities.
+Setting this parameter enhances security protocols by enforcing a check on emergency access requests, ensuring they are approved by an administrator. It minimally impacts regular workflows while significantly safeguarding sensitive operations, thereby maintaining integrity and compliance.
 
-## Best Practices
-- **Configure when**:
-    - Transparency in administrative actions within workflow approvals is required.
-    - Compliance and auditing processes benefit from clear markers of administrative approval.
-- **Avoid when**:
-    - If adding annotations could potentially clutter or confuse the workflow approval process.
-    - In workflows where administrative approval is implied or unnecessary to explicitly mark.
+**Technical Impact when configured:**
 
-## Context
-The `ApprovedByAdminAnnotation` is a customizable string setting available within the PathlockGRC platform's common settings. This setting is instrumental in providing clarity and accountability in automated authorization request workflows, especially where administrative oversight plays a crucial role in operational compliance and governance.
+When enabled, the parameter mandates administrative approval for emergency access requests within workflows. This adds an extra layer of security by verifying that such requests are legitimate and authorized, thereby preventing unauthorized access and potential security breaches.
+
+**Examples Scenario:**
+
+A high-level scenario where this parameter is crucial could involve a situation where an employee requires urgent access to sensitive data due to an uncontrollable event. With `ApprovedByAdminAnnotation` enabled, the system ensures that this emergency access is explicitly approved by an administrator, thereby maintaining oversight and control even in exigent circumstances.
+
+**Related Settings:** 
+
+- ChangeDocumentsShowActivity
+
+**Best Practices:** 
+
+- **Configure when:** It's essential to have tight control and oversight over emergency access requests, particularly in environments handling sensitive or regulated data.
+- **Avoid when:** If your organization operates in a less regulated environment and the administrative approval process could unduly hinder operational efficiency for emergency access scenarios. However, consider the security implications carefully.

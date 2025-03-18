@@ -1,40 +1,33 @@
-# AuthorizationCertificationShareCommentsAdded Parameter Documentation
+**Authorization Certification Share Comments Added**
 
-## Category
-Configuration
+**Technical Name:** AuthorizationCertificationShareCommentsAdded
 
-## Default Value
-"Back to you !"
+**Category:** Workflow
 
-## Impact Level
-Application Behavior
+**Default Value:** False
 
-## Description
-The `AuthorizationCertificationShareCommentsAdded` parameter is used within the application to define the default message sent when sharing certification comments via email upon the completion of a certification process.
+**Impact Level:** Medium
 
-## Business Impact
-The utilization of this parameter directly affects the user experience by providing a customizable message encouraging interaction or acknowledgment upon sharing comments, which can potentially enhance engagement and communication efficiency during the certification review processes.
+**Description:**
 
-## Technical Impact when configured
-When this parameter is configured:
-- It alters the default message that is included in the automated email notifications sent to users who are part of a certification process when comments are added and shared.
-- Ensures that communications sent out after comments have been added to a certification are in line with corporate or departmental tone and policy by allowing customization of the email message content.
+The parameter `AuthorizationCertificationShareCommentsAdded` is used to control whether comments added during the authorization certification process are shared among relevant stakeholders or kept private. This setting is crucial for ensuring that the communication process during the authorization review is in line with the organizational policy on transparency and confidentiality.
 
-## Example Scenario
-In a scenario where a user has completed a certification review and added comments for consideration, setting the `AuthorizationCertificationShareCommentsAdded` parameter ensures that the recipient of these comments, upon receiving the email notification, sees a message that could be tailored to prompt specific actions or simply acknowledge receipt of the comments in a manner consistent with organizational communication standards.
+**Business Impact:**
 
-## Related Settings
-- Email Notification Settings
-- Certification Process Configuration
-- User Communication Preferences
+Enabling this parameter ensures that comments made during the certification process can be shared, promoting transparency and collaboration among the team members and relevant stakeholders. It helps in creating a clear audit trail and supports decision-making processes by providing context and insights into the decisions made during the authorization certification process.
 
-## Best Practices
-### Configure when:
-- The default email message needs to reflect specific instructions, encouragement, or information aligned with the organizational tone and policy.
-- Tailoring the communication to enhance user engagement and clarity regarding the shared comments is necessary.
+**Technical Impact when configured:**
 
-### Avoid when:
-- The default setting is sufficient for organizational needs and any change might introduce confusion or misalignment with established communication practices.
+When configured to true, any comments added during the authorization certification process will be visible to all stakeholders involved in the process. This facilitates better communication and understanding among the team members. If set to false, the comments will only be available to the person who added them, limiting the visibility and possibly hindering collaboration.
 
-## Context
-The parameter `AuthorizationCertificationShareCommentsAdded` is an integral part of the settings that influence the behavior of the application's certification review process, particularly in how users are notified and engaged through email communications. It exists within the application's common settings, allowing for a centralized configuration approach that benefits system administrators and end-users by providing clarity and consistency in application-generated communications.
+**Examples Scenario:**
+
+- **Scenario 1:** An organization requires that any objections or approvals regarding user access rights during the authorization certification must be fully transparent to audit, compliance, and security teams. Setting `AuthorizationCertificationShareCommentsAdded` to true enables this requirement by ensuring that all comments are shared with relevant stakeholders.
+  
+- **Scenario 2:** Another organization prefers to keep the reviewers' comments confidential to protect the identities or prevent bias in decision-making. Here, setting `AuthorizationCertificationShareCommentsAdded` to false would ensure that comments are not shared beyond the individual who made them.
+
+**Related Settings:** 
+
+- `RoleBuilder_EnableTransactionsRemoval`
+
+**Best Practices:** configure when transparency and collaboration among stakeholders are required during the authorization certification process; avoid when there is a need to keep the comments private or when confidentiality is a priority.

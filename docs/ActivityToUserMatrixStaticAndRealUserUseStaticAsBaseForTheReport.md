@@ -6,22 +6,24 @@
 
 **Default Value:** False
 
-**Impact Level:** Medium
+**Impact Level:** High
 
-**Description:** This parameter controls how the Activity to User matrix report is generated when comparing static (pre-defined roles and activities) and real user data (actual user activities within the system). When enabled, the report uses the static data as the baseline for comparison rather than treating actual user data as the baseline.
+**Description:**
 
-**Business Impact:** Understanding how actual user activities compare against pre-defined roles and activities helps in identifying deviations and ensuring that users only have the access necessary to perform their job functions. This can be critical in maintaining a secure, compliant, and efficient access environment.
+This setting controls how the comparison between a static user activity matrix and real-time user data is handled in the reporting feature. When enabled, the static matrix serves as the base reference, and overlaps with real user activities are marked distinctly.
 
-**Technical Impact when configured:** Enabling this setting shifts the perspective of the report, highlighting discrepancies where actual user activities extend beyond what is statically defined. This can assist in tightening security controls and improving compliance by identifying and rectifying excessive permissions.
+**Business Impact:**
 
-**Example Scenario:** If an organization is undergoing a security audit and needs to demonstrate that users are not granted more permissions than those defined by their roles, enabling this setting would make discrepancies apparent, thereby facilitating the identification of users with excess privileges.
+Allows organizations to effectively track and analyze deviations in user activities from established baselines, highlighting potential security or compliance risks. This insight is crucial for maintaining stringent GRC (Governance, Risk Management, and Compliance) standards within an organization's IT ecosystem.
 
-**Related Settings:** `FioriConnectorIdentifyBasedOnCatalogs` (as it pertains to identifying user activities based on specific catalogs, which could be related in assessing access and activity scopes).
+**Technical Impact when configured:**
 
-**Applicable Workflow Actions:** The specific workflow actions relevant to this parameter would typically include generating reports, assessing user permissions against pre-defined roles, and auditing user activities.
+When this setting is enabled, any activity recorded for users that matches the static matrix's activities will be marked, facilitating straightforward identification of conformity and deviations. This helps in pinpointing unauthorized or unexpected actions within the system, thereby enhancing oversight.
 
-**Best Practices:** 
-- **Configure when:** Preparing for audits, assessing compliance against predefined roles, or when security and access governance are a priority.
-- **Avoid when:** The organization prioritizes monitoring real user behavior without comparing it to static definitions, or if the static data is not up-to-date, which might result in misleading report outcomes.
+**Examples Scenario:**
 
-**Context:** This parameter plays a critical role in Pathlock Cloud GRC's reporting functionality, enabling organizations to fine-tune how they monitor and compare user activities against predefined access controls and roles. Its configuration is essential for leveraging the platform's capabilities to maintain compliance, manage risk, and enhance security protocols effectively.
+An organization wants to ensure that users are only performing actions within their purview, as delineated by predefined roles and permissions. By enabling this setting, they can easily compare actual user activities against the statically defined matrix of activities meant for those roles, identifying any discrepancies or unauthorized actions.
+
+**Related Settings:** N/A
+
+**Best Practices:** configure when you need rigorous oversight on user activities vis-a-vis their defined roles and permissions to ensure security and compliance. Avoid when such detailed tracking is not essential, as it may lead to unnecessary data processing and interpretation efforts.

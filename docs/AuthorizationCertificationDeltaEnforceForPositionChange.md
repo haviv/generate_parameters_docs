@@ -1,35 +1,39 @@
-# `AuthorizationCertificationDeltaEnforceForPositionChange` Parameter Documentation
+**Authorization Certification Delta Enforce For Position Change**
 
-## Category:
-Security Configuration
+**Technical Name:** AuthorizationCertificationDeltaEnforceForPositionChange
 
-## Default Value:
-True
+**Category:** Compliance
 
-## Impact Level:
-High
+**Default Value:** (The default value was not provided in the code references)
 
-## Description:
-This parameter determines whether the authorization certification process should enforce a re-certification (hence not perform a delta certification) for users whose position within the company has changed since the last certification cycle. A delta certification only reviews permissions that have changed since the last full certification.
+**Impact Level:** High
 
-## Business Impact:
-Enabling this setting ensures that employees who have transitioned to new roles or responsibilities undergo a full certification of their access rights, reducing the risk of retaining access that is no longer appropriate for their new position. This is crucial for maintaining the principle of least privilege and complying with internal and external audit requirements.
+**Description:**
 
-## Technical Impact when configured:
-When enabled, the system checks if an employee's position has changed since the last authorization certification period. If a position change is detected, the system will bypass delta certification (which only considers changes since the last review) and will enforce a full certification review for the affected user, ensuring their access rights are fully vetted against their new role requirements.
+Enforces the re-certification of user authorization when a significant position change occurs within the organization. This parameter ensures that users' access rights remain aligned with their current job functions and responsibilities.
 
-## Examples Scenario:
-- **Without Position Change**: If a user's position has not changed since the last authorization review and this parameter is set to True, the system may perform a delta review for that user, focusing only on what has changed.
-  
-- **With Position Change**: Conversely, if a user has changed positions since the last authorization review and this parameter is True, the system will require a full review of the user's access permissions, ignoring the delta and ensuring comprehensive oversight of their access rights in light of their new position.
+**Business Impact:**
 
-## Related Settings:
-- `DeltaSinceAuthorizationReviewId`
-- Settings related to authorization review cycles and criteria for delta versus full reviews.
+Mitigates the risk of unauthorized access by ensuring users possess only the access rights necessary for their current positions. Helps in maintaining a tight security posture and supports compliance with various regulatory standards that mandate periodic review of access rights.
 
-## Best Practices:
-- **Configure when**: Position changes within the organization are common, and the risk of inappropriate access due to role changes is a concern.
-- **Avoid when**: The organization has a very stable employee role environment, or the system cannot accurately track and process the change in positions due to limitations in the HR system integration.
+**Technical Impact when configured:**
 
-## Context:
-The `AuthorizationCertificationDeltaEnforceForPositionChange` parameter is a crucial security control within access governance frameworks, particularly for organizations with dynamic role environments or those subject to stringent compliance mandates relating to user access rights management.
+Triggers a process for authorization review and certification for users undergoing significant job function changes. This review process helps in identifying and revoking any unnecessary privileges, thus minimizing potential security risks.
+
+**Examples Scenario:**
+
+- **Promotion:** When a user is promoted from a junior role to a senior role, this parameter ensures that their access rights are reviewed and updated to match the new responsibilities.
+- **Department Change:** If a user switches departments, this parameter prompts a review of their access rights to ensure they only have access to resources relevant to their new department.
+
+**Related Settings:**
+
+- ExternalDatabaseOrgStructureSelectQuery: This setting is used to fetch the organizational structure from an external database, which could be related in determining position changes.
+
+**Best Practices:** configure when
+
+- Implementing this parameter is crucial in environments where users' roles and responsibilities change frequently.
+- Use in conjunction with real-time monitoring of organizational changes to promptly trigger the necessary authorization reviews.
+
+avoid when
+
+- The organization has a very stable structure with infrequent position changes, as it may introduce unnecessary administrative overhead.

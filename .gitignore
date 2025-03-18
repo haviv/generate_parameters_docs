@@ -12,4 +12,7 @@ __pycache__/
 # Distribution / packaging
 dist/
 build/
-*.egg-info/ 
+*.egg-info/
+
+# Checkpoint file
+checkpoint.json 

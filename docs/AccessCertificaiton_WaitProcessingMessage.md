@@ -1,37 +1,35 @@
-# Access Certification Wait Processing Message
+**Access Certification Wait Processing Message**
 
 **Technical Name:** AccessCertificaiton_WaitProcessingMessage
 
 **Category:** Workflow
 
-**Default Value:** ""
+**Default Value:**
 
 **Impact Level:** Medium
 
-**Description:** This parameter controls the display message to users during the processing wait time in access certification workflows. It improves user experience by providing informative feedback during system operations that require significant processing time.
+**Description:**
 
-**Business Impact:** Tailoring the wait processing message can significantly enhance the user experience during access certification processes. By setting an appropriate and informative message, organizations can reduce user frustration and confusion during lengthy processing times, leading to more efficient and user-friendly access certification cycles.
+The `AccessCertification_WaitProcessingMessage` parameter is used to customize the message displayed to users during the processing of access certifications in the Pathlock Cloud GRC platform. This message is intended to inform users that their request is being processed and to wait for completion, enhancing user experience by providing clear communication during processes that might take time.
 
-**Technical Impact when configured:** Setting a custom message will replace the default system message during access certification processing times. This allows for a more personalized user interaction, potentially improving user compliance and engagement with the certification process.
+**Business Impact:**
 
-**Examples Scenario:**
+Proper configuration of this parameter enhances user satisfaction by managing expectations during longer processing times for access certifications. It helps in reducing user frustration by providing a clear message that the system is working on their request, potentially reducing the number of support tickets related to access certification delays.
 
-- **Before Setting a Custom Message:** Users might see a generic or default message such as "Processing..." during long wait times, which may not provide much insight into the operation's progress.
-  
-- **After Setting a Custom Message:** Users might see "Your access certification is currently being processed. Thank you for your patience!" This provides a clearer expectation and enhances the user experience.
+**Technical Impact when configured:**
 
-**Related Settings:** Not explicitly mentioned in the provided code snippets, but it may relate to other user interface customization settings within the Pathlock Cloud GRC platform.
+When this parameter is configured, the specified message is displayed to users during the access certification process. This aids in clear communication with users, especially during processes that are not instantaneous, ensuring users are aware that their actions are being processed.
 
-**Applicable Workflows Actions:** While specific workflow actions relating to this parameter were not detailed in the provided context, it is applicable to any workflow action within the access certification process that involves significant processing time.
+**Example Scenario:**
+
+Consider a scenario where an organization has implemented a complex access certification process that includes various checks and approvals which might take several minutes to complete. By customizing the `AccessCertification_WaitProcessingMessage` to display a message such as "Your access certification request is being processed, please wait. This may take a few minutes.", users are informed about the ongoing process, leading to a better user experience and reduced user anxiety over the wait time.
+
+**Related Settings:**
+
+- `AuthorizationReviewShowFillEmptyToApprove`
+- `AuthorizationReviewShowFillEmptyToDecline`
 
 **Best Practices:** 
 
-- **Configure when:**
-  - The processing time for access certification is considerably long.
-  - There’s a need to enhance user communication and experience during access certification processes.
-  
-- **Avoid when:**
-  - The default system message suffices due to the quick processing times of access certifications.
-  - Custom messaging could introduce confusion or misinterpretation of the process status.
-
-**Context:** This parameter is part of the Pathlock Cloud GRC platform's workflow settings, aimed at improving the user experience during access certification processes by allowing for customized processing wait messages.
+- **Configure when:** There is an anticipated delay in the processing of access certifications to manage user expectations effectively.
+- **Avoid when:** The access certification process is typically fast, and adding a wait message might unnecessarily alarm the users or imply that the system is slower than it actually is.

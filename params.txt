@@ -1,7 +1,6 @@
-# Format: DisplayName,ParamName
+#Parameter Name,Parameter Technical Name
 Access Certificaiton Wait Processing Message,AccessCertificaiton_WaitProcessingMessage
 Actions Address,Actions_Address
-Active Employees Read Days Ahead,ActiveEmployeesReadDaysAhead
 Active Employees Read Days Ahead,ActiveEmployeesReadDaysAhead
 Activity To User Matrix Static And Real User Use Static As Base For The Report,ActivityToUserMatrixStaticAndRealUserUseStaticAsBaseForTheReport
 Add Counter Value To Pattern Set Field,AddCounterValueToPatternSetField
@@ -9,3 +8,45 @@ Add Excel Document Sign Details,AddExcelDocumentSignDetails
 Add Option To Allow Return To Previous For Parallel Steps,AddOptionToAllowReturnToPreviousForParallelSteps
 Add Reference Information To User Owner Review,AddReferenceInformationToUserOwnerReview
 Add Support For Excel Protected File,AddSupportForExcelProtectedFile
+Additional Columns In User Search,AdditionalColumnsInUserSearch
+Additional Data Extractor Tables For Sync Org,AdditionalDataExtractorTablesForSyncOrg
+Additional Data Extractor Tables For Sync Roles,AdditionalDataExtractorTablesForSyncRoles
+Additional Domains Custom Password,AdditinalDomainsCustomPassword
+Additional Domains Custom User,AdditinalDomainsCustomUser
+Additional Domains Only,AdditinalDomainsOnly
+Allow Decline Without Comment,AllowDeclineWithoutComment
+Allow Edit Email In My Profile,AllowEditEmailInMyProfile
+Allow Edit For Custom Field Ids,AllowEditForCustomFieldIds
+Always Show Update Button For Role Review,AlwaysShowUpdateButtonForRoleReview
+Application Name,ApplicationName
+Application Signout Url,ApplicationSignoutUrl
+Approved By Admin Annotation,ApprovedByAdminAnnotation
+Approved By Delegate Annotation,ApprovedByDelegateAnnotation
+Authorization Certification By Activities Include Role Name,AuthorizationCertificationByActivitiesIncludeRoleName
+Authorization Certification Delta Enforce For Position Change,AuthorizationCertificationDeltaEnforceForPositionChange
+Authorization Certification For Report Push Approvals To Report,AuthorizationCertificationForReportPushApprovalsToReport
+Authorization Certification For Roles Use Direct Link For Content,AuthorizationCertificationForRolesUseDirectLinkForContent
+Authorization Certification Hide Indirect Role Assignment,AuthorizationCertificationHideIndirectRoleAssisgment
+Authorization Certification Make Reject Comment Error Message,AuthorizationCertificationMakeRjectCommentErrorMessage
+Authorization Certification Make Reject Comment Mandatory,AuthorizationCertificationMakeRjectCommentMandatory
+Authorization Certification Share Comments Added,AuthorizationCertificationShareCommentsAdded
+Authorization Certification Show User Review In Wide Approval Screen,AuthorizationCertificationShowUserReviewInWideApprovalScreen
+Authorization Certification Use Mass Comment For All Decisions,AuthorizationCertificationUseMassCommentForAllDecisions
+Authorization Roles Tree Selected Parent Role Text For Fully Selected,AuthorizationRolesTree_SelectedParentRoleTextForFullySelected
+Authorization Roles Tree Selected Parent Role Text For Pratially Selected,AuthorizationRolesTree_SelectedParentRoleTextForPratiallySelected
+Authorization Value For Automatic Object Level,AuthorizationValueForAutomaticObjectLevel
+Auto Refresh User Information For Emergency Access Step,AutoRefreshUserInforamationForEmergencyAccessStep
+Automatic Role Assignments Default User Group Type,AutomaticRoleAssignmentsDefaultUserGroupTypeId
+Automatic User Lock Include Users Locked By Incorrect Logons,AutomaticUserLockIncludeUsersLockedByIncorrectLogons
+Automatic User Lock Override Disable Default Action,AutomaticUserLockOverrideDisableDefaultAction
+Awaiting Decisions Approve,AwaitingDecisions_Approve
+Awaiting Decisions Decline,AwaitingDecisions_Decline
+Block Size For Matrix Query,BlockSizeForMatrixQuery
+Build Departments By Custom Info Type Mapping,BuildDepartmentsByCustomInfoTypeMapping
+Cache For Pathlock Roles In Hours,CachaForProfileTailorRolesInHours
+Calculate Role Content Based On Meta Activities,CalculateRoleContentBasedOnMetaActivities
+Campaign Name Date Format,CampaignNameDateFormat
+Ccm Drawer Field Set,CcmDrawerFieldSet
+Change Documents Read Source Table For More Info,ChangeDocumentsReadSourceTableForMoreInfo
+Change Documents Show Activity,ChangeDocumentsShowActivity
+Change Documents Show Change Type Column,ChangeDocumentsShowChangeTypeColumn

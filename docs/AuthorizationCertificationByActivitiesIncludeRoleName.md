@@ -1,40 +1,29 @@
-# Authorization Certification By Activities Include Role Name
-
 **Technical Name:** AuthorizationCertificationByActivitiesIncludeRoleName
 
 **Category:** Audit
 
-**Default Value:** {0}
+**Default Value:**
 
-**Impact Level:** High
+**Impact Level:** Medium
 
-**Description:** 
-This parameter configures the inclusion of role names in authorization certifications when reviewing activities. It is utilized to enhance the visibility and traceability of roles associated with particular activities within the Pathlock Cloud GRC platform.
+**Description:**
 
-**Business Impact:** 
-Enabling this feature can greatly assist in comprehending the scope and responsibilities of roles within an organization, increasing transparency in the audit and compliance processes. It aids in identifying potentially over-permissioned roles or misalignments between roles and activities, reducing security risks and ensuring compliance with internal policies and external regulations.
+This parameter controls whether role names are included in the details when performing authorization reviews by activities within the Pathlock Cloud GRC platform. It specifies if the names of the roles associated with the activities are to be displayed in the audit details, enhancing the clarity and context of the authorization review outputs.
+
+**Business Impact:**
+
+Including role names in authorization reviews by activities can significantly improve the understanding of the access rights and activities being certified. This can help auditors and compliance managers to quickly identify any discrepancies or unauthorized access rights, thereby improving the organization's compliance posture and reducing the risk of security breaches.
 
 **Technical Impact when configured:**
-When this parameter is configured to include role names in the authorization certification reviews, it enriches the data provided during audits and compliance checks. It allows for a more detailed analysis and understanding of the access rights and limitations associated with each role, streamlining the certification process by providing clearer insights into authorization structures.
 
-**Example Scenario:**
-- A compliance officer is reviewing the access rights of employees in sensitive departments. By enabling this parameter, the officer can see not only the activities that individual members are authorized to perform but also the roles associated with these activities. This detail makes it easier to verify that access rights are in compliance with the principle of least privilege and regulatory requirements.
+When this parameter is configured to include role names, the output of authorization reviews by activities will contain additional details, specifically the names of roles associated with each activity. This enhancement in detail facilitates more informed decisions during the certification process, as it provides clearer insights into the access context.
+
+**Examples Scenario:**
+
+A compliance manager conducting a quarterly review of user access rights decides to include role names in the authorization review by activities report. By doing so, the manager can easily pinpoint that a user has been wrongly assigned to a high-privilege role, which was not immediately obvious without the role names being displayed. This insight allows for prompt corrective action, thereby avoiding potential security risks.
 
 **Related Settings:**
-- ActivityDetailsVisibility
-- RoleCertificationDetails
 
-**Applicable Workflow Actions:**
-- Generate Authorization Review Report
-- Initiate Authorization Certification Process
-- Review Authorization Certifications
+- `GetDetailsControl` (Related to how details are fetched and displayed in the authorization review interface).
 
-**Best Practices:** 
-- **Configure when:** 
-   - You require detailed auditing and review of authorization certifications.
-   - It is critical to understand the mapping between roles and activities for security and compliance reasons.
-- **Avoid when:** 
-   - Simplicity is preferred over detail in certification reports, or when the inclusion of role names might create unnecessary complexity or data privacy concerns.
-
-**Context:**
-This parameter plays a crucial role in enhancing the effectiveness of audits, compliance checks, and general security governance within the Pathlock Cloud GRC platform by providing an additional layer of detail during the review of authorization certifications by activities. Its configuration can be tailored to meet the specific needs of an organization's security and compliance policies.
+**Best Practices:** Configure when conducting detailed authorization reviews to enhance clarity and understanding of access rights. Avoid when such detailed reporting is not required or could lead to information overload.

@@ -5,6 +5,21 @@ from typing import List
 from openai import OpenAI
 from dotenv import load_dotenv
 import sys
+import json
+
+def load_checkpoint(checkpoint_file: str) -> int:
+    """Load the last processed parameter index from checkpoint file."""
+    try:
+        with open(checkpoint_file, 'r') as f:
+            checkpoint = json.load(f)
+            return checkpoint.get('last_processed_index', 0)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return 0
+
+def save_checkpoint(checkpoint_file: str, index: int):
+    """Save the last processed parameter index to checkpoint file."""
+    with open(checkpoint_file, 'w') as f:
+        json.dump({'last_processed_index': index}, f)
 
 def find_param_references(code_folder: str, param_name: str) -> List[dict]:
     """
@@ -152,28 +167,46 @@ def generate_param_documentation(param_info: dict, references: List[dict]) -> st
 Based on the following code references, generate comprehensive markdown documentation for this parameter.
 Go over the code and then understand what is the purposes of the param so you can create a documentation for end user that wants to use this param in this format. It has to be in markdown format - this is super important!
 For context, these params are part of the Pathlock Cloud GRC platform. Pathlock is a cloud-based GRC platform that helps organizations manage their security, risk, and compliance.
-When you give examples, make sure to give examples that are relevant to the business impact of the param.
-when you reference someting, only do it if you are sure that the reference is relevant to the param and that it exist.
+Guidelines:
+1. When you give examples, make sure to give examples that are relevant to the business impact of the param.
+2. When presenting Applicable Workflows Actions, if there are no relevant workflow actions, dont add this attribute.
+3. when you reference someting, only do it if you are sure that the reference is relevant to the param and that it exist.
+4. Generate the next format, leave a blank line between each section (**this is mandatory**)
+5. Add a Header with the parameter display name: {param_info['display_name']}
 
-Generate the next format:
-Header with the parameter display name: {param_info['display_name']}
+Generate the Documentation in This Exact Format:
 
-Technical Name: {param_info['param_name']}
-Category: (based on the code references decide which category it fits, for example: "Security", "Risk", "Compliance", "Workflow", "Audit", "Reporting", "User Management", "Configuration", "SOD")
-Default Value:
-Impact Level: (based on the code references decide which impact level it fits, for example: "Low", "Medium", "High")
-Description:
-Business Impact:
-Technical Impact: when configured
-Examples Scenario:
-Related Settings: (add related settings only if you saw them in the code references. Dont add them unless you are sure)
-Applicable Workflows Actions: (list the specific workflows actions relevant here, take them from the Context section only - workflow_action attribute, dont add this attribute if there are no relevant workflow actions) 
-Best Practices: configure when, avoid when 
+**Technical Name:** {param_info['param_name']} **
+
+**Category:** (based on the code references decide which category it fits, for example: "Security", "Risk", "Compliance", "Workflow", "Audit", "Reporting", "User Management", "Configuration", "SOD")
+
+**Default Value:**
+
+**Impact Level:** (based on the code references decide which impact level it fits, for example: "Low", "Medium", "High")
+
+**Description:**
+
+**Business Impact:**
+
+**Technical Impact: when configured **
+
+**Examples Scenario:**
+
+**Related Settings:** (add related settings only if you saw them in the code references. Dont add them unless you are sure)
+
+**Applicable Workflows Actions:** (list the specific workflows actions relevant here, take them from the Context section only - workflow_action attribute, dont add this attribute if there are no relevant workflow actions) 
+
+**Best Practices:** configure when, avoid when 
 
 the next are the code references:
 {context}
 
-generate a valid markdown file. dont add ```markdown at the beginning or at the end of the file."""
+**Final Instructions**
+- Ensure markdown validity (no syntax errors).  
+- Do NOT add** ```markdown at the beginning or end.  
+- Each section must be separated by a blank line (this is critical).  
+- Only include relevant attributes—do not guess.  
+- generate a valid markdown file. dont add ```markdown at the beginning or at the end of the file."""
     
     # print(prompt)
 
@@ -207,26 +240,50 @@ def generate_doc(code_folder: str, params_file: str, output_folder: str):
     params = read_params_from_file(params_file)
     print(f"Found {len(params)} parameters to process")
     
+    # Load checkpoint
+    checkpoint_file = "checkpoint.json"
+    start_index = load_checkpoint(checkpoint_file)
+    print(f"Resuming from parameter {start_index + 1} of {len(params)}")
+    
     # Process each parameter
-    for param_info in params:
-        print(f"Processing parameter: {param_info['display_name']} ({param_info['param_name']})")
-        
-        # Find all references to the parameter in the code
-        references = find_param_references(code_folder, param_info['param_name'])
-        
-        if not references:
-            print(f"No references found for parameter: {param_info['param_name']}")
-            continue
-        
-        # Generate documentation using OpenAI
-        documentation = generate_param_documentation(param_info, references)
-        
-        # Save documentation to file
-        output_file = Path(output_folder) / f"{param_info['param_name']}.md"
-        with open(output_file, 'w') as f:
-            f.write(documentation)
-        
-        print(f"Documentation generated for {param_info['param_name']}: {output_file}")
+    try:
+        for i, param_info in enumerate(params[start_index:], start=start_index):
+            print(f"\nProcessing parameter {i + 1} of {len(params)}: {param_info['display_name']} ({param_info['param_name']})")
+            
+            # Find all references to the parameter in the code
+            references = find_param_references(code_folder, param_info['param_name'])
+            
+            if not references:
+                print(f"No references found for parameter: {param_info['param_name']}")
+                # Save checkpoint even for skipped parameters
+                save_checkpoint(checkpoint_file, i + 1)
+                continue
+            
+            # Generate documentation using OpenAI
+            documentation = generate_param_documentation(param_info, references)
+            
+            # Save documentation to file
+            output_file = Path(output_folder) / f"{param_info['param_name']}.md"
+            with open(output_file, 'w') as f:
+                f.write(documentation)
+            
+            print(f"Documentation generated: {output_file}")
+            
+            # Save checkpoint after each successful processing
+            save_checkpoint(checkpoint_file, i + 1)
+            
+    except KeyboardInterrupt:
+        print("\nProcess interrupted by user. Progress has been saved.")
+        sys.exit(1)
+    except Exception as e:
+        print(f"\nError occurred: {str(e)}")
+        print("Progress has been saved. You can resume from the last successful parameter.")
+        sys.exit(1)
+    
+    # Clear checkpoint after successful completion
+    if os.path.exists(checkpoint_file):
+        os.remove(checkpoint_file)
+    print("\nAll parameters processed successfully!")
 
 if __name__ == "__main__":
     # Configuration
