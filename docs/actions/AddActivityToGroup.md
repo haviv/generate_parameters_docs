@@ -1,39 +1,38 @@
-# AddActivityToGroup
+# Action Name: AddActivityToGroup
 
 **Category:** Workflow
 
-**Description:** 
-
-This action is designed to automate the assignment of specific activities to a user group within the Pathlock Cloud platform. It takes two main inputs: an activity group name and an activity mode name. The workflow looks up the activity mode based on the given name and identifies the target group using the activity group name. If both the transaction and the group are valid, the action creates a link (SoxGroupsContent) between the transaction and the group with the specified activity mode (if provided). This process facilitates dynamic access management and operational flexibility, aligning with compliance and governance requirements.
+**Description:** This workflow action is designed to add an activity to a specific group within Pathlock Cloud's identity and GRC platform. The action takes the name of an activity group and an activity mode as inputs and dynamically adds the specified activity to the defined group based on these parameters. The process involves looking up the activity mode and group by their names, creating a new `SoxGroupsContent` entry with the transaction, activity group, and mode information, and then committing this entry to the database. This functionality is crucial for dynamically managing and organizing activities within groups, which can be essential for compliance, monitoring, and reporting purposes.
 
 **Parameters:**
 
 - Basic:
+    - Name: TechnicalNameForActivityGroup
+    - Description: The technical name of the activity group, used to identify the group to which the activity will be added. This name is defined in the common settings key and used to retrieve the specific `SoxGroup`.
+    - Default value: (None provided in the provided code context)
+    - Mandatory: Yes
   
-  Name: TechnicalNameForActivityGroup  
-  Description: Specifies the name of the activity group. It is used to locate the group in the database and associate it with the Target transaction.  
-  Default value: N/A  
-  Mandatory: yes
+    - Name: TechnicalNameForActivityMode
+    - Description: The technical name for the activity mode, utilized when specifying the mode of the activity being added to the group. This parameter is defined in the common settings and used to find the corresponding `ActivityMode`.
+    - Default value: (None provided in the provided code context)
+    - Mandatory: No
+
+**Business impact:** Implementing this action efficiently organizes activities into groups within the Pathlock Cloud platform, enhancing the manageability and oversight of various compliance, risk, and governance processes. By automating the addition of activities to specific groups based on their modes, organizations can streamline workflows, improve access controls, and bolster their compliance posture with minimal manual intervention.
+
+**Example of usage:** An example scenario involves dynamically adding privileged access management (PAM) activities to a specific group for heightened monitoring. By specifying the technical names for the PAM activity group and mode, Pathlock Cloud can automate the categorization and management of these critical activities, facilitating better risk management and compliance.
+
+**Prerequisites:** Before executing this action, users must ensure that the specified activity group and activity mode technically exist within the platform’s settings. Permissions to modify the structure and content of SoxGroups and their contents in the database are also required.
+
+**Error Handling and Troubleshooting:**
+
+- **Error Scenario:** Activity group not found.
+    - **Probable Cause:** The specified activity group name does not match any existing group within the system.
+    - **Solution:** Verify the technical name for the activity group corresponds accurately to an existing group as configured within the platform settings.
   
-  Name: TechnicalNameForActivityMode  
-  Description: Determines the mode in which the activity should be added to the group. It influences how the activity is processed and applied to the group members.
-  Default value: N/A  
-  Mandatory: no
+- **Error Scenario:** Activity mode not found.
+    - **Probable Cause:** The activity mode name provided does not align with any known modes within the platform.
+    - **Solution:** Ensure the technical name for the activity mode is correct and matches one of the configured modes in Pathlock Cloud.
 
-**Business impact:** 
-
-Implementing this action impacts the business by ensuring that access rights and operational permissions can be dynamically managed and adjusted to meet the evolving needs and compliance requirements of the organization. Efficiently managing activity groups helps streamline processes, mitigate risks associated with access control, and enhance the overall governance framework.
-
-**Example of usage:** 
-
-An administrator wants to add a financial review task to the "Financial Managers" group in "Audit Only" mode. They would configure the action with the "Financial Managers" as the activity group and "Audit Only" as the activity mode. This ensures that members of the "Financial Managers" group can perform the task under the defined constraints, aligning with compliance and audit requirements.
-
-**Prerequisites:** 
-
-- The user executing the action must have administrative rights to manage groups and activities.
-- The specified activity group and mode must exist in the system.
-
-**Error Handling and Troubleshooting:** 
-
-- If the activity group name or activity mode name does not exist, the action will not perform any operations. Ensure the names are correctly specified and exist in the system.
-- In case of a system exception, refer to the error log for more detailed information about the cause of the failure. Common issues may include database connectivity problems or transactional errors. In such cases, verifying the system's operational status and checking database permissions may resolve the issue.
+- **Error Scenario:** Database update failure.
+    - **Probable Cause:** The transaction fails due to database constraints or connectivity issues.
+    - **Solution:** Check for database connection integrity and ensure all referenced entities (groups, modes) are valid and not violating any constraints before reattempting.

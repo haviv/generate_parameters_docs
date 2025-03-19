@@ -1,53 +1,50 @@
-# AddRoleToTransport
+Action Name: AddRoleToTransport
 
 **Category:** Workflow
 
-**Description:** The `AddRoleToTransport` action is designed to automate the process of adding a new role to a specified transport within the SAP environment. This action retrieves the system ID and transport number from the parameters, validates if a target system ID is specified, and updates the transport with the new role name using the SAP connector. The action primarily facilitates the management of role assignments in transports, which is a common requirement in identity and access management workflows, especially in SAP systems.
+**Description:** 
 
-**Parameters:**
+The `AddRoleToTransport` action is integral within the Pathlock Cloud's workflow engine, primarily focusing on automating the process of associating SAP roles to transport requests. It serves as a bridge between identity management tasks and system-specific operations, facilitating smoother transitions and deployments of role changes across environments. The action extracts requisite parameters, such as system identifiers and role names, to initiate a mass transport operation within an SAP system, effectively streamlining the process of role adjustments and deployments without manual intervention.
 
-_Basic Parameters:_
+**Parameters:** 
 
-- Name: SystemId
-  - Description: The ID of the system where the transport resides. It is used to initialize the SAP system context within the workflow.
-  - Default value: None
-  - Mandatory: Yes
+- Basic:
+    - Name: SystemId
+    - Description: Identifies the specific system where the role will be added to a transport. It is utilized to initialize the context for connecting to the correct system.
+    - Default value: None
+    - Mandatory: Yes
+    - Name: TransportNo
+    - Description: The transport request number to which the new role will be added. This parameter allows the action to specifically target and update the desired transport request.
+    - Default value: None
+    - Mandatory: Yes
+    - Name: NewRoleName
+    - Description: The name of the new role to be added to the transport request. This is crucial for identifying which role is being operated upon within the workflow.
+    - Default value: None
+    - Mandatory: Yes
 
-- Name: TransportNo
-  - Description: The transport number to which a new role will be added. This parameter specifies the target transport in the SAP system.
-  - Default value: None
-  - Mandatory: Yes
+- Advanced:
+    - Name: TargetSystemIdBasedOnParameters
+    - Description: Optionally overrides the `SystemId` if provided. This allows dynamic targeting of systems based on workflow parameters, thereby enhancing flexibility in role deployment scenarios.
+    - Default value: None
+    - Mandatory: No
 
-- Name: NewRoleName
-  - Description: The name of the new role that needs to be added to the transport. This is the role that will be mass transported into the specified transport number.
-  - Default value: None
-  - Mandatory: Yes
+**Business impact:**
 
-_Advanced Parameters:_
+This action automates the addition of roles to SAP transport requests, thereby accelerating the deployment process and minimizing manual errors. It ensures that role updates are propagated efficiently across systems, maintaining system integrity and compliance with identity and access management policies. This capability is crucial for enterprises looking to streamline their SAP role management processes, ensuring agility in access governance and compliance tasks.
 
-- Name: TargetSystemIdBasedOnParameters
-  - Description: Optionally specifies a different target system ID for the operation, overriding the default SystemId if provided. This allows flexibility in targeting different SAP systems within the same action execution.
-  - Default value: None
-  - Mandatory: No
+**Example of usage:**
 
-**Business impact:** Automating the addition of roles to transports significantly enhances the efficiency and accuracy of access and role management processes within SAP environments. It reduces manual errors, saves time for administrators, and ensures consistent role assignments across transports, thereby aiding in maintaining compliance and audit requirements in the identity and access management domain.
+In a scenario where an organization needs to quickly add a newly created role, `FinanceViewer`, to a transport request `TR12345` in their SAP system with an ID of `100`, the workflow can be configured to automate this process using the `AddRoleToTransport` action. The organization benefits from reduced manual intervention and faster deployment times, thereby enhancing the efficiency of their identity and access management practices.
 
-**Example of usage:** An administrator needs to add a role named "FinancialReviewer" to a transport numbered "TR1234" in the SAP system with an ID of 1. They can execute this action with the parameters set as follows:
+**Prerequisites:**
 
-- SystemId: 1
-- TransportNo: "TR1234"
-- NewRoleName: "FinancialReviewer"
-  
-This operation will ensure that the "FinancialReviewer" role is correctly added to the "TR1234" transport, ready to be moved across systems as required.
-
-**Prerequisites:** The user must have sufficient permissions to manage roles and transports within the targeted SAP system. Additionally, the specific SAP connector must be properly configured to allow for the execution of transport and role management operations.
+- Appropriate permissions to execute transport operations within the target SAP system.
+- Valid inputs for the `SystemId`, `TransportNo`, and `NewRoleName` parameters.
+- The SAP system connector must be properly configured within the Pathlock Cloud environment.
 
 **Error Handling and Troubleshooting:**
 
-- **Error:** Invalid SystemId or TransportNo
-  - **Cause:** The specified SystemId or TransportNo does not exist or is incorrect.
-  - **Solution:** Verify that the SystemId and TransportNo are correct and refer to existing entities in the SAP system.
-
-- **Error:** Role addition failed
-  - **Cause:** The operation to add the role to the transport could not be completed. This could be due to the role name being incorrect, insufficient permissions, or issues with the SAP connector.
-  - **Solution:** Check the role name for accuracy, ensure the executing user has the necessary permissions, and verify the SAP connector's configuration and status.
+- If the action fails due to an invalid `SystemId`, verify that the provided ID corresponds to a correctly configured and accessible system within the Pathlock Cloud platform.
+- A missing or incorrect `TransportNo` will prevent the operation from proceeding. Ensure that the transport request exists and is accessible.
+- Errors related to the addition of the role to the transport may indicate permission issues or misconfigurations within the SAP system. Review system logs and validate connector configurations.
+- Advanced parameter `TargetSystemIdBasedOnParameters` should be used judiciously. Incorrect system targeting can lead to unintended consequences. Always verify input values if this parameter is utilized.

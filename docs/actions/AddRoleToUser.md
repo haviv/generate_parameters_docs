@@ -1,50 +1,57 @@
-### AddRoleToUser
+# AddRoleToUser
 
 **Category:** User Management
 
-**Description:** The `AddRoleToUser` action is designed to automate the assignment of roles to users within the Pathlock platform. This action is crucial for managing access and permissions efficiently and supports dynamic role assignment based on specific requests or predefined criteria. Through a series of conditional checks and parameter evaluations, this action can assign requested roles directly from user requests or add custom roles as specified by the workflow parameters. The action supports both individual and batch role assignments and includes an error handling mechanism to log issues and provide feedback for troubleshooting.
+**Description:** The `AddRoleToUser` action is designed to facilitate role-based access control within Pathlock Cloud by dynamically assigning specified roles to users. This action integrates with the workflow engine to automate the process of role assignment based on specific triggers or conditions, such as user requests or administrator actions. It supports adding roles directly requested by the user, roles specified in the workflow step, or additional roles defined by the administrator. The action leverages the system's connectors to apply the changes directly to the user's profile in the respective system, ensuring that access permissions are updated in real time.
 
 **Parameters:**
 
-- Basic:
-    - Name: `AddRoleFromRequest`
-    - Description: Indicates whether to add the role specified in a user's request to the user.
-    - Default value: `false`
+  - Basic:
+    - Name: `Username`
+    - Description: The username of the account to which the role will be added.
+    - Default value: N/A
+    - Mandatory: Yes
+  - Name: `AddRoleFromRequest`
+    - Description: Determines if the role to be added should be taken from the user's request.
+    - Default value: false
     - Mandatory: No
-    
-    - Name: `RequestedRole`
-    - Description: Specifies the role to be added to the user if `AddRoleFromRequest` is true. It is used directly to assign a specified role to the user based on a request parameter.
-    - Default value: (none)
+  - Name: `RequestedRole`
+    - Description: Specifies the role to be added to the user. This role is typically defined in the request for workflows triggered by self-service requests.
+    - Default value: N/A
     - Mandatory: No
-    
-    - Name: `Custom_Roles_Add`
-    - Description: Allows for adding a role to the user that is not specified in the initial request, facilitating custom role assignments beyond the requested scope.
-    - Default value: (none)
-    - Mandatory: No
-    
-- Advanced:
+  
+  - Advanced:
     - Name: `IgnoreAdditionalRequestedRoles`
-    - Description: Controls whether additional roles specified in the user's request beyond the initially requested role should be ignored.
-    - Default value: `false`
+    - Description: Indicates whether to ignore any additional roles requested beyond the primary requested role.
+    - Default value: false
     - Mandatory: No
-    
+    - Name: `Custom_Roles_Add`
+    - Description: A custom or dynamically determined list of roles to add to the user, which can be based on workflow logic or admin input.
+    - Default value: N/A
+    - Mandatory: No
     - Name: `OnlyAssignRolesInCurrentSystem`
-    - Description: Limits the role assignment to the system currently being processed, ensuring that roles are not inadvertently assigned across multiple systems.
-    - Default value: `false`
+    - Description: Restricts role assignment to the current system to avoid cross-system role assignments, ensuring system integrity and compliance.
+    - Default value: false
     - Mandatory: No
 
-**Business impact:** Implementing the `AddRoleToUser` action within workflow automations significantly enhances operational efficiency in user access management. It reduces manual processing time, minimizes the risk of human error, and ensures that access rights align with organizational policies and compliance requirements. Specifically, it facilitates the dynamic and context-sensitive assignment of roles, thereby supporting granular access control and streamlined user onboarding and offboarding processes.
+**Business impact:** Automating role assignment through the `AddRoleToUser` action significantly enhances organizational security and compliance by ensuring that users have the appropriate access levels based on their roles and responsibilities. This process minimizes the risk of unauthorized access and facilitates efficient user management, role-based access control, and compliance with regulatory requirements.
 
-**Example of usage:** To automate the process of adding a role to a user based on specific request parameters, configure the `AddRoleToUser` action within a workflow to listen for role assignment requests. When a request is captured, specify whether to extract the role from the request directly using `AddRoleFromRequest` or to assign a predefined role specified in `RequestedRole`.
+**Example of usage:** As an example, if a user submits a request for access to specific resources needed for a new project, the workflow could be configured to trigger the `AddRoleToUser` action. This action would then automatically assign the relevant roles to the user's profile, granting them the requested access without manual intervention from the IT department.
 
-**Prerequisites:** Users executing this action must have administrative privileges to assign roles and access to the workflow management interface. Additionally, the relevant roles and user information must be preconfigured in the system, ensuring accurate assignments.
+**Prerequisites:** Users or administrators initiating this action must have sufficient permissions to modify user roles within the target system. Additionally, the system ID and user information must be accurately specified in the workflow parameters.
 
 **Error Handling and Troubleshooting:**
 
-- Common Error Scenario: Role does not exist
-    - Probable Cause: The role specified for assignment is not defined within the system.
-    - Recommended Solution: Verify that the role name is correct and exists within the system. If the role is missing, create the role before attempting to assign it again.
-    
-- Common Error Scenario: System connector issue
-    - Probable Cause: Failure in the system connector operation while attempting to assign the role to the user.
-    - Recommended Solution: Check the system connector configuration and logs for any errors. Ensure that the system connector is correctly set up and that there are no issues with network connectivity or permissions.
+  - **Common error scenario:** Role does not exist.
+    - **Probable cause:** The roleName specified does not match any roles within the system.
+    - **Recommended solution:** Verify the roleName parameter matches the name of an existing role within the system.
+
+  - **Common error scenario:** User not found.
+    - **Probable cause:** The specified username does not exist or is misspelled.
+    - **Recommended solution:** Ensure the username is correct and exists in the system.
+
+  - **Common error scenario:** System connection failure.
+    - **Probable cause:** Workflow action cannot establish a connection with the target system.
+    - **Recommended solution:** Check the system connectivity and ensure the system ID is correct.
+
+For further assistance, consult the system logs or contact technical support.

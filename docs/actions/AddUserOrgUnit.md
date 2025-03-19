@@ -1,45 +1,48 @@
-Action Name: AddUserOrgUnit
+# AddUserOrgUnit
 
 **Category:** User Management
 
-**Description:**
-The `AddUserOrgUnit` action is designed to manage and automate the process of assigning new organizational unit roles to a specific user within the Pathlock Cloud platform. This process involves identifying the user based on a given workflow instance, determining the new organizational unit (Org Unit) to be assigned, and dynamically attaching all relevant roles associated with that Org Unit to the user. The action utilizes the `ProfileTailorDataClassesDataContext` for database operations, fetching both the target user and Org Unit roles, and subsequently using the `ProvisionService` to apply these roles to the user in question.
+**Description:** 
 
-**Parameters:**
+The `AddUserOrgUnit` action is designed to augment a user's profile by assigning new organizational unit roles within the Pathlock Cloud's identity management system. When an organization wants to update or assign a new department, project team, or any organizational unit to a user, this action ensures the user gets access to necessary resources by assigning the roles associated with the new organizational unit. The process involves querying the current user's information, identifying the new organizational unit, and assigning all roles related to that unit to the user.
 
-*Basic:*
+**Parameters:** 
 
--   Name: Organization Unit Name
--   Description: The name of the organization unit whose roles are to be assigned to the user. This parameter is utilized to fetch the corresponding Org Unit and its related roles for the assignment process.
--   Default value: None
--   Mandatory: Yes
+_Basic Parameters:_
 
-*Advanced:*
+- Name: Organization Unit Name
+  - Description: The name of the organizational unit whose roles are to be added to the user. This parameter is critical as it determines which roles are deemed necessary for the user based on their new or updated organizational alignment. The workflow retrieves this organizational unit's roles and assigns them to the user to ensure access is aligned with their responsibilities.
+  - Default value: N/A
+  - Mandatory: Yes
 
-_None_
+_Advanced Parameters:_
 
-**Business impact:**
-Implementing the `AddUserOrgUnit` action within workflow automation significantly streamlines user management processes, ensuring users are promptly and accurately granted access based on organizational roles. This efficiency aids in maintaining robust access control, compliance with company policies, and minimizing potential security risks by assigning appropriate permissions automatically.
+N/A
 
-**Example of usage:**
+**Business impact:** 
 
-To utilize the `AddUserOrgUnit` action in a workflow, an administrator might set up a self-service request for new employees to be automatically assigned roles associated with their organizational unit. Upon the creation of a new employee's user account, the workflow is triggered, executing the `AddUserOrgUnit` action with the specific Org Unit Name supplied, thus provisioning the relevant access rights without manual intervention.
+Implementing the `AddUserOrgUnit` action streamlines the process of updating user roles in accordance with changes in their organizational unit assignments. It plays a pivotal role in ensuring that access management remains dynamic and reflects organizational changes, thereby maintaining security and compliance while enhancing productivity. By automating role assignment, it significantly reduces the administrative burden and potential errors associated with manual updates.
 
-**Prerequisites:**
+**Example of usage:** 
 
-- A valid workflow instance ID must exist.
-- The invoking user must have permissions to manage user roles within the system.
-- The `Organization Unit Name` parameter must correspond to an existing organizational unit within the system.
-- The system must have predefined roles associated with organizational units.
+To assign a user to a new department 'Finance', the administrator would execute the `AddUserOrgUnit` action with the 'Organization Unit Name' parameter set to "Finance". This action would automatically query all roles associated with the 'Finance' organizational unit and assign them to the user, granting them access to all necessary resources without manual intervention.
 
-**Error Handling and Troubleshooting:**
+**Prerequisites:** 
 
-- **Error**: Roles not assigned to the user.
-  - **Cause**: The specified Org Unit Name does not exist or has no roles associated with it.
-  - **Solution**: Ensure the Org Unit Name is correct and verify that roles are associated with this Org Unit in the system. 
+1. The administrator executing the action must have sufficient permissions to modify user roles within the Pathlock Cloud system.
+2. The organization unit name provided must exist within the Company's organizational structure in Pathlock Cloud.
+3. The user to whom the roles are being assigned must exist in the system.
 
-- **Error**: User not found.
-  - **Cause**: The workflow instance ID provided does not correspond to an existing user.
-  - **Solution**: Check the workflow instance ID for accuracy and ensure that the user exists in the system.
+**Error Handling and Troubleshooting:** 
 
-For any persistent issues, verify the workflow configuration, check the system's connectivity and access rights, and refer to the system logs for detailed error messages.
+- *Error:* User not found
+  - *Cause:* The user ID provided does not match any user within the system.
+  - *Solution:* Verify the user ID and ensure that the user exists within the Pathlock Cloud system.
+  
+- *Error:* Organization Unit not found
+  - *Cause:* The specified organization unit name does not exist or is misspelled.
+  - *Solution:* Verify the organization unit name for accuracy and ensure it exists within the company's organizational structure in Pathlock Cloud.
+  
+- *Error:* Role assignment failure
+  - *Cause:* Could be due to a variety of issues including system connectivity, permissions, or the roles no longer existing.
+  - *Solution:* Check system logs for detailed error messages. Ensure that the system is online, the executing user has adequate permissions, and the roles associated with the organization unit are valid and exist.

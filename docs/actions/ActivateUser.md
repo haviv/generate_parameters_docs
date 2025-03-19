@@ -2,56 +2,43 @@
 
 **Category:** User Management
 
-**Description:** 
+**Description:** The `ActivateUser` action automates the process of re-enabling a previously disabled or new user account in the systems managed by Pathlock Cloud. This entails potentially unlocking the account, resetting the user's password, applying or updating the user's parameters such as roles and authorizations based on predefined workflows, setting expiration dates for the user, and, if necessary, removing outdated authorizations before applying new ones. The action utilizes the system’s workflow engine to execute these tasks in a sequenced manner, ensuring that each step is logged for auditing purposes.
 
-The `ActivateUser` action is designed to manage and update the status of user accounts within the Pathlock Cloud identity and GRC platform. This action automates the process of activating a user, including unlocking their account, setting parameters, resetting passwords, setting expiration dates, and applying authorizations based on predefined or dynamically determined criteria. It leverages a workflow engine to facilitate self-service requests and automate manual processes related to user account management. The action checks if a user exists based on provided credentials and parameters, then performs a series of operations to ensure the account is activated and configured according to business rules and compliance policies.
+**Parameters:**
+- Basic:
+    - Name: `ActivateUser_Username`
+    - Description: Username of the account to be activated. It is used to locate the user in the database to perform the activation steps.
+    - Default value: None
+    - Mandatory: No
 
-**Parameters:** 
+    - Name: `ActivateUser_RunOnRequestUser`
+    - Description: A boolean parameter that determines if the action should run on the user who requested the action, primarily used when `ActivateUser_Username` is not provided.
+    - Default value: False
+    - Mandatory: No
 
-Basic:
-- Name: `ActivateUser_Username`
-  Description: The username of the account to be activated. Used to identify the user in the system.
-  Default value: N/A
-  Mandatory: No
+- Advanced:
+    - Name: `ActivateUser_OverrideUserRecord`
+    - Description: Determines if the user record should be overridden during activation. This is particularly useful when activating a user who does not meet the standard validity checks.
+    - Default value: False
+    - Mandatory: No
 
-- Name: `ActivateUser_RunOnRequestUser`
-  Description: A boolean parameter determining if the action should be performed on the user making the request.
-  Default value: `false`
-  Mandatory: No
+    - Name: `ActivateUser_RemoveRolesForInvalidUser`
+    - Description: Specifies if roles should be removed for a user considered invalid before re-applying authorization.
+    - Default value: None
+    - Mandatory: No
 
-Advanced:
-- Name: `ActivateUser_OverrideUserRecord`
-  Description: Determines if the user record should be overridden during activation. It is utilized when a user needs to be forcibly updated or reconfigured.
-  Default value: `false`
-  Mandatory: No
+    - Name: `DisableADExpirePasswordNow`
+    - Description: A flag to determine whether to disable the AD policy for password expiration for the newly set password.
+    - Default value: False
+    - Mandatory: No
 
-- Name: `DisableADExpirePasswordNow`
-  Description: Disables immediate password expiration in Active Directory, allowing for a grace period before the user must change their password.
-  Default value: `false`
-  Mandatory: No
+**Business impact:** Streamlining the process of user activation significantly impacts an organization by reducing the administrative burden on IT staff, ensuring rapid access for users to critical systems and reducing downtime. Automating the activation process enhances compliance with security policies by enforcing consistent application of access controls and ensuring that only authorized users gain access to sensitive systems and information.
 
-- Name: `ActivateUser_RemoveRolesForInvalidUser`
-  Description: A parameter indicating whether roles should be removed from an invalid user during activation. This is primarily used in compliance scenarios where access must be tightly controlled.
-  Default value: `false`
-  Mandatory: No
+**Example of usage:** To activate a user whose account has been previously suspended, a workflow could be initiated with the `ActivateUser` action. By providing the username as a parameter, the system could automatically unlock the user's account, reset the password according to the policy, reapply necessary authorizations and roles, and update the user's parameters to reflect the current access needs.
 
-**Business impact:** 
+**Prerequisites:** The executing user must have sufficient permissions to modify user accounts, including password resets, role management, and authorization updates. Additionally, the database should be accessible, and the specified user must exist unless the action is set to run on the requester.
 
-Activating users through the `ActivateUser` action directly impacts operational efficiency by automating and streamlining the process of enabling user access to critical systems. It supports compliance with internal and external policies by ensuring that user accounts are correctly configured and authorized before being activated. This reduces the risk of unauthorized access and enhances the overall security posture of the organization.
-
-**Example of usage:** 
-
-A common scenario involves activating a new employee's user account. The workflow would be initiated after the new employee is added to the company's system, triggering the `ActivateUser` action to unlock the account, reset the password to a temporary one, set parameters as defined by company policy, and apply the necessary authorizations for the employee's role.
-
-**Prerequisites:** 
-
-- The user or system initiating the action must have administrative privileges or equivalent permissions.
-- The user account to be activated must exist in the Pathlock Cloud database, even if it is in an inactive or locked state.
-
-**Error Handling and Troubleshooting:** 
-
-- If the user cannot be found or is not specified, the action will log an error indicating that the username is required.
-- Errors during the password reset process, including failure to meet complexity requirements or system connection issues, will be logged with a specific message detailing the cause of the failure.
-- In case of failure to apply authorizations or any other action, the system will log the detailed error message, and it is recommended to review these messages for troubleshooting.
-
-For troubleshooting purposes, ensuring that all parameters are correctly set and that the system has connectivity with any external systems (e.g., Active Directory) is essential. It is also recommended to verify that the user account is correctly configured within the system before attempting activation.
+**Error Handling and Troubleshooting:**
+- Common error scenarios include an inability to find the specified user, failure to reset the password due to policy restrictions, or errors in applying authorizations.
+- Probable causes could be incorrect username input, insufficient permissions for the executing user, or misconfiguration of role definitions.
+- Recommended solutions include verifying the input parameters for accuracy, ensuring the executing user has adequate permissions, and reviewing role and authorization configurations for consistency with the current policy. In the event of persistent errors, consult the system logs for specific error messages that can aid in diagnosing the issue.

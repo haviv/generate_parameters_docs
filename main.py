@@ -285,10 +285,194 @@ def generate_doc(code_folder: str, params_file: str, output_folder: str):
         os.remove(checkpoint_file)
     print("\nAll parameters processed successfully!")
 
+def extract_class_name(line: str) -> str:
+    """Extract the class name from a line containing a class definition."""
+    try:
+        # Extract text between 'class' and ':'
+        class_part = line.split('class')[1].split(':')[0].strip()
+        return class_part
+    except:
+        return None
+
+def find_class_code(code_folder: str, class_name: str) -> tuple[str, str]:
+    """
+    Find and extract the complete class code for a given class name.
+    Returns a tuple of (file_path, class_code).
+    """
+    try:
+        # Search for the class definition
+        cmd = f'grep -r --include="*.cs" "class {class_name}" {code_folder}'
+        output = subprocess.check_output(cmd, shell=True, text=True)
+        
+        if not output:
+            return None, None
+            
+        # Get the file path from the first match
+        file_path = output.splitlines()[0].split(':')[0]
+        
+        if not os.path.isfile(file_path):
+            return None, None
+            
+        # Read the entire file
+        with open(file_path, 'r') as f:
+            file_content = f.readlines()
+        
+        # Find the class definition line
+        class_start = -1
+        brace_count = 0
+        found_class = False
+        class_code_lines = []
+        
+        for i, line in enumerate(file_content):
+            if f"class {class_name}" in line:
+                class_start = i
+                found_class = True
+                
+            if found_class:
+                class_code_lines.append(line)
+                brace_count += line.count('{') - line.count('}')
+                
+                if brace_count == 0 and len(class_code_lines) > 1:
+                    # We've found the complete class
+                    break
+        
+        if class_code_lines:
+            return file_path, ''.join(class_code_lines)
+        
+        return None, None
+        
+    except subprocess.CalledProcessError:
+        return None, None
+
+def generate_action_documentation(class_name: str, file_path: str, class_code: str) -> str:
+    """
+    Generate documentation for a workflow action using OpenAI API.
+    """
+    # Load environment variables
+    load_dotenv()
+    
+    # Initialize OpenAI client with API key
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise ValueError("OPENAI_API_KEY not found in environment variables")
+    
+    client = OpenAI(api_key=api_key)
+    
+    # Create the prompt for OpenAI
+    prompt = f"""
+you are a technical doc creator, you need to create a technical documentation for a saas company called Pathlock in a product called Pathlock clooud whcih is an identity and GRC platform. Similar to Sailpoint and Savynt.
+One of the core component is the workflow engine which used to automate and expose a self service requests to end users like PAM, Access, Risk calculation, etc.,.
+You need to document a workflow action based on the code that I will provide.
+An action class exetnds IWorkflowAction and implement a Perform method whcih you need to understand what it does.
+Guidelines:
+1. When you give examples, make sure to give examples that are relevant to the business impact of the param.
+2. when you reference someting, only do it if you are sure that the reference is relevant to the param and that it exist.
+3. Generate the next format, leave a blank line between each section (**this is mandatory**)
+4. Add a Header with the Action Name 
+
+Generate the Documentation in This Exact Format:
+Action name: (header format)
+**Category:** (based on the code references decide which category it fits, for example: "Security", "Risk", "Compliance", "Workflow", "Audit", "Reporting", "User Management", "Configuration", "SOD")
+**Description:** (provide a description of the action with high level overview and the flow of the actions so end user can understand what it does)
+**Parameters:** (per parameter follow this strucrture:
+    Name:
+    Description:
+    Default value:
+    Mandatory: yes/no)
+    Important: group the parametes into 2 buckets: basic and advanced. understand from the code what are the must have, mandatory params and what are not and they are extract config
+    Important: when you write the descripiton, add the explanantion on how its being used in the code, what is the flow that uses it, under which context it is being used.
+**Business impact:** (describe the business impact of the action)
+**Example of usage:** (provide an example of usage of the action)
+**Prerequisites:** (Clearly state required pre-conditions or permissions the user must have to execute this action.)
+**Error Handling and Troubleshooting:** (List common error scenarios, their probable causes, and recommended solutions or workarounds.)
+
+the next is the code of the action:
+{class_code}
+
+**Final Instructions**
+- Ensure markdown validity (no syntax errors).  
+- Do NOT add** ```markdown at the beginning or end.  
+- Each section must be separated by a blank line (this is critical).  
+- Only include relevant attributes—do not guess.  
+- generate a valid markdown file. dont add ```markdown at the beginning or at the end of the file.
+"""
+    
+    # Call OpenAI API
+    response = client.chat.completions.create(
+        model="gpt-4-turbo-preview",
+        messages=[
+            {"role": "system", "content": "You are a technical documentation expert specializing in C# and workflow systems."},
+            {"role": "user", "content": prompt}
+        ]
+    )
+    
+    return response.choices[0].message.content
+
+def generate_actions_doc(code_folder: str, actions_file: str, output_folder: str):
+    """
+    Generate documentation for workflow actions based on their class definitions.
+    
+    Args:
+        code_folder (str): Path to the folder containing the source code
+        actions_file (str): Path to the file containing workflow action class definitions
+        output_folder (str): Path where the generated documentation should be stored
+    """
+    # Ensure output folder exists
+    actions_docs_folder = os.path.join(output_folder, "actions")
+    os.makedirs(actions_docs_folder, exist_ok=True)
+    
+    try:
+        # Read the actions file
+        with open(actions_file, 'r') as f:
+            action_lines = f.readlines()
+        
+        print(f"Found {len(action_lines)} workflow actions to process")
+        
+        # Process each action
+        for i, line in enumerate(action_lines, 1):
+            # Extract class name
+            class_name = extract_class_name(line)
+            if not class_name:
+                print(f"Skipping line {i}: Could not extract class name")
+                continue
+                
+            print(f"\nProcessing action {i} of {len(action_lines)}: {class_name}")
+            
+            # Find the class code
+            file_path, class_code = find_class_code(code_folder, class_name)
+            if not class_code:
+                print(f"Could not find code for class: {class_name}")
+                continue
+            
+            # Generate documentation
+            documentation = generate_action_documentation(class_name, file_path, class_code)
+            
+            # Save documentation to file
+            output_file = Path(actions_docs_folder) / f"{class_name}.md"
+            with open(output_file, 'w') as f:
+                f.write(documentation)
+            
+            print(f"Documentation generated: {output_file}")
+            
+    except FileNotFoundError:
+        print(f"Error: Actions file not found: {actions_file}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"\nError occurred: {str(e)}")
+        sys.exit(1)
+    
+    print("\nAll workflow actions processed successfully!")
+
 if __name__ == "__main__":
     # Configuration
     code_folder = "/Users/haviv_rosh/work/PathlockGRC/"
+    actions_folder = "/Users/haviv_rosh/work/PathlockGRC/Bl/WorkflowActions"
     params_file = "params.txt"
+    actions_file = "actions.txt"  # New file for workflow actions
     output_folder = "docs/"
     
-    generate_doc(code_folder, params_file, output_folder) 
+    # Generate parameter documentation
+    # generate_doc(code_folder, params_file, output_folder)
+    
+    # Generate workflow action documentation
+    generate_actions_doc(code_folder, actions_file, output_folder) 

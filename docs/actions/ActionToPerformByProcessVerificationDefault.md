@@ -2,43 +2,26 @@
 
 **Category:** Workflow
 
-**Description:** The `ActionToPerformByProcessVerificationDefault` is a core workflow action designed to automate the process of verification within the Pathlock Cloud identity and GRC platform. This action plays a critical role in ensuring that specific verification steps are completed as part of a broader, automated workflow. Its primary function is to evaluate and verify various processes in a predefined manner, ensuring that each process meets the necessary criteria established by the organization's policies. 
-
-The action performs an automated verification check without much detail provided on the specifics of the verification logic. As such, it can be inferred that the implementation details are to be customized based on the specific needs of a process verification step. The action operates within the context of a workflow engine where it is executed as a part of a series of actions aimed at managing access, risk calculation, privilege management (PAM), and more, offering a self-service approach for end-users.
+**Description:** The `ActionToPerformByProcessVerificationDefault` action is designed to be a core component within the Pathlock cloud's workflow engine. It plays a crucial role in automating processes and facilitating the exposure of self-service requests to end-users. This action, though not explicitly detailed in the provided code, typically involves running checks or processes necessary for verifying certain conditions or states within the system. By assuming a default behavior for process verification, it aims to ensure consistency and reliability in executing tasks such as Privileged Access Management (PAM), access requests, and risk calculation workflows.
 
 **Parameters:**
+*Basic Parameters:*
+- There are no specific parameters detailed in the provided code snippet, which suggests that this action might utilize a standard set of parameters inherited or assumed by the `IWorkflowAction` interface.
 
-_Basic:_
-- Since no parameters are specifically defined or utilized in the code snippet provided, it cannot be accurately detailed. Typically, parameters such as **ProcessID** or **VerificationType** could be expected as mandatory to specify which process is being verified and the nature of the verification.
+*Advanced Parameters:*
+- The provided code does not outline advanced parameters, emphasizing the action's role as a foundational, default operation within the workflow engine.
 
-_Advanced:_ 
-- Advanced parameters would typically include configurations for logging, notification thresholds, or custom verification logic plugin names but are not detailed in the provided code snippet.
+**Business impact:** Implementing the `ActionToPerformByProcessVerificationDefault` within workflows significantly contributes to operational efficiency and security compliance. For businesses, especially those dealing with sensitive information or requiring strict access controls, this action automates the verification processes that are critical for maintaining the integrity and confidentiality of the system. By standardizing this process, companies can reduce manual errors, ensure compliance with internal and external regulations, and streamline user access management.
 
-**Business impact:** This action is fundamental in automating and enforcing compliance and governance measures within the organization. By automating the process verification, Pathlock Cloud ensures that only verified processes proceed further in the workflow, minimizing the risk associated with manual errors and oversight. It supports compliance with internal policies and external regulations by providing a consistent and reliable mechanism for process verification.
+**Example of usage:** In a typical scenario where a new employee requires access to certain resources, the `ActionToPerformByProcessVerificationDefault` could be invoked as part of a workflow to automatically verify the employee's eligibility based on predefined criteria. This may include checking departmental assignments, job roles, or completion of mandatory compliance training.
 
-**Example of usage:**
-```csharp
-// Note: This is a hypothetical example due to the lack of detailed information on parameters and implementation specifics.
-WorkflowActionPramaters verificationParams = new WorkflowActionPramaters();
-verificationParams.Add("ProcessID", "12345");
-verificationParams.Add("VerificationType", "ComplianceCheck");
+**Prerequisites:** Users or systems attempting to execute this action must have appropriate permissions set within the Pathlock cloud platform, aligning with the governance, risk, and compliance (GRC) policies established by the organization. For instance, initiating this action might require admin-level permissions or specific roles within the workflow management framework.
 
-ActionToPerformByProcessVerificationDefault verificationAction = new ActionToPerformByProcessVerificationDefault();
-verificationAction.Perform(verificationParams);
-```
+**Error Handling and Troubleshooting:** 
+- *Common Error Scenario:* Failure to initiate the process verification due to insufficient permissions.
+  - *Probable Cause:* The user or service account does not have the necessary roles or permissions to execute the action.
+  - *Recommended Solution:* Verify the user's permissions and role assignments within the Pathlock cloud platform. Ensure that the account has been granted the necessary privileges to perform workflow actions.
 
-**Prerequisites:**
-- User must have permission to execute workflow actions within the Pathlock Cloud platform.
-- There must be a predefined process and criteria available for verification.
-- The workflow engine should be properly configured to support custom actions.
-
-**Error Handling and Troubleshooting:**
-
-_Common Error Scenarios:_
-1. **Insufficient Permissions:** The user does not have the required permissions to execute the action.
-   - **Solution:** Ensure the user executing the action has the appropriate permissions set within Pathlock Cloud's User Management settings.
-   
-2. **Undefined Parameters:** The action is executed without the required parameters or context.
-   - **Solution:** Verify that all mandatory parameters are passed correctly in the `WorkflowActionPramaters` object before calling the `Perform` method.
-
-In cases where error descriptions are vague or the action fails silently, logs should be thoroughly reviewed within the Pathlock Cloud's logging framework. Contact support for further assistance if the issue persists.
+- *Common Error Scenario:* The process verification does not complete or returns an unexpected result.
+  - *Probable Cause:* There may be issues with the workflow's configuration, such as incorrect parameters or a misconfigured environment.
+  - *Recommended Solution:* Review the workflow configuration and ensure that all necessary conditions and parameters are correctly defined and applied. Check the system logs for any detailed error messages that can aid in diagnosing the issue.

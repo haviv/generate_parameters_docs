@@ -3,37 +3,39 @@
 **Category:** User Management
 
 **Description:**  
-The DeActivateUser action is responsible for deactivating a user account within the Pathlock Cloud platform, particularly applicable to systems integrated like SAP. This action encompasses locking the user, setting expiration for the user account, and removing any existing authorizations. It dynamically chooses the deactivation approach based on provided parameters, supporting both specific and system-wide deactivation options. This action performs checks and actions conditionally, based on the specified user and system ID, providing flexibility for application in various scenarios.
+The DeActivateUser action is designed to automate the process of deactivating a user account within the Pathlock Cloud identity and GRC platform. This action executes several key operations: locking the user account, setting expiration for the account (effectively disabling it), and removing any existing authorizations assigned to the user. The workflow leverages conditional logic to target a specific user based on the supplied parameters, with a fallback to operate on the request user if no specific username is provided or found. This action is fundamental in maintaining the security posture and compliance status of an organization by ensuring that user access is appropriately revoked when no longer needed or in cases of employee departure.
 
 **Parameters:**  
-_Basic Parameters:_
-- Name: DeActivateUser_Username
-  - Description: The username of the account to be deactivated. This is initially checked, and if not provided, the action may alternatively target the requesting user based on further parameters.
-  - Default value: None
-  - Mandatory: No
-
-_Advanced Parameters:_
-- Name: ActivateUser_RunOnRequestUser
-  - Description: A boolean parameter that decides whether the deactivation should be run on the user making the request if the username is not provided. Used in scenarios where the action targets the requester directly.
-  - Default value: false
-  - Mandatory: No
-- Name: DeactivateUser
-  - Description: System-wide options for deactivating a user. Allows specifying whether to lock the account, set expiration, or remove authorizations at a global level.
-  - Default value: None
-  - Mandatory: No
+- Basic
+    - Name: DeActivateUser_Username
+      Description: The technical name for identifying the user to deactivate. It is used to query the user from the system based on the SAP username. If not provided, the action may target the requesting user subject to the `ActivateUser_RunOnRequestUser` parameter.
+      Default value: None
+      Mandatory: No
+- Advanced
+    - Name: ActivateUser_RunOnRequestUser
+      Description: A boolean parameter that determines if the action should run on the user making the request when no specific username is provided. This parameter adds flexibility for automated processes where the target is the requester.
+      Default value: false
+      Mandatory: No
+    - Name: DeactivateUser
+      Description: Specifies system-wide options for deactivating users, such as "Lock", "Set Expiration", or "Remove Authorizations". These options dictate what operations are performed as part of the user deactivation process.
+      Default value: None
+      Mandatory: No
 
 **Business impact:**  
-The DeActivateUser action directly impacts the security and compliance posture of the organization by ensuring that user accounts can be deactivated or modified in response to varying requirements such as end of employment, changes in roles, or security incidents. Efficient handling of user deactivation helps in maintaining the least privilege principle and reduces the risk associated with orphaned or overly privileged accounts.
+Deactivating user accounts promptly after they are no longer required or in response to particular events (e.g., employee termination) is pivotal for an organization's security and compliance. This action helps prevent unauthorized access and reduces the attack surface by ensuring only current, legitimate users have access. Additionally, it aids in compliance with various regulatory and audit requirements that mandate strict control over access rights.
 
 **Example of usage:**  
-In a scenario where an employee leaves the organization, DeActivateUser can be triggered to immediately lock the account, set an expiration date to disable any future login attempts, and remove all assigned authorizations to safeguard against unauthorized access.
+An administrator wants to deactivate a user who has recently left the company. The administrator specifies the SAP username of the departed employee as the `DeActivateUser_Username` parameter and executes the DeActivateUser action. The action locks the user account, sets the expiration date, and removes all assigned authorizations, effectively disabling the account and logging all actions for audit purposes.
 
 **Prerequisites:**  
-- Proper permissions to invoke workflow actions within the Pathlock Cloud.
-- An existing user account identified by a valid `SapUserName`.
-- The invoking user must have the authority to perform user management tasks.
+- The executing user must have sufficient permissions to manage user accounts and execute workflow actions.
+- The target user account must exist within the Pathlock Cloud system database.
+- Relevant parameters (like SAP username) must correctly identify the user to deactivate.
 
 **Error Handling and Troubleshooting:**  
-- **User Not Found:** If the specified username does not exist within the system, cross-verify the username for any typos or inconsistencies.
-- **Action Fails:** If any of the deactivation steps (lock, set expiration, remove authorizations) fails, consult the error message for specifics. Common causes include network issues, insufficient permissions, or system-specific constraints.
-- **System-Wide Parameter Inconsistencies:** If the deactivation does not perform as expected with system-wide parameters, verify the parameter strings for correctness and ensure they are applicable to the target system and user.
+- **Error:** "User not found"
+  - **Cause:** The specified username does not match any user in the system.
+  - **Solution:** Verify the username parameter for accuracy and ensure the user exists in the system.
+- **Error:** Action failed with a message indicating a specific operation (e.g., "Lock User failed...")
+  - **Cause:** A step within the deactivation process encountered an issue, such as a permission error or a connectivity problem.
+  - **Solution:** Review the specific error message for clues and check system logs for more details. Ensure all prerequisites are met, and retry the action.
