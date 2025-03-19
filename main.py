@@ -234,7 +234,8 @@ def generate_doc(code_folder: str, params_file: str, output_folder: str):
     load_dotenv()
     
     # Ensure output folder exists
-    os.makedirs(output_folder, exist_ok=True)
+    settings_docs_folder = os.path.join(output_folder, "settings")
+    os.makedirs(settings_docs_folder, exist_ok=True)
     
     # Read parameters from file
     params = read_params_from_file(params_file)
@@ -263,7 +264,7 @@ def generate_doc(code_folder: str, params_file: str, output_folder: str):
             documentation = generate_param_documentation(param_info, references)
             
             # Save documentation to file
-            output_file = Path(output_folder) / f"{param_info['param_name']}.md"
+            output_file = Path(settings_docs_folder) / f"{param_info['param_name']}.md"
             with open(output_file, 'w') as f:
                 f.write(documentation)
             
@@ -472,7 +473,7 @@ if __name__ == "__main__":
     output_folder = "docs/"
     
     # Generate parameter documentation
-    # generate_doc(code_folder, params_file, output_folder)
+    generate_doc(code_folder, params_file, output_folder)
     
     # Generate workflow action documentation
     generate_actions_doc(code_folder, actions_file, output_folder) 
