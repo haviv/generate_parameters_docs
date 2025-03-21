@@ -1,42 +1,38 @@
-# `SystemWideSystemId` Parameter Documentation
+# HR source system
 
-## Category
-Configuration/Setup
+**Technical Name:** SystemWideSystemId
 
-## Default Value
-Not explicitly mentioned in the provided code snippets. The default value is typically defined in the application's settings or configuration files.
+**Category:** Configuration
 
-## Impact Level
-High
+**Default Value:** (not specified)
 
-## Description
-The `SystemWideSystemId` parameter is used within the Pathlock Cloud GRC platform to define a system-wide identifier which applies across multiple components of the application. This ID is utilized when a specific system ID is not provided or needs to be overridden by a global setting.
+**Impact Level:** High
 
-## Business Impact
-Setting the correct `SystemWideSystemId` is crucial for maintaining the integrity of risk and compliance data across the organization. It ensures that operations such as role assignment, workflow execution, SoD (Segregation of Duties) calculation for business roles, and profile context initialization reference the correct system entity. Incorrect configuration can lead to mismanaged access controls, inaccurate risk assessments, and non-compliance incidents.
+**Description:**
 
-## Technical Impact when configured
-- Initializes the application context with a global system ID if a more specific context is not available.
-- Ensures workflow actions, and SoD calculations for entities default to a consistent system reference in absence of a specified system ID.
-- Facilitates correct data retrieval and process execution across the Pathlock platform, leveraging a consistent system identifier.
+The `SystemWideSystemId` parameter is utilized across the Pathlock Cloud GRC platform to identify and manage system-wide settings, particularly in relation to user management and workflow processes. This parameter ensures that configurations or actions can be applied universally across all systems integrated into the Pathlock platform, enhancing both security and compliance measures by maintaining a consistent policy application.
 
-## Examples Scenario
-In an organization using Pathlock to manage GRC across multiple SAP systems, the `SystemWideSystemId` can be set to refer to the primary SAP system's ID. This ensures that, by default, any operations not explicitly tied to alternative systems still execute against this primary system, maintaining operational continuity and compliance integrity.
+**Business Impact:**
 
-**Example:**
-An administrator sets the `SystemWideSystemId` to `1000`, designating the primary SAP system. When a new workflow is initiated without a specific system ID, it inherits the ID `1000`, ensuring it operates within the context of the primary system.
+Implementing the `SystemWideSystemId` effectively allows organizations to streamline their GRC processes, ensuring uniformity in compliance and security policies. This is crucial for organizations with complex IT environments, as it simplifies management tasks and reduces the risk of oversight or non-compliance due to disparate system configurations.
 
-## Related Settings
-- `IsCloud`: Determines if the settings are applied cloud-wide.
-- `EnableSoDCalculationByEntityForBusinessRoles`: Flags whether SoD calculation by entity for business roles is enabled, which also depends on the `SystemWideSystemId`.
+**Technical Impact when configured:**
 
-## Best Practices
-- **Configure when:** 
-  - You have a primary system that will serve as the default context for operations within the Pathlock platform.
-  - You need to ensure fallback to a consistent system ID for various operations to maintain operational and compliance integrity.
-- **Avoid when:**
-  - Each operation or process requires a distinct system context, and defaulting to a global ID could cause data integrity or compliance issues.
-  - The organization does not have a clear primary system that can serve as a default context for unspecified operations.
+Once configured, `SystemWideSystemId` influences various functionalities within the Pathlock platform, including user addition to approval groups, employee position management, and the initiation of workflows. It enables these actions to adhere to system-wide settings, thus acting as a centralized point of control for system-wide GRC management.
 
-## Context
-The `SystemWideSystemId` parameter is a fundamental setting within the Pathlock Cloud GRC platform that influences how data is associated, accessed, and processed across the platform, affecting security, compliance, and operational effectiveness. Proper configuration aligns the platform's operation with the organization's structure and compliance requirements, ensuring effective governance, risk management, and compliance (GRC) practices.
+**Examples Scenario:**
+
+A scenario where `SystemWideSystemId` is pivotal includes the automation of user role assignments in compliance with SOD (Segregation of Duties) policies. By configuring this parameter, an organization can ensure that when a user is added to an approval group or when there's a query for the last employee in a position as part of a workflow action, these operations respect the organization-wide settings for SOD, thereby mitigating risk.
+
+**Related Settings:** 
+
+- `CommonSettings.Default.IsCloud`
+- `CommonSettings.Default.SystemWideSystemId`
+
+**Applicable Workflows Actions:** 
+
+- AddUserToApprovalGroup
+- FindLastEmployeeInPosition
+- StartWorkflows
+
+**Best Practices:** configure when initiating system-wide changes that must be reflected across all integrated systems, avoid when changes are meant for a specific system context only.

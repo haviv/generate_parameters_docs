@@ -1,52 +1,1408 @@
 #Parameter Name,Parameter Technical Name
-Access Certificaiton Wait Processing Message,AccessCertificaiton_WaitProcessingMessage
-Actions Address,Actions_Address
-Active Employees Read Days Ahead,ActiveEmployeesReadDaysAhead
-Activity To User Matrix Static And Real User Use Static As Base For The Report,ActivityToUserMatrixStaticAndRealUserUseStaticAsBaseForTheReport
-Add Counter Value To Pattern Set Field,AddCounterValueToPatternSetField
-Add Excel Document Sign Details,AddExcelDocumentSignDetails
-Add Option To Allow Return To Previous For Parallel Steps,AddOptionToAllowReturnToPreviousForParallelSteps
-Add Reference Information To User Owner Review,AddReferenceInformationToUserOwnerReview
-Add Support For Excel Protected File,AddSupportForExcelProtectedFile
-Additional Columns In User Search,AdditionalColumnsInUserSearch
-Additional Data Extractor Tables For Sync Org,AdditionalDataExtractorTablesForSyncOrg
-Additional Data Extractor Tables For Sync Roles,AdditionalDataExtractorTablesForSyncRoles
-Additional Domains Custom Password,AdditinalDomainsCustomPassword
-Additional Domains Custom User,AdditinalDomainsCustomUser
-Additional Domains Only,AdditinalDomainsOnly
-Allow Decline Without Comment,AllowDeclineWithoutComment
-Allow Edit Email In My Profile,AllowEditEmailInMyProfile
-Allow Edit For Custom Field Ids,AllowEditForCustomFieldIds
-Always Show Update Button For Role Review,AlwaysShowUpdateButtonForRoleReview
-Application Name,ApplicationName
-Application Signout Url,ApplicationSignoutUrl
-Approved By Admin Annotation,ApprovedByAdminAnnotation
-Approved By Delegate Annotation,ApprovedByDelegateAnnotation
-Authorization Certification By Activities Include Role Name,AuthorizationCertificationByActivitiesIncludeRoleName
-Authorization Certification Delta Enforce For Position Change,AuthorizationCertificationDeltaEnforceForPositionChange
-Authorization Certification For Report Push Approvals To Report,AuthorizationCertificationForReportPushApprovalsToReport
-Authorization Certification For Roles Use Direct Link For Content,AuthorizationCertificationForRolesUseDirectLinkForContent
-Authorization Certification Hide Indirect Role Assignment,AuthorizationCertificationHideIndirectRoleAssisgment
-Authorization Certification Make Reject Comment Error Message,AuthorizationCertificationMakeRjectCommentErrorMessage
-Authorization Certification Make Reject Comment Mandatory,AuthorizationCertificationMakeRjectCommentMandatory
-Authorization Certification Share Comments Added,AuthorizationCertificationShareCommentsAdded
-Authorization Certification Show User Review In Wide Approval Screen,AuthorizationCertificationShowUserReviewInWideApprovalScreen
-Authorization Certification Use Mass Comment For All Decisions,AuthorizationCertificationUseMassCommentForAllDecisions
-Authorization Roles Tree Selected Parent Role Text For Fully Selected,AuthorizationRolesTree_SelectedParentRoleTextForFullySelected
-Authorization Roles Tree Selected Parent Role Text For Pratially Selected,AuthorizationRolesTree_SelectedParentRoleTextForPratiallySelected
-Authorization Value For Automatic Object Level,AuthorizationValueForAutomaticObjectLevel
-Auto Refresh User Information For Emergency Access Step,AutoRefreshUserInforamationForEmergencyAccessStep
-Automatic Role Assignments Default User Group Type,AutomaticRoleAssignmentsDefaultUserGroupTypeId
-Automatic User Lock Include Users Locked By Incorrect Logons,AutomaticUserLockIncludeUsersLockedByIncorrectLogons
-Automatic User Lock Override Disable Default Action,AutomaticUserLockOverrideDisableDefaultAction
-Awaiting Decisions Approve,AwaitingDecisions_Approve
-Awaiting Decisions Decline,AwaitingDecisions_Decline
-Block Size For Matrix Query,BlockSizeForMatrixQuery
-Build Departments By Custom Info Type Mapping,BuildDepartmentsByCustomInfoTypeMapping
-Cache For Pathlock Roles In Hours,CachaForProfileTailorRolesInHours
-Calculate Role Content Based On Meta Activities,CalculateRoleContentBasedOnMetaActivities
-Campaign Name Date Format,CampaignNameDateFormat
-Ccm Drawer Field Set,CcmDrawerFieldSet
-Change Documents Read Source Table For More Info,ChangeDocumentsReadSourceTableForMoreInfo
-Change Documents Show Activity,ChangeDocumentsShowActivity
 Change Documents Show Change Type Column,ChangeDocumentsShowChangeTypeColumn
+Check Client Open For Customization,CheckClientOpenForCustomization
+Check Interval For Business Days,CheckIntervalForBusinessDays
+Check Is User Exists Include Cua,CheckIsUserExistsIncludeCua
+Check Mime Type By Content,CheckMimeTypeByContent
+Check Process Queue Every,CheckProcessQueueEvery
+Cloud Approval Server Url,CloudApprovalServerUrl
+Cloud Approval Token,CloudApprovalToken
+Cloud Auto Run Procesess Simple Mode,CloudAutoRunProcesessSimpleMode
+Cloud Client Encrypt Parameters,CloudClientEncryptParameters
+Cloud Client Immediate Operation Timeout In Seconds,CloudClientImmediateOperationTimeoutInSeconds
+Cloud Client Reconnect Attempts Check Every,CloudClientReconnectAttemptsCheckEvery
+Cloud Client Reconnect Wait Time In Seconds,CloudClientReconnectWaitTimeInSeconds
+Cloud Not Registered Customer,CloudNotRegisteredCustomerId
+Code Page,CodePage
+Combination Max Systems For Display,CombinationMaxSystemsForDisplay
+Combination Object,CombinationObject
+Comment For Apply Changes Through Authorization Simulation,CommentForApplyChangesThroughAuthorizationSimulation
+Comment For Parallel Step Returned Back,CommentForParallelStepReturnedBack
+Compliance Frameworks,ComplianceFrameworks
+Connect Users To Employee By Employee,ConnectUsersToEmployee_ByEmployeeID
+Connect Users To Employee By HR system,ConnectUsersToEmployee_By_HR_system
+Connect Users To Employee By Username,ConnectUsersToEmployee_ByUsername
+Connect Users To Employee By Windows User,ConnectUsersToEmployee_ByWindowsUser
+Connector Tester Include Role Content,ConnectorTesterIncludeRoleContent
+Connectors Folder,ConnectorsFolder
+Content Security Header Custom Specification Enabled,ContentSecurityHeaderCustomSpecificationEnabled
+Content Security Header Default Src Directive Allowed Domains,ContentSecurityHeaderDefaultSrcDirectiveAllowedDomains
+Convert Currency Expression,ConvertCurrencyExpression
+Create New Doctor Add Dash To,CreateNewDoctorAddDashToID
+Create New User Delay After Creation,CreateNewUser_DelayAfterCreation
+Current Image Logo Height,CurrentImageLogoHeight
+Current Image Logo Width,CurrentImageLogoWidth
+Current Portal UICulture,CurrentPortalUICulture
+Custom Authentication Provider,CustomAuthenticationProvider
+Custom Authentication Provider Additional Parameter,CustomAuthenticationProviderAdditionalParameter
+Custom Authentication Provider Allow Fallback,CustomAuthenticationProviderAllowFallback
+Custom Authentication Provider Url,CustomAuthenticationProviderUrl
+Custom BUInfo Type Fields,CustomBUInfoTypeFields
+Custom BUInfo Type Table,CustomBUInfoTypeTable
+Custom Connection String For Transaction History,CustomConnectionStringForTransactionHistory
+Custom Domains,CustomDomains
+Custom Domains Split By,CustomDomainsSplitBy
+Custom Field Display Name For User Building Data,CustomFieldDisplayNameForUserBuildingData
+Custom Field Techincal Name For User Building Data,CustomFieldTechncalNameForUserBuildingData
+Custom Field Techncal Name For Employee Id In ERP 2004 S,CustomFieldTechncalNameForEmployeeIdInERP_2004S
+Custom Logic For User Creation,CustomLogicForUserCreation
+Custom Method External Command Timeout In Seconds,CustomMethodExternalCommandTimeoutInSeconds
+Custom Report Separator,CustomReportSeperator
+Custom Report Wasnt Found Error Message,CustomReportWasntFoundErrorMessage
+Custom Role For Auto Complete,CustomRoleForAutoComplete
+Custom Role For Auto Complete Prevent For No Role,CustomRoleForAutoCompletePreventForNoRole
+Custom Role Type Id For Authorization Provider For Role,CustomRoleTypeIdForAuthorizationProviderForRole
+Custom Roles That Allow Edit,CustomRolesThatAllowEdit
+Custom Security Headers Adding Enabled,CustomSecurityHeadersAddingEnabled
+Custom Sql Query For Rest API HR Data Source,Custom_Sql_Query_For_Rest_API_HR_DataSource
+Custom Sql Query For Rest API HR Data Source Secondary,Custom_Sql_Query_For_Rest_API_HR_DataSource_Secondary
+Custom Store Procedure For Employees Data,CustomStoreProedureForEmployeesData
+Custom Store Procedure For User Archiving,CustomStoreProcedureForUserArchiving
+Custom Store Procedure For User Archiving Parameters,CustomStoreProcedureForUserArchivingParameters
+Custom TCodes For Direct Execution Of Programs,CustomTCodesForDirectExectionOfPrograms
+#Customer Name,CustomerName
+Customer Statistics Enable Send,CustomerStatistics_EnableSend
+Customer Statistics Every,CustomerStatistics_Every
+Customer Statistics Last Calculated,CustomerStatistics_LastCalculated
+Customer Statistics Last Send,CustomerStatistics_LastSend
+Customer Statistics Monitoring Post Url,CustomerStatistics_MonitoringPostUrl
+Customer Statistics Post Url,CustomerStatistics_PostUrl
+Daily Email Excel Event Column Width,DailyEmailExcelEventColumnWidth
+Daily Email Include Username Field,DailyEmailIncludeUsernameField
+Dashboard Max Results,DashboardMaxResults
+Dashboard Sorting Order,DashboardSortingOrder
+Data Exception Initial Status,InitialStatusforDataException
+Data Exception Interim Status,InterimStatusforDataException
+Data Exceptions Batch Size,DataExceptionsBatchSize
+Data Flower Connection String,DataFlowerConnectionString
+Database Provider Type Custom,DatabaseProviderType_Custom
+Database Provider Type DB2,DatabaseProviderType_DB2
+Database Provider Type Oracle,DatabaseProviderType_Oracle
+Database Provider Type Sql Server,DatabaseProviderType_SqlServer
+Date Format,DateFormat
+Date Time Formats,DateTimeFormats
+DBMax Date,DBMaxDate
+DBMin Date,DBMinDate
+Decline Affected Roles In Risk Approval By Schema,DeclineAffectedRolesInRiskApprovalBySchema
+Default CCM Currency:,DefaultCcmCurrency
+Default Domain For Mixed Login,DefaultDoaminForMixedLogin
+Default Menu Icon,DefaultMenuIcon
+Default Role For Direct Manager,DefaultRoleForDirectManager
+Delete All Invalid Approvers,DeleteAllInvalidApprovers
+Department Level1 Text,DepartmentLevel1Text
+Department Level2 Text,DepartmentLevel2Text
+Department Level3 Text,DepartmentLevel3Text
+Department Level4 Text,DepartmentLevel4Text
+Department Level5 Text,DepartmentLevel5Text
+Departments Level Skip Items,DepartmentsLevelSkipItems
+Description Column Max Length For Display,DescriptionColumnMaxLengthForDisplay
+Direct Execution Of Programs Log Only High Risk Events,DirectExectionOfProgramsLogOnlyHighRiskEvents
+Disable Analytical Views,DisableAnalyticalViews
+Disable Approval By Submitter In Role Owner Step,DisableApprovalBySubmitterInRoleOwnerStep
+Disable Approval Check By Request Submitter,DisableApprovalCheckByRequestSubmitter
+Disable Approval Check By Request User,DisableApprovalCheckByRequestUser
+Disable Approval Of Authorization Set Reports,DisableApprovalOfAuthorizationSetReports
+Disable Automatic Rebuild Indexes,DisableAutomaticRebuildIndexes
+Disable Automatic Update Of Allowed Transactions Last Use,DisableAutomaticUpdateOfAllowedTransactionsLastUse
+Disable Comments Section In Config Screens,DisableCommentsSectionInConfigScreens
+Disable Custom Report Query Caching,DisableCustomReportQueyCaching
+Disable Employee HR Data Collection,DisableEmployeeHRDataCollection
+Disable Export To Excel,DisableExportToExcel
+Disable Impact Column Style,DisableImpactColumnStyle
+Disable Init Last Use Of Activity,DisableInitLastUseOfActivity
+Disable System Selection Narrow By User Groups,DisableSystemSelectionNarrowByUserGroups
+Disable Termination Event,DisableTerminationEvent
+Disable Update Username In Users Administration,DisableUpdateUsernameInUsersAdministration
+Disable Working Hours,DisableWorkingHours
+Display My Profile,DisplayMyProfile
+Display My Waiting Reviews On Home Screen,DisplayMyWaitingReviewsOnHomeScreen
+Display Score Bar Image Max Size,DisplayScoreBarImageMaxSize
+Dns Postfix For Disable Windows Authentication,DnsPostfixForDisableWindowsAuthntication
+Do Not Mail Business Process Schedule Report,DoNotMailBusinessProcessScheduleReport
+Duration Days,Duration_Days
+Duration Hours,Duration_Hours
+Duration Minutes,Duration_Minutes
+Email Formatting,EmailFormatting
+Email Message Log Enable Password Protection,EmailMesssageLogEnablePasswordProtection
+Emergency Access Log Time Threshold In Minutes,EmergencyAccessLogTimeThresholdInMinutes
+Emergency Access Report Custom Events Type Ids To Include,EmergencyAccessReportCustomEventsTypeIdsToInclude
+Emergency Access Report Filter Records By Extra Roles,EmergencyAccessReportFilterRecordsByExtraRoles
+Emergency Access Requests Enabled For Anyone,EmergencyAccessRequestsEnabledForAnyone
+Employee Alternative Key Column,EmployeeAlternativeKeyColumn
+Employee Auto Complete Data Template,EmployeeAutoCompleteDataTemplate
+Employee Card Left Panel,EmployeeCard_LeftPanel
+Employee Card Right Panel,EmployeeCard_RightPanel
+Employee Custom Source Field For Mail Field,EmployeeCustomSourceFieldForMailField
+Employee Custom Subtype For Mail Field,EmployeeCustomSubtypeForMailField
+Employee Custom Type For Mail Field,EmployeeCustomTypeForMailField
+Employee Domain Field,EmployeeDomainField
+Employee Extra Attributes Add Escape,EmployeeExtraAttributesAddEscape
+Employee Natural Key Column,EmployeeNaturalKeyColumn
+Employee Read Direct Manager For Direct Supervisor Field,EmployeeReadDirectManagerForDirectSupervisorField
+Employee Read Direct Manager For Positions,EmployeeReadDirectManagerForPositions
+Employees Source File Delimieter,EmployeesSourceFileDelimieter
+Employees Source File Name,EmployeesSourceFileName
+Empty Profile Image,EmptyProfileImage
+Empty Profile Image New,EmptyProfileImage_New
+Enable Apply Changes To Derived Role,EnableApplyChangesToDerivedRole
+Enable Async Approval For All Steps,EnableAsyncApprovalForAllSteps
+Enable Automatic Activity Selection,EnableAutomaticActivitySelection
+Enable Automatic Approval,EnableAutomaticApproval
+Enable Change Management,EnableChangeManagement
+Enable Collapse Composite Roles View,EnableCollapseCompositeRolesView
+Enable Default Approver For Role Owner Steps,EnableDefaultApproverForRoleOwnerSteps
+Enable Delete Comments,EnableDeleteComments
+Enable Dynamic Request Page,EnableDynamicRequestPage
+Enable Get Current Use,EnableGetCurrentUse
+Enable Globalization,EnableGlobalization
+Enable Impact Analysis Calculator,EnableImpactAnalysisCalculator
+Enable Lock User Locally For Non Active User,EnableLockUserLocalyForNonActiveUser
+Enable Modern Style,EnableModernStyle
+Enable Modern Style Chart In Report Designer,EnableModernStyleChartInReportDesigner
+Enable Modern Style For Forms,EnableModernStyleForForms
+Enable Modern Style For Reviews,EnableModernStyleForReviews
+Enable Portal For Deleted Users,EnablePortalForDeletedUsers
+Enable Process Control Open Request For Deleted,EnableProcessControlOpenRequestForDeleted
+Enable Report Trace,EnableReportTrace
+Enable Sap Trace,EnableSAPTrace
+Enable Simulation Of Role From Dev,EnableSimulationOfRoleFromDev
+Enable System Selection Narrow By Assigned Roles,EnableSystemSelectionNarrowByAssignedRoles
+Enable Translate IPTo Computer Name,EnableTranslateIPToComputerName
+Enable User Exists Check For Exchange,EnableUserExistsCheckForExchange
+Enable User Multiple Usage Recognize,EnableUserMultipleUsageRecognize
+End Time Default Value,EndTimeDefaultValue
+Escalation Email Template Post Fix,EscalationEmailTemplatePostFix
+ESSUser Group,ESSUserGroup
+Evaluate Relation Rule By Store Procedure Field Key,EvaluateRelationRuleByStoreProcedureFieldKey
+Event For Employee Changed Enable For Employee Without Users,EventForEmployeeChangedEnableForEmployeeWithoutUsers
+Event On Employee Job Code Change Include Position Title Texts,EventOnEmployeeJobCodeChangeIncludePositionTitleTexts
+Event On Employee Org Unit Code Change,EventOnEmployeeOrgUnitCodeChange
+Event On Employee Position Code Change Include Position Title Texts,EventOnEmployeePositionCodeChangeIncludePositionTitleTexts
+Event On Employee Termination For Employee Without Users,EventOnEmployeeTerminationForEmployeeWithoutUsers
+Everyone Role In PTD,EveryoneRoleInPTD
+Excel File Provider File With Header,ExcelFileProvider_FileWithHeader
+Excel Matrix Enable Conditional Formating,ExcelMatrix_EnableConditionalFormating
+Excel Matrix Enable Freeze Panes,ExcelMatrix_EnableFreezePanes
+Excel Matrix Freeze Pane Column,ExcelMatrix_FreezePaneColumn
+Excel Matrix Freeze Pane Row,ExcelMatrix_FreezePaneRow
+Excel Matrix Headers Begin Color As Hex,ExcelMatrix_HeadersBeginColorAsHex
+Excel Matrix Headers End Color As Hex,ExcelMatrix_HeadersEndColorAsHex
+Excel Matrix Max Number Of Chars To Set Row Hight,ExcelMatrix_MaxNumberOfCharsToSetRowHight
+Excel Matrix Row Hight,ExcelMatrix_RowHight
+Excel Matrix Top Percentage Background Color,ExcelMatrix_TopPercentageBackgroundColor
+Exclude Empty Activity Modes,ExcludeEmptyActivityModes
+Excluded Users From Change Documents,ExcludedUsersFromChangeDocuments
+Extended Request Automatic Comment,ExtendedRequestAutomaticComment
+Extended Request By Original Step Duration,ExtendedRequestByOriginalStepDuration
+Extended Request Time Hours,ExtendedRequestTimeHours
+External Data Column Decimal Precision,ExternalDataColumnDecimalPrecision
+External Data Column Length,ExternalDataColumnLength
+External Database Employee Status To Exclude,ExternalDatabaseEmployeeStatusToExclude
+External Database Employees Select Query For Secondary Provider,ExternalDatabaseEmployeesSelectQuery_ForSecondaryProvider
+External Database Manager Select Query,ExternalDatabaseManagerSelectQuery
+External Database Manager Select Query For Secondary Provider,ExternalDatabaseManagerSelectQuery_ForSecondaryProvider
+External Database Org Structure Select Query,ExternalDatabaseOrgStructureSelectQuery
+External Database Org Structure Select Query For Secondary Provider,ExternalDatabaseOrgStructureSelectQuery_ForSecondaryProvider
+External Database SQLInstance Name For Secondary Provider,ExternalDatabaseSQLInstanceName_ForSecondaryProvider
+External Dlls Folder,ExternalDllsFolder
+External Dns For Portal Only,ExternalDnsForPortalOnly
+Field Sets Entities Xml Path,FieldSetsEntitiesXmlPath
+File Manager Upload Forbidden File Types,FileManagerUploadForbiddenFileTypes
+File Manager Upload Forbidden Filename Sequences,FileManagerUploadForbiddenFilenameSequences
+Filter By System Is Checked By Default,FilterBySystemIsCheckedByDefault
+Filter Out Terminated Employees From Employees Data,FilterOutTerminatedEmployeesFromEmployeesData
+Fiori Connector Identify Based On Catalogs,FioriConnectorIdentifyBasedOnCatalogs
+Flexible Approver Name Template,FlexibleApproverNameTemplate
+FMGet Missing Authorization For User,FMGetMissingAuthorizationForUser
+Force Https For Site Redirect,ForceHttpsForSiteRedirect
+Formatted Quarter Pattern,FormatedQuarterPattern
+Generic Sheet Import Name,GenericSheetImportName
+Get Employee Roles By One Username,GetEmployeeRolesByOneUsername
+Get Last Use From All History,GetLastUseFromAllHistory
+Get Roles By Business Role Take Data From Request,GetRolesByBusinessRoleTakeDataFromRequest
+#Global Administrator,GlobalAdministrator
+Group Change Document Results,GroupChangeDocuemntResults
+HCMAdditional Columns For Reports,HCMAdditionalColumnsForReports
+Help Desk System Parameters,HelpDeskSystemParameters
+Help Desk System Password,HelpDeskSystemPassword
+Help Desk System Url,HelpDeskSystemUrl
+Help Desk System User,HelpDeskSystemUser
+Hide Approval Comment From Custom Reports,HideApprovalCommentFromCustomReports
+Hide Pathlock News,HideXpandionNews
+Hide Refresh Button In Inbox,HideRefreshButtonInInbox
+Hide Roles In Search Window By Attribute10 Values,HideRolesInSearchWindowByAttribute10Values
+Home Page Screen For Redirect After Login,HomePageScreenForRedirectAfterLogin
+Home Page Screen For Redirect After Login For Admin,HomePageScreenForRedirectAfterLoginForAdmin
+Hosting Server IISExpress Process,HostingServerIISExpressProcess
+Hosting Server IISProcess,HostingServerIISProcess
+HR Data Source For External Table Name,HRDataSourceForExternalTableName
+HR Employees File FTPSite,HREmployeesFileFTPSite
+HR Employees File FTPSite Password Password Key,HREmployeesFileFTPSitePasswordPasswordKey
+HR Employees File FTPSite Username Password Key,HREmployeesFileFTPSiteUsernamePasswordKey
+Http Web Proxy Password,HttpWebProxyPassword
+Http Web Proxy Port,HttpWebProxyPort
+Http Web Proxy Url,HttpWebProxyUrl
+Http Web Proxy User,HttpWebProxyUser
+Image Background,Image_Background
+Image Login Logo,Image_LoginLogo
+Images Index File,ImagesIndexFile
+Impact Analysis Include Child Roles Of Current Assigned Roles,ImpactAnalysisIncludeChildRolesOfCurrentAssignedRoles
+Impact Analysis Include Risk Description,ImpactAnalysisIncludeRiskDescription
+Impact Analysis Show Controls From Combination Only,ImpactAnalysisShowControlsFromCombinationOnly
+Impact Analysis Show Controls From Combination Only Hide Migitaion Box For Other Risks,ImpactAnalysisShowControlsFromCombinationOnlyHideMigitaionBoxForOtherRisks
+Impact Analysis Show Controls Selection,ImpactAnalysisShowControlsSelection
+Impact Analysis Show Other Option In Selection Box,ImpactAnalysisShowOtherOptionInSelectionBox
+Impact Analysis Show Risk Level,ImpactAnalysisShowRiskLevel
+Import Managers Disable Approval Group Cleanup,ImportManagersDisableApprovalGroupCleanup
+Import Managers To Workflow Approval Group Name Template,ImportManagersToWFApprovalGroupNameTemplate
+Include Roles That Are Not Safe To Remove,IncludeRolesThatAreNotSafeToRemove
+Include Roles Without Profiles,IncludeRolesWithoutProfiles
+Include Users Without Risks In Matrix Report,IncludeUsersWithoutRisksInMatrixReport
+Index Fragmentation Value,IndexFragmentationValue
+Initialize Date,InitializeDate
+Initialize Year,InitializeYear
+Installed Modules,InstalledModules
+Invalid Date,InvalidDate
+Is Demo,IsDemo
+Is User Exists Check In Sap Retry Count,IsUserExistsCheckInSAPRetryCount
+Is Validate Installation,IsValidateInstallation
+ISHR ead Employee Number From VMA,ISHReadEmployeeNumberFromVMA
+Job Roles Sheet Importer V2 Background Color Max Tint,JobRolesSheetImporterV2_BackgroundColorMaxTint
+Job Roles Sheet Importer V2 Background Color Min Tint,JobRolesSheetImporterV2_BackgroundColorMinTint
+Job Roles Sheet Importer V2 Background Color Rgb,JobRolesSheetImporterV2_BackgroundColorRgb
+Lanman Server Path,LanmanServerPath
+Learning Period For Default Computer In Days,LearningPeriodForDefaultComputerInDays
+License Agreement File,LicenseAgreementFile
+Locked By Incorrect Logons Code,LockedByIncorrectLogonsCode
+Log Entry Max Length,LogEntryMaxLength
+Log File Name,LogFileName
+Log Folder,LogFolder
+Log Level,LogLevel
+Login Method,LoginMethod
+Main Entity Name,MainEntityName
+Main Entity Name For Activity,MainEntityNameForActivity
+Main Entity Name For Employee,MainEntityNameForEmployee
+Manage Connectors In Database,ManageConnectorsInDatabase
+Mark Rfc Background Tasks With Prefix,MarkRfcBackgroundTasksWithPrefix
+Matrix Block Size,MatrixBlockSize
+Matrix Reports Enable Render Summary Tabs,MatrixReportsEnableRenderSummaryTabs
+Max Attempts To Assign Position,MaxAttemptsToAssignPosition
+Max Items In Column Filter,MaxItemsInColumnFilter
+Max Records For Changes Log Display,MaxRecordsForChangesLogDisplay
+Max Records For Excel Sheet,MaxRecordsForExcelSheet
+Max Records For Excel Sheet Buffer,MaxRecordsForExcelSheetBuffer
+Max Records For Single Report Run,MaxRecordsForSingleReportRun
+Max Replace Template Values Counter,MaxReplaceTemplateValusCounter
+Max Role Size For Role Advisor Dialog,MaxRoleSizeForRoleAdvisorDialog
+Maximum Items For Column Header Filter,MaximumItemsForColumnHeaderFilter
+Maximum Log Read Delay,MaximumLogReadDelay
+Maximum Not Logged,MaximumNotLogged
+Maximum Number Of Characters For Role Name,MaximumNumberOfCharactersForRoleName
+Message Queue Base Address,MessageQueueBaseAddress
+Microsoft Graph Get Token,MicrosoftGraphGetToken
+Microsoft Graph Scope,MicrosoftGraphScope
+Microsoft Graph Send Mail,MicrosoftGraphSendMail
+Missing End Of Learning Period Date,MissingEndOfLearningPeriodDate
+Mitigate Violation Show Approve Reason And Control,MitigateViolation_ShowApproveReasonAndContorl
+Mitigate Violation Show Approve Reason Only,MitigateViolation_ShowApproveReasonOnly
+Mixed Windows Primary Domain Use Simple Binding,MixedWindowsPrimaryDomainUseSimpleBinding
+Mixed Windows Secondary Domain IP,MixedWindowsSecondaryDomainIP
+Mixed Windows Secondary Domain Name,MixedWindowsSecondaryDomainName
+Mixed Windows Secondary Domain Use Simple Binding,MixedWindowsSecondaryDomainUseSimpleBinding
+Month Default Value,Month_DefaultValue
+Month Format,MonthFormat
+My Approvals Portal Show Last Top Requests,MyAppovalsPortalShowLastTopRequests
+My Requests Portal Show Last Top Requests,MyRequestsPortalShowLastTopRequests
+Need To Assign Role,NeedToAssignRole
+New Direct Manager Template,NewDirectManagerTemplateId
+New Username Check All Systems,NewUsernameCheckAllSystems
+New Username Forbidden Characters,NewUsernameForbiddenCharacters
+New Username Forbidden Characters At End,NewUsernameForbiddenCharactersAtEnd
+New Username Forbidden Characters Replacement,NewUsernameForbiddenCharactersReplacement
+No Data Sign,NoDataSign
+Not Used Days Medium Level,NotUsedDaysMediumLevel
+Not Used Days Medium Low Level,NotUsedDaysMediumLowLevel
+Notify Submitter In Emergancy Access Step,NotifySubmitterInEmergancyAccessStep
+Number Of Days Since Role Was Assigned,NumberOfDaysSinceRoleWasAssigned
+Number Of Idocs To Display,NumberOfIdocsToDisplay
+Ole Db Driver For Text File,OleDbDriverForTextFile
+Open ID Authorization Endpoint,OpenID_AuthorizationEndpoint
+Open ID Issuer,OpenID_Issuer
+Open ID Jwks Uri,OpenID_JwksUri
+Open ID Registration Endpoint,OpenID_RegistrationEndpoint
+Open ID Response Mode,OpenID_ResponseMode
+Open ID Token End Point,OpenID_TokenEndPoint
+Open ID User Info End Point,OpenID_UserInfoEndPoint
+Organization Structure Provider Secondary,OrganizationStructureProvider_Secondary
+Organization Structure Secondary Provider Additional Comparison Field,OrganizationStructureSecondaryProvider_AdditionalComparisonField
+Organization Structure Secondary Provider Chars To Remove,OrganizationStructureSecondaryProvider_CharsToRemove
+Organization Structure Secondary Provider Chars To Trim,OrganizationStructureSecondaryProvider_CharsToTrim
+Organization Structure Secondary Provider Custom HR System,OrganizationStructureSecondaryProvider_Custom_HR_SystemId
+Organization Structure Secondary Provider Include Empty Values,OrganizationStructureSecondaryProvider_IncludeEmptyValues
+Organization Structure Secondary Provider Main Comparison Field,OrganizationStructureSecondaryProvider_MainComparisonField
+Organization Structure Secondary Provider Mode,OrganizationStructureSecondaryProvider_Mode
+Organization Structure Secondary Provider Properties To Update,OrganizationStructureSecondaryProvider_PropertiesToUpdate
+Override Last Logon Based On Usage,OverrideLastLogonBasedOnUsage
+Override Ldap Filter For Direct Managers,OverrideLdapFilterForDirectManagers
+Override Role End Date To Sap,OverrideRoleEndDateToSAP
+Password Recover Maximum Login Attempts,PasswordRecover_MaximumLoginAttempts
+Password Recover Minutes Wait Before Reset Last Login,PasswordRecover_MinutesWaitBeforeResetLastLogin
+Pathlock License Use For POC,ProfileTailorLicenseUseForPOC
+Pathlock License Use Subscription Based License,ProfileTailorLicenseUseSubscriptionBasedLicense
+Pathlock Logo Url,PathlockLogoUrl
+Pathlock Processes Queue,ProfileTailorProcessesQueue
+Pathlock Role For Report APICalls Full Permission,PathlockRoleForReportAPICallsFullPermission
+Pathlock Server Type,ProfileTailorServerType
+Pathlock User Min Required Non Alphanumeric Characters,PathlockUser_MinRequiredNonAlphanumericCharacters
+Pathlock User Min Required Password Length,PathlockUser_MinRequiredPasswordLength
+Pathlock Worker Process Server,ProfileTailorWorkerProcessServer
+PDTM Web Collector Virtual Directory,PDTM_WebCollectorVirtualDirectory
+Performed By System,PerformedBySystem
+Portal Hide Company Logo,Portal_HideCompanyLogo
+Portal Hide Pathlock Bottom Logo,Portal_HidePathlockBottomLogo
+Portal Item Background Color,Portal_ItemBackgroundColor
+Portal Logo Icon Height,Portal_LogoIconHeight
+Portal Show Back To Portal Icon,Portal_ShowBackToPortalIcon
+Portal Show Details Link,Portal_ShowDetailsLink
+Portal Version,PortalVersion
+Post Login Home Page Screen Admin Roles,PostLoginHomePageScreenAdminRoles
+Power Shell Exe Path,PowerShelllExePath
+Proccess Run Time Out Mintues,ProccessRunTimeOutMintues
+Process Control Action Configuration,ProcessControlActionConfiguration
+Processes Max Number,ProcessesMaxNumber
+Product Key Experission Warning Days,ProductKeyExperisionWarningDays
+PTDM App Virtual Directory,PTDM_AppVirtualDirectory
+PTDM Host,PTDM_Host
+PTDM IISApp Root Path,PTDM_IISAppRootPath
+PTDM IISRoot Path,PTDM_IISRootPath
+PTDM Logo Html Path,PTDM_LogoHtmlPath
+PTDM Logo Path,PTDM_LogoPath
+PTDM Site,PTDM_Site
+PTDM Smart Query Entities Path,PTDM_SmartQueryEntitiesPath
+PTDM Web Collector Virtual Directory,PTDM_WebCollectorVirtualDirectory
+PTDM Worker Process Path,PTDM_WorkerProcessPath
+Query Desginer Display Timout,QueryDesginerDisplayTimout
+Query Designer Export To Excel Timeout,QueryDesginerExportToExcelTimout
+Query Designer Top Records For Timeout Scenario,QueryDesginerTopRecordsForTimeoutScenario
+Query Preview Timeout,QueryPreviewTimeout
+Read Employee To User Mapping For All Systems From HR System,ReadEmployeeToUserMappingForAllSystemsFromHRSystem
+Read Fiori Service Descriptions,ReadFioriServiceDescriptions
+Read Role Assignment Change Documents,ReadRoleAssignmentChangeDocuments
+Read Usage Keep Alive Interval In Seconds,ReadUsageKeepAliveIntervalInSeconds
+Read Usage Max Delay In Seconds For Inactive Read,ReadUsageMaxDelayInSecondsForInactiveRead
+Rebuild User Catalog Cloud Version,RebuildUserCatalogCloudVersion
+Rebuild Users Minimal Sync Profiles For AD,RebuildUsersMinimal_SyncProfilesForAD
+Redirect Url For Assync Operation,RedirectUrlForAssyncOperation
+Remove Invalid Approvers From Approval Groups,RemoveInvalidApproversFromApprovalGroups
+Report Approval Global Scope,ReportApprovalGlobalScope
+Report Filter Use Wide Activity Filter,ReportFilterUseWideActivityFilter
+Report Filter Use Wide Role Filter,ReportFilterUseWideRoleFilter
+Report Filter Use Wide User Filter,ReportFilterUseWideUserFilter
+Report Invoker Failure Minutes To Wait,ReportInvokerFailureMinutesToWait
+Report Invoker Failure Number Of Retries,ReportInvokerFailureNumberOfRetries
+Report Run Time Out In Seconds,ReportRunTimeOutInSeconds
+Report Scheduler Web Address,ReportSchedulerWebAddress
+Report With Business Rules Hide Invalid Rows,ReportWithBusinessRulesHideInvalidRows
+Request Details Redirect To Referrer,RequestDetailsRedirectToReferrer
+Request Details Redirect To Url,RequestDetailsRedirectToUrl
+Request Handled,RequestHandled
+Request Opened Email Text,RequestOpenedEmailText
+Request Returned Email Text,RequestReturnedEmailText
+Request Waiting For Approval Hide Mass Approve,RequestWaitingForApprovalHideMassApprove
+Request Waiting For Approval Hide Mass Decline,RequestWaitingForApprovalHideMassDecline
+Request Waiting For Approval Show Assign With All Groups,RequestWaitingForApprovalShowAssignWithAllGroups
+Request Waiting For Approval Show Step Name In Requested Object,RequestWaitingForApprovalShowStepNameInRequestedObject
+Requests Waiting For Approval Get Data From Stored Procedure,RequestsWaitingForApprovalGetDataFromStoredProcedure
+Require Domain Name In Mixed Login,RequireDomainNameInMixedLogin
+Reset Password Welcome Label1 Text,ResetPasswordWelcomeLabel1Text
+Reset Password Welcome Label2 Text,ResetPasswordWelcomeLabel2Text
+Rest Api Drill Down Field Names,RestApiDrillDownFieldNames
+Rest Organization Structure Provider Run In Cloud,RestOrganizationStructureProvider_RunInCloud
+Rest Organization Structure Provider Run In Cloud For Secondary Provider,RestOrganizationStructureProvider_RunInCloud_ForSecondaryProvider
+Review Default Approval Group Type,ReviewDefaultApprovalGroupTypeId
+Risk Level,RiskLevelId
+Risk Types Keywords For Risk Approval Step,RiskTypesKeywordsForRiskApprovalStep
+Role Advisor Exclude Roles Business Process,RoleAdvisorExcludeRolesBusinessProcess
+Role Advisor Show More Filters,RoleAdvisorShowMoreFilters
+Role Builder Enable Transactions Removal,RoleBuilder_EnableTransactionsRemoval
+Role Description Max Length For Display,RoleDescriptionMaxLengthForDisplay
+Role Re Design Mode,RoleReDesginMode
+Role Search Provider Show Activities Is Role Count,RoleSearchProviderShowActivitiesIsRoleCount
+Role Selection Hide Master For Derive Roles With Single Child,RoleSelectionHideMasterForDeriveRolesWithSingleChild
+Role Splitter Copy Also Inactive Auth,RoleSpliterCopyAlsoInactiveAuth
+Role Types To Assign By Child Roles,RoleTypesToAssignByChildRoles
+Roles Registry Nodes,RolesRegistryNodes
+Roles Splliter Roles Prefix,RolesSplliterRolesPrefix
+Roles Spllitter Copy Only Default Authorization Objects,RolesSplliterCopyOnlyDefaultAuhtorizationObjects
+Roles Spllitter Roles Child Role Identify Common Part,RolesSplliterRolesChildRoleIdentifyCommonPart
+Roles Spllitter Roles Child Role Objects Only Role Flag,RolesSplliterRolesChildRoleObjectsOnlyRoleFlag
+Roles Spllitter Roles Child Role Pattern,RolesSplliterRolesChildRolePattern
+Roles Spllitter Roles Child Role Single Role Flag,RolesSplliterRolesChildRoleSingleRoleFlag
+Rule Upload List Of Value Seperator,RuleUploadListOfValueSperator
+Run Report On Start,RunReportOnStart
+Run User Process In Separate Queue,RunUserProcessInSeperateQueue
+S4 Hana Read Disable USOBHASH,S4_Hana_Read_Disable_USOBHASH
+S4 Hana Read USOBHASH BY FM,S4_Hana_Read_USOBHASH_BY_FM
+Saml Entity,Saml_EntityId
+Sampling Rate For Inbox,SamplingRateForInbox
+Sap Connector Create User Central User Administration Retries,SapConnectorCreateUserCUARetries
+Sap Connector Create User Ignore User Already Exists Error,SapConnectorCreateUserIgnoreUserAlreadyExistsError
+Sap Connector Is Remove All Roles Supported,SapConnectorIsRemoveAllRolesSupported
+Sap Connector Last Logon Field,SapConnectorLastLogonField
+Sap Connector Query Domain Values,SapConnectorQueryDomainValues
+Sap Connector Read SM20 For Each Application Server,SapConnectorReadSM20ForEachApplicationServer
+Sap Connector Role Creation Disable Role Generate,SapConnectorRoleCreationDisableRoleGenerate
+Sap Connector User Filter For Include,SapConnectorUserFilterForInclude
+Sap Connector User Group For Exclude,SapConnectorUserGroupForExclude
+Sap Connector User Group For Include,SapConnectorUserGroupForInclude
+Sap Employee Id Add Zero,SapEmployeeIdAddZero
+Sap Employee Id Replace String,SapEmployeeIdReplaceString
+Sap Employee Id Trim Zero,SapEmployeeIdTrimZero
+Sap Erp Version,SAPErpVersion
+Sap Error Character,SapErrorCharacter
+Sap Error Codes To Ignore,SAP_ErrorCodesToIgnore
+Sap ISHGroup Size For Changes Log Read,SAPISHGroupSizeForChangesLogRead
+Sap Query Data Start Index,SAPQueryDataStartIndex
+Sap Query Pre Fix,SAPQueryPreFix
+Sap Query Query Code Length,SAPQueryQueryCodeLength
+Sap Query Query Group Length,SAPQueryQueryGroupLength
+Sap Read Logs Response Timeout In Minutes,SapReadLogsResponseTimeoutInMinutes
+Sap Table Read Buffer Size,SapTableReadBufferSize
+Sap User Data Custom Fields Mapping,SapUserDataCustomFieldsMapping
+Sap User Role Back Trace Role From Generated Profile,SapUserRoleBackTraceRoleFromGeneratedProfile
+Save History From Log,SaveHistoryFromLog
+Save Sap Log Into DB,SaveSapLogIntoDB
+Schedule Report Data Compare Columns To Ignore,ScheduleReportDataCompareColumnsToIgnore
+Schedule Report File Path,ScheduleReportFilePath
+Scope Directory Path,ScopeDirectoryPath
+SE16 NRead Change Documents Details,SE16NReadChangeDocumentsDetails
+SE16 NRead Change Documents Details Abap,SE16NReadChangeDocumentsDetailsAbap
+Search Menu Proxy URL,SearchMenuProxyURL
+Search Using Contains Instead Of Starts With,SearchUsingContainsInsteadOfStartsWith
+Secondary Domain Password Key,SecondaryDomainPasswordKey
+Secondary Domain Username,SecondaryDomainUsername
+Send Daily Mail As Attachment,SendDailyMailAsAttachment
+Send Email For Shared Items,SendEmailForSharedItems
+Send Mail Excluded Domains,SendMailExcludedDomains
+Send Mail On Step Started,SendMailOnStepStarted
+Send Mail Only To Professional Users,SendMailOnlyToProfessionalUsers
+Send Mail Only To Specific Addresses,SendMailOnlyToSpecificAddresses
+Send Recurring Reminders For Auto Lock,SendRecurringRemindersForAutoLock
+Send Recurring Reminders For Auto Lock Days,SendRecurringRemindersForAutoLock_Days
+Send Roles In Bulk To Sap,SendRolesInBulkToSAP
+Send Step Already Been Approved By Someone Else Mail,SendStepAlreadyBeenApprovedBySomeoneElseMail
+Server Version Timestamp,ServerVersionTimestamp
+Service Configuration Tester,ServiceConfigurationTester
+Service Configuration Tester TCP,ServiceConfigurationTesterTCP
+Service Configuration Tester Use Net Pipe,ServiceConfigurationTesterUseNetPipe
+#Setting,Setting
+#Severity Low,SeverityLow
+#Severity Medium,SeverityMedium
+#Severity Medium Low,SeverityMediumLow
+Shadow System,ShadowSystemId
+Share To Directory Select,ShareToDirectorySelect
+Shared Items Email Template,SharedItemsEmailTemplateId
+Sheet Name Length,SheetNameLength
+Show Advanced User Group Filter Selection,ShowAdvancedUserGroupFilterSelection
+Show All Risks In Risk Analysis,ShowAllRisksInRiskAnalysis
+Show All User Requests Link On Request Submitted Page,ShowAllUserRequestsLinkOnRequestSubmittedPage
+Show Buttons Inline,ShowButtonsInline
+Show Created On Column,ShowCreatedOnColumn
+Show CSG,ShowCSG
+Show Default Roles For External Users,ShowDefaultRolesForExternalUsers
+Show Delete From Profile In User Card,ShowDeleteFromProfileInUserCard
+Show Department Column,ShowDepartmentColumn
+Show Employee Change Data,ShowEmployeeChangeData
+Show Feedback form after Request Submission,RequestSubmittedShowFeedback
+Show Forget Password Link In Login Page,ShowForgetPasswordLinkInLoginPage
+Show Has Change Filter,ShowHasChangeFilter
+Show Inbox Item In Popup,ShowInboxItemInPopup
+Show Lat Log On,ShowLatLogOn
+Show Lock Time,ShowLockTime
+Show Message On System Change,ShowMessageOnSystemChange
+Show New Request Link On Request Submitted Page,ShowNewRequestLinkOnRequestSubmittedPage
+Show Not Locked Icon,ShowNotLockedIcon
+Show Open Requests Link On Request Submitted Page,ShowOpenRequestsLinkOnRequestSubmittedPage
+Show Portal Link On Request Submitted Page,ShowPortalLinkOnRequestSubmittedPage
+Show Request Details As Button On Portal Pages,ShowRequestDetailsAsButtonOnPortalPages
+Show Role Catalog Attribute1,ShowRoleCatalogAttribute1
+Show Role Catalog Attribute10,ShowRoleCatalogAttribute10
+Show Role Catalog Attribute2,ShowRoleCatalogAttribute2
+Show Role Catalog Attribute3,ShowRoleCatalogAttribute3
+Show Role Catalog Attribute4,ShowRoleCatalogAttribute4
+Show Role Catalog Attribute5,ShowRoleCatalogAttribute5
+Show Role Catalog Attribute6,ShowRoleCatalogAttribute6
+Show Role Catalog Attribute7,ShowRoleCatalogAttribute7
+Show Role Catalog Attribute8,ShowRoleCatalogAttribute8
+Show Role Catalog Attribute9,ShowRoleCatalogAttribute9
+Show Role High Risk Icon Column,ShowRoleHighRiskIconColumn
+Show Role Owners In Role Query,ShowRoleOwnersInRoleQuery
+Show Role Risk Classification Column,ShowRoleRiskClassificationColumn
+Show Role Type Column,ShowRoleTypeColumn
+Show Role Type Column As Text,ShowRoleTypeColumnAsText
+Show Sap Company Column,ShowSapCompanyColumn
+Show System Link On Request Submitted Page,ShowSystemLinkOnRequestSubmittedPage
+Show Transaction Application Area,ShowTransactionApplicationArea
+Show Transaction Application Area Column In Emergancy Access,ShowTransactionApplicationAreaColumnInEmergancyAccess
+Show Transaction Application Desc,ShowTransactionApplicationDesc
+Show Transaction Status Column,ShowTransactionStatusColumn
+Show Usage More Info Field,ShowUsageMoreInfoField
+Show User Group,ShowUserGroup
+Show User Group Filter Outside Users Filter,ShowUserGroupFilterOutsideUsersFilter
+Show User Has Employee Column,ShowUserHasEmployeeColumn
+Show User Invalid Date Column,ShowUserInvalidDateColumn
+Show User Type,ShowUserType
+Show User Valid From Column,ShowUserValidFromColumn
+Show Virtual Role Scope In Report,ShowVirtualRoleScopeInReport
+Single Page Review,SinglePageReview
+Skip Is User Exists Check In Sap,SkipIsUserExistsCheckInSAP
+SM20 Drill Down Transactions,SM20DrillDownTransactions
+Smart Query Text Box Width,SmartQueryTextBoxWidth
+Smart Query Xml Path,SmartQueryXmlPath
+Smart Query Xml Path Non Web,SmartQueryXmlPathNonWeb
+Smart Search Key,SmartSearchKey
+SMS Authentication Max Attempts,SMSAuthnticationMaxAttempts
+SMS Authenticator Text Message,SMSAuthnitcatorTextMessage
+SMS Error Texts,SMSErrorTexts
+SMS Pass,SMSPass
+SMS Provider Use TLS12,SMSProviderUseTLS12
+SMS Url,SMSUrl
+SMS User,SMSUser
+Smtp Server TLS12,SmtpServerTLS12
+Spool Number Length,SpoolNumberLength
+Sql Error For Duplicate Key,SqlErrorForDuplicateKey
+Sql Error For PKViolation,SqlErrorForPKViolation
+Sql Error For PKViolation Retries,SqlErrorForPKViolationRetries
+Status File Name,StatusFileName
+Step Extension Failed,StepExtensionFailed
+Step Extension Max Requests,StepExtensionMaxRequests
+Stored Procedure Name For Currency Conversion,StoredProcedureNameForCurrencyConversion
+Success Factors Provider Base Url,SuccessFactorsProviderBaseUrl
+Switch Back To Original User After Emergency Access,SwitchBackToOriginalUserAfterEmergencyAccess
+Sync Organization Structure Maximum Employee Number Length,SyncOrganizationStructureMaximumEmployeeNumberLength
+Synchronize Employees Combine Data Take Active Employee Instead Of Terminated One,SyncronizeEmployeesCombineDataTakeActiveEmployeeInsteadOfTerminatedOne
+Synchronize Employees Fields To Exclude,SyncronizeEmployeesFieldsToExclude
+System Id For Pathlock In Pathlock,SystemIdForProfileTailorInProfileTailor
+System Ids To Ignore,SystemIdsToIgnore
+System Link On Request Submitted Page,SystemLinkOnRequestSubmittedPage
+System Product Key,SystemProductKey
+System Time Zone,SystemTimeZone
+Systems To Include User Previous Roles,SystemsToIncludeUserPreviousRoles
+Systems Without Last Logon,SystemsWithoutLastLogon
+Table Change By For Automatic Records,TableChangeByForAutomaticRecords
+Target System Logon System,TargetSystemLogonSystemId
+Technical Name For Approve Text,TechnicalNameForApproveText
+Technical Name For Country,TechnicalNameForCountry
+Technical Name For Decline Text,TechnicalNameForDeclineText
+Technical Name For Job Role,TechnicalNameForJobRole
+Technical Name Of User Location,TechnicalNameOfUserLocation
+Test Connection Before Emergency Access Completion,TestConnectionBeforeEmergencyAccessCompletion
+Time Out Error Page,TimeOutErrorPage
+Time Zone,TimeZone
+Top Department Level,TopDepartmentLevel
+Transaction History Organization Information Data Source Users Selector,TransactionHistoryOrganizationInformationDataSource_UsersSelector
+Transaction History Record Terminal Number Of Users To Display,TransactionHistoryRecordTerminal_NumberOfUsersToDisplay
+Un Lock,UnLock
+Unique Portal Link Validity In Minutes,UniquePortalLinkValidityInMinutes
+Update All Systems Properties On Terminate User Action,UpdateAllSystemsPropertiesOnTerminateUserAction
+Update Cache Period For Approval Groups,UpdateCachePeriodForAprpovalGroups
+Update Cache Period For Forbidden Combination Mins,UpdateCachePeriodForForbiddenCombinationMins
+Update Cache Period For Role Authorizations Mins,UpdateCachePeriodForRoleAuthorizationsMins
+Update Role Rfc Function,UpdateRoleRfcFunction
+Url Validation Regular Expression Base Pattern,UrlValidationRegularExpressionBasePattern
+Use Approval Group Description Instead Of Group Name,UseApprovalGroupDescriptionInsteadOfGroupName
+Use Business Roles As Composite Roles,UseBusinessRolesAsCompositeRoles
+Use Custom Count Users For License,UseCustomCountUsersForLicense
+Use Employee Full Name In Users Auto Complete,UseEmployeeFullNameInUsersAutoComplete
+Use From Mail To Authenticate,UseFromMailToAuthenticate
+Use One User Name For All Rebuild Username For Casing,UseOneUserNameForAllRebuildUsernameForCasing
+Use One User Name Only For New Users,UseOneUserNameOnlyForNewUsers
+Use Sap Query As Roles,UseSapQueryAsRoles
+Use Transaction History From Caching,UseTransactionHistoryFromCaching
+User Categories Default Value,UserCategories_DefaultValue
+User Categories User Group Type,UserCategories_UserGroupTypeId
+User Group Automatic Roles Deletion Fixed Tolerance,UserGroupAutomaticRolesDeletionFixedTolerance
+User Group Automatic Roles Deletion Percentage Tolerance,UserGroupAutomaticRolesDeletionPrecentageTolerance
+User Group Automatic Roles Deletion Percentage Tolerance Min Group Size,UserGroupAutomaticRolesDeletionPrecentageToleranceMinGroupSize
+User Group Type Id For VIP,UserGroupTypeIdForVIP
+User Information Url,UserInformationUrl
+User Multi User Max Number Of Users Per Computer,UserMultiUserMaxNumberOfUsersPerComputer
+User Multi User Max Number Of Users Per Computer Message,UserMultiUserMaxNumberOfUsersPerComputerMessage
+User Multiple Usage Time Range In Minutes,UserMultipleUsageTimeRangeInMinutes
+User Name Sub Type For Info Type105,UserNameSubTypeForInfoType105
+User Open Request Screen Show Add Info Button,UserOpenRequestScreenShowAddInfoButton
+User Open Request Screen Show End Request Button,UserOpenRequestScreenShowEndRequestButton
+User Open Request Screen Show End Request Confirm Message,UserOpenRequestScreenShowEndRequestConfirmMessage
+User Open Requests Show Add Info Link,UserOpenRequestsShowAddInfoLink
+User Open Requests Show Approval Group Description,UserOpenRequestsShowApprovalGroupDescription
+User Open Requests Show Approval Group Name,UserOpenRequestsShowApprovalGroupName
+User Open Requests Show Approver,UserOpenRequestsShowApprover
+User Open Requests Show End Link,UserOpenRequestsShowEndLink
+User Portal Enable Choose System,UserPortalEnableChooseSystem
+User Selection Show Full Name From Employee,UserSelectionShowFullNameFromEmployee
+Username Field In Custom Reports,UsernameFieldInCustomReports
+Username For External File Attachments,UsernameForExternalFileAttachments
+V2 Normal Records Columns,V2_Normal_Records_Columns
+V2 Normal Records Sort Columns,V2_Normal_Records_Sort_Columns
+V2 Rfc Server Dest Records Columns,V2_Rfc_Server_Dest_Records_Columns
+V2 Rfc Server Dest Records Sort Columns,V2_Rfc_Server_Dest_Records_Sort_Columns
+Virtual Profile Pictures Folder Path,VirtualProfilePicturesFolderPath
+Vms Rsh Filename,VmsRshFilename
+VMSFile Convert Total Seconds,VMSFileConvertTotalSeconds
+VMSFolder,VMSFolder
+WB2 V MKPF MSEG2 Fields,WB2_V_MKPF_MSEG2_Fields
+WB2 V RBKP RSEG2 Fields,WB2_V_RBKP_RSEG2_Fields
+Web Services Address,WebServicesAddress
+Web Site Host For Validation,WebSiteHostForValidation
+Write Status File,WriteStatusFile
+You Approved Request,YouApprovedRequest
+You Extended Request,YouExtendedRequest
+You Handled Request,YouHandledRequest
+Active Directory Account Disable Only,ActiveDirectoryAccountDisableOnly
+Active Directory Account Expiration Date Add Additional Day,ActiveDirectoryAccountExpirationDateAddAddiotnalDay
+Active Directory Account Remove Disable Users,ActiveDirectoryAccountRemoveDisableUsers
+Active Directory Activity Selector Also For Files,ActiveDirectoryActivitySelectorAlsoForFiles
+Active Directory Additional User Attributes,ActiveDirectoryAdditionalUserAttributes
+Active Directory Building Attribute,ActiveDirectoryBuildingAttribute
+Active Directory Company Attribute,ActiveDirectoryCompanyAttribute
+Active Directory Directory Monitoring Ignored Patterns,ActiveDirectoryDirectoryMonitoringIgnoredPatterns
+Active Directory Disable Employee IDField,ActiveDirectoryDisableEmployeeIDField
+Active Directory Display Name Pattern,ActiveDirectoryDisplayNamePattern
+Active Directory Employee Id Format Value,ActiveDirectoryEmployeeIdFormatValue
+Active Directory Employee IDAttribute,ActiveDirectoryEmployeeIDAttribute
+Active Directory File Monitoring Ignore Paths,ActiveDirectoryFileMonitoringIngorePaths
+Active Directory File Monitoring Ignored Extensions,ActiveDirectoryFileMonitoringIgnoredExtensions
+Active Directory Get Users By Mail Page Size,ActiveDirectoryGetUsersByMailPageSize
+Active Directory Lock Status By Incorrect Logons,ActiveDirectoryLockStatusByIncorrectLogons
+Active Directory Numeric Field Types,ActiveDirectoryNumericFieldTypes
+Active Directory Properties File Name,ActiveDirectoryPropertiesFileName
+Active Directory Provider Additional Fields,ActiveDirectoryProviderAdditionalFields
+Active Directory Provider Calculate Employment Status Based On ADStatus,ActiveDirectoryProviderCalculateEmploymentStatusBasedOnADStatus
+Active Directory Provider Employee Id Maximum Length,ActiveDirectoryProviderEmployeeIdMaximumLength
+Active Directory Provider Password Key,ActiveDirectoryProviderPasswordKey
+Active Directory Provider Test All Properties,ActiveDirectoryProviderTestAllProperties
+Active Directory Provider Test Employee,ActiveDirectoryProviderTestEmployeeId
+Active Directory Provider Username,ActiveDirectoryProviderUsername
+Active Directory Provider With External Data Employee Linkage Field,ActiveDirectoryProviderWithExternalDataEmployeeLinkadgeField
+Active Directory Secondary Provider Additional Domains,ActiveDirectorySecondaryProviderAdditinalDomains
+Active Directory Secondary Provider Additional Fields,ActiveDirectorySecondaryProviderAdditionalFields
+Active Directory Secondary Provider Custom Domains,ActiveDirectorySecondaryProviderCustomDomains
+Active Directory Secondary Provider Enable Active Directory Org Structure Based On Managers,ActiveDirectorySecondaryProviderEnableActiveDirectoryOrgStrctureBasedOnManagers
+Active Directory Secondary Provider Ldap Filter,ActiveDirectorySecondaryProviderLdapFilter
+Active Directory Secondary Provider Password Key,ActiveDirectorySecondaryProviderPasswordKey
+Active Directory Secondary Provider Username,ActiveDirectorySecondaryProviderUsername
+Active Directory Sso Group Name,ActiveDirectorySsoGroupName
+Active Directory System,ActiveDirectorySystemId
+Active Directory User Provision Fallback Mode,ActiveDirectoryUserProvisionFallbackMode
+Activity Modes By Level,ActivityModesByLevel
+Add User Specific Permissions as a Role:,AddUserSpesificPermissionsAsARole
+Additional MS Active Directory domains:,AdditinalDomains
+Conversion rule of MS Active Directory user email addresses:,IsTranslateMail
+Create Approval Group For Company Employee Record Query Active Directory For Each Manager,CreateApprovalGroupForCompanyEmployeeRecord_QueryActiveDirectoryForEachManager
+Custom Terminate Date Fieldin Active Directory,CustomTerminateDateFieldinActiveDirectory
+Custom Terminate Date Fieldin Active Directory Date Format,CustomTerminateDateFieldinActiveDirectoryDateFormat
+Employee Provider For Active Directory Light Mode,EmployeeProviderForActiveDirectoryLightMode
+Enable Active Directory Activity Modes Matrix Compact Mode,EnableActiveDirectoryActivityModesMatrixCompactMode
+Enable Active Directory Connector Remote Event Log Events,EnableActiveDirectoryConnectorRemoteEventLogEvents
+Enable Active Directory Last Logon Dates,EnableActiveDirectoryLastLogonDates
+Enable Directory Monitoring Active Directory Monitoring,EnableDirectoryMonitoringActiveDirectoryMonitoring
+Enable File Use Monitoring Active Directory Monitoring,EnableFileUseMonitoringActiveDirectoryMonitoring
+Enable Get Object Path In Active Directory For Single OU,EnableGetObjectPathInActiveDirectoryForSingleOU
+Enable user recognition by email address in workflow requests:,RecognizeUserNameOfCurrentUserByEmail
+External email address postfix:,ExternalStmpDomainPostfix
+File Server Monitoring Sub Folder Deep,FileServerMonitoringSubFolderDeep
+Get Active Directory Mail From Employee,GetActiveDirectoryMailFromEmployee
+Get Employee Data From Active Directory,GetEmployeeDataFromActiveDirectory
+Get Employee Roles By Active Directory User,GetEmployeeRolesByActiveDirectoryUser
+Internal email address postfix:,InternalStmpDomainPostfix
+Ldap Filter,LdapFilter
+Length For Active Directory Username Cut For Employee,LengthForActiveDirectoryUsernameCutForEmployee
+MS Active Directory users without groups:,ADTakeUsersWithoutGroups
+Pathlock User Management From Active Directory,ProfileTailorUserManagmentFromActiveDirectory
+Set Application User Status By Active Directory User Status,SetAppliactionUserStatusByActiveDirectoryUserStatus
+Update Active Directory Properties On Terminate User Action,UpdateActiveDirectoryPropertiesOnTerminateUserAction
+Use Active Directory Connector Legacy Version,UseActiveDirectoryConnectorLegacyVersion
+Use Group Name As Activity In Active Directory,UseGroupNameAsActivityInActiveDirectory
+Archiving Backup Table Pattern,ArchivingBackupTablePattern
+Archiving Database Backup Name,ArchivingDatabaseBackupName
+Azure AADInstance,Azure_AADInstance
+Azure Client,Azure_ClientId
+Azure Client Secret,Azure_ClientSecret
+Azure Post Logout Redirect Uri,Azure_PostLogoutRedirectUri
+Azure Tenant,Azure_TenantId
+Google Client,Google_ClientId
+Google Client Secret,Google_ClientSecret
+Approval Group Type For Authorization Review From Excel,ApprovalGroupTypeForAuthorizationReviewFromExcel
+Authorization Description,AuthorizationDescription
+Authorization Name,AuthorizationName
+Authorization Review By Activity Group Type,AuthorizationReviewByActivityGroupTypeId
+Authorization Review By Role Job Roles And Activity Disable Role Include,AuthorizationReviewByRoleJobRolesAndActivityDisableRoleInclude
+Authorization Review By Roles Show Activities In Role Details Link,AuthorizationReviewByRolesShowActivitiesInRoleDetailsLink
+Authorization Review By Roles Show High Risk Activities,AuthorizationReviewByRolesShowHighRiskActivities
+Authorization Review By Roles Show Number Of Activities,AuthorizationReviewByRolesShowNumberOfActivities
+Authorization Review By Roles Show Role Description,AuthorizationReviewByRolesShowRoleDescription
+Authorization Review By Roles Show System Name,AuthorizationReviewByRolesShowSystemName
+Authorization Review Comment For Handling Deleted User,AuthorizationReviewCommentForHandlingDeletedUser
+Authorization Review Customize Details Button Text,AuthorizationReviewCustomizeDetailsButtonText
+Authorization Review Customize Wide Approval Button Text,AuthorizationReviewCustomizeWideApprovalButtonText
+Authorization Review Dashboard Use Fallback With User Data,AuthorizationReviewDashboardUseFallbackWithUserData
+Authorization Review Disable Overview Tabs,AuthorizationReviewDisableOverviewTabs
+Authorization Review Disable Session For Waiting Items,AuthorizationReviewDisableSessionForWaitingItems
+Authorization Review Disable Submit Approval,AuthorizationReviewDisableSubmitApproval
+Authorization Review Disable Wide Approval,AuthorizationReviewDisableWideApproval
+Authorization Review Disable Wide Approval Filter,AuthorizationReviewDisableWideApprovalFilter
+Authorization Review Exclude Locked Users,AuthorizationReviewExcludeLockedUsers
+Authorization Review Exclude Locked Users By Logons,AuthorizationReviewExcludeLockedUsersByLogons
+Authorization Review For Position Change Enable,AuthorizationReviewForPositionChangeEnable
+Authorization Review For Position Change Notify Manager,AuthorizationReviewForPositionChangeNotifyManager
+Authorization Review For Position Change Run For All Online Systems,AuthorizationReviewForPositionChangeRunForAllOnlineSystems
+Authorization Review For Position Change Template,AuthorizationReviewForPositionChangeTemplateId
+Authorization Review For Position Change Title,AuthorizationReviewForPositionChangeTitle
+Authorization Review Icon As Link,AuthorizationReviewIconAsLink
+Authorization Review In Requests Waiting Page,AuthorizationReviewInRequestsWaitingPage
+Authorization Review Link To Portal Text,AuthorizationReviewLinkToPortalText
+Authorization Review Link To Portal Visible,AuthorizationReviewLinkToPortalVisible
+Authorization Review Max Thread Count,AuthorizationReviewMaxThreadCount
+Authorization Review Page Size,AuthorizationReviewPageSize
+Authorization Review Position Change Notification Header,AuthorizationReviewPositionChangeNotificationHeader
+Authorization Review Position Change Notification Text,AuthorizationReviewPositionChangeNotificationText
+Authorization Review Position Change Notification Visible,AuthorizationReviewPositionChangeNotificationVisible
+Authorization Review Position Change Notification Year,AuthorizationReviewPositionChangeNotificationYear
+Authorization Review Risk Weight For Critical,AuthorizationReviewRiskWeightForCritical
+Authorization Review Risk Weight For Non Critical,AuthorizationReviewRiskWeightForNonCritical
+Authorization Review Role,AuthorizationReviewRole
+Authorization Review Show Basic User Details,AuthorizationReviewShowBasicUserDetails
+Authorization Review Show Business Process,AuthorizationReviewShowBusinessProcess
+Authorization Review Show Fill Empty To Approve,AuthorizationReviewShowFillEmptyToApprove
+Authorization Review Show Fill Empty To Decline,AuthorizationReviewShowFillEmptyToDecline
+Authorization Review Show High Risk Column On Details Page,AuthorizationReviewShowHighRiskColumnOnDetailsPage
+Authorization Review Show Last Logon Date,AuthorizationReviewShowLastLogonDate
+Authorization Review Show Partial Approval Icon,AuthorizationReviewShowPartialApprovalIcon
+Authorization Review Show Partial Approval Text,AuthorizationReviewShowPartialApprovalText
+Authorization Review Show Roles In Grid,AuthorizationReviewShowRolesInGrid
+Authorization Review Show Save And Approve,AuthorizationReviewShowSaveAndApprove
+Authorization Review Show Step Name Column On Waiting Page,AuthorizationReviewShowStepNameColumnOnWaitingPage
+Authorization Review Show Submit Only Handled Items,AuthorizationReviewShowSubmitOnlyHandledItems
+Authorization Review Show User Or Employee By Process Definition,AuthorizationReviewShowUserOrEmployeeByProcessDefinition
+Authorization Review Show User Type,AuthorizationReviewShowUserType
+Authorization Review Statistics Calculation Interval In Minutes,AuthorizationReviewStatisticsCalculationIntervalInMinutes
+Authorization Review System Details Link Text,AuthorizationReviewSystemDetailsLinkText
+Authorization Review System Details Link Url,AuthorizationReviewSystemDetailsLinkUrl
+Authorization Review System Details Link Visible,AuthorizationReviewSystemDetailsLinkVisible
+Authorization Review Take Full Name From User Record,AuthorizationReviewTakeFullNameFromUserRecord
+Authorization Review Transaction,AuthorizationReviewTransaction
+Authorization Review Wide Approval By Roles Sort By Users,AuthorizationReviewWideApprovalByRolesSortByUsers
+Authorization Review Wide Approval Show Activity Group,AuthorizationReviewWideApproval_ShowActivityGroup
+Authorization Review Wide Approval Show Application Area,AuthorizationReviewWideApproval_ShowApplicationArea
+Authorization Review Wide Approval Show Dept Level3,AuthorizationReviewWideApproval_ShowDeptLevel3
+Authorization Review Wide Approval Show Dept Level4,AuthorizationReviewWideApproval_ShowDeptLevel4
+Authorization Review Wide Approval Show Dept Level5,AuthorizationReviewWideApproval_ShowDeptLevel5
+Authorization Review Wide Approval Show Job Title,AuthorizationReviewWideApproval_ShowJobTitle
+Authorization Review Wide Approval Show System,AuthorizationReviewWideApproval_ShowSystem
+Campaigns Review Details Tab SoD,CampaignsReviewDetailsTabSOD
+Campaigns Review Details Tab SoD History,CampaignsReviewDetailsTabSODHistory
+Campaigns Review Details Tab SoD Peer Analysis,CampaignsReviewDetailsTabSODPeerAnalysis
+Campaigns Review Details Tab SoD Roles,CampaignsReviewDetailsTabSODRoles
+Campaigns Review Details Tab UAR,CampaignsReviewDetailsTabUAR
+Campaigns Review Details Tab UAR History,CampaignsReviewDetailsTabUARHistory
+Campaigns Review Details Tab UAR Peer Analysis,CampaignsReviewDetailsTabUARPeerAnalysis
+Campaigns Review Details Tab UAR Provision History,CampaignsReviewDetailsTabUAR_ProvisionHistory
+Campaigns Review Details Tab UAR Usage,CampaignsReviewDetailsTabUARUsage
+Campaigns Review Details Tab UAR Violations,CampaignsReviewDetailsTabUARViolations
+Custom Action Id For Authorization Review Remove Authorization,CustomActionIdForAuthorizationReviewRemoveAuthorization
+Custom Action Template For Authorization Review Remove Authorization,CustomActionTemplateForAuthorizationReviewRemoveAuthorization
+Display Application Area column:,DisplayApplicationAreaOnRolesAuthorizationReview
+Display auto-complete missing decisions window:,ShowIsApprovedOnPageStart
+Display No. of High Risk Activities column:,DisplayHighRiskActivitiesOnRolesAuthorizationReview
+Display Usage On Roles Authorization Review,DisplayUsageOnRolesAuthorizationReview
+Enable Custom Action For Authorization Review Remove Authorization,EnableCustomActionForAuthorizationReviewRemoveAuthorization
+Enable Smart Authorization Review,EnableSmartAuthorizationReview
+Existing String Pattern,ExistingStringPattern
+Module Name,ModuleName
+Notify Authorization Review Started Template,NotifyAuthorizationReviewStartedTemplateId
+Notify Authorization Review Will Start Template,NotifyAuthorizationReviewWillStartTemplateId
+Process Verification Is Send Mail To Manager,ProcessVerificationIsSendMailToManager
+Review Authorizations Show Employee,ReviewAuthorizationsShowEmployee
+Schedule Authorization Review Use Recurrence Parameter,ScheduleAuthorizationReviewUseRecurrenceParameter
+Sent Authorization Review Mail To Managers For Second Step,SentAuthorizationReviewMailToManagersForSecondStep
+Show Application Column,ShowApplicationColumn
+Show Is Approved Dialog,ShowIsApprovedDialog
+Automatic Lock User Comment Template,AutomaticLockUserCommentTemplate
+Automatic Lock User Enable Workflow Action,AutomaticLockUserEnableWorkflowAction
+Automatic Lock User Never Logged In Text,AutomaticLockUserNeverLoggedInText
+Automatic Lock User Workflow Action,AutomaticLockUserWorkflowActionId
+Automatic Lock User Workflow Type,AutomaticLockUserWorkflowTypeId
+Include Only Users With HR Record In Lock Process,IncludeOnlyUsersWithHRRecordInLockProccess
+Central User Administration Prefix For Rfc Destinations,CUAPrefixForRfcDestinations
+Custom Central User Administration Client Number,CustomCUAClientNumber
+Custom Central User Administration Server Host,CustomCUAServerHost
+Custom Central User Administration System Number,CustomCUASystemNumber
+Enable Central User Administration,EnableCUA
+System for Central Users Administration Connection,CUASystemId
+Is Cloud,IsCloud
+Is Trial Version,IsTrialVersion
+User Percentage For Poc Data Upload,UserPercentageForPocDataUplaod
+Number of days back for usage of activities,SodResolverConfig_UsageDaysBack
+Custom BUType Object Type,CustomBUTypeObjectType
+Notify about application servers discrepancy:,SendMailOnApplicationServerDiscrepancies
+Pad Transaction Codes,PadTransactionCodes
+Sample Low Case Roles,SampleLowCaseRoles
+Transaction Code Max Length,TransactionCodeMaxLength
+Transaction Code Pad Text,TransactionCodePadText
+Use Validity Date As Deleted,UseValidityDateAsDeleted
+Add Buttons,AddButtons
+Add Web Dynpros To Transactions,AddWebDynprosToTransactions
+Change Documents Read Child Records,ChangeDocumentsReadChildRecords
+Custom Log Read Filter For ECC6 Connector,CustomLogReadFilterForECC6Connector
+Custom User Group Id For Change Documents Sync,CustomUserGroupIdForChangeDocumentsSync
+Custom User Group Id For Excluded Users From Usage Logs,CustomUserGroupIdForExcludedUsersFromUsageLogs
+Delete Log Files,DeleteLogFiles
+Disable Usage,DisableUsage
+Enable Job Failed Read,EnableJobFailedRead
+Enable SM20 Detailed Log From SE16,EnableSM20DetailedLogFromSE16
+Enable SM20 Log Read,EnableSM20LogRead
+Enable Transports Read,EnableTransportsRead
+Is New Button Show In Reports,IsNewButtonShowInReports
+Max Parallel Log Reads,MaxParallelLogReads
+Max Records For Audit,MaxRecordsForAudit
+Minimum Time Diff Between To Uses Of The Same Transaction By The Same User In Minutes,MinimumTimeDiffBetweenToUsesOfTheSameTransactionByTheSameUserInMinutes
+Online Monitoring Tables Folder,OnlineMonitoringTablesFolder
+Read Usage From SM20 Enable,ReadUsageFromSM20Enable
+Read Usage From SM20 Tcode Filter,ReadUsageFromSM20TcodeFilter
+Run Process Out Process,RunProccessOutProccess
+Take Usage Since Last Record,TakeUsageSinceLastRecord
+Time interval (seconds) between two identical Activies:,AuditMinTimeBetweenRequredsInSeconds
+Time Slice In Hours For Read Log,TimeSliceInHoursForReadLog
+Time Slot For Change Document Read,TimeSlotForChangeDocumentRead
+Advanced Db Trace Log Level,AdvancedDbTraceLogLevel
+Enable Advanced Db Trace,EnableAdvancedDbTrace
+Enable Advanced Workflow Trace,EnableAdvancedWorkflowTrace
+Write Event On Every Report Run,WriteEventOnEveryReportRun
+Write Extension Dll To Log,WriteExtensionDllToLog
+Check Activity Mode For High Risk Activity Event,CheckActivityModeForHighRiskActivityEvent
+Default event severity:,EventDefaultSeverity
+Event On Employee Job Code Change,EventOnEmployeeJobCodeChange
+Event On Employee Job Title Change,EventOnEmployeeJobTitleChange
+Event On Employee Org Unit Change,EventOnEmployeeOrgUnitChange
+Event On Employee Position Code Change,EventOnEmployeePositionCodeChange
+Event On Employee Position Title Change,EventOnEmployeePositionTitleChange
+Event Subscription Type Monthly Day Of Month,EventSubscriptionTypeMonthlyDayOfMonth
+Event Subscription Type Quaterly Day Of Month,EventSubscriptionTypeQueterlyDayOfMonth
+Event Subscription Type Weekly Day Of Week,EventSubscriptionTypeWeeklyDayOfWeek
+Event Subscription Type Yearly Day Of Year,EventSubscriptionTypeYearlyDayOfYear
+Initiator name for workflow triggered by event:,EventsWorkflowOpenBy
+Number of days back to check if a computer was used by more than one user:,NoDaysGoBackFor
+Send events summary email report even without data:,SendEmptyEventsReport
+Set termination of employment for each user:,CreateTerminationOfEmploymentForEachUser
+Template for events summary email message (table):,EventsDetailsTableText
+Working Hours Margin,WorkingHoursMargin
+Enable Excel Matrix Text Rotation,EnableExcelMatrixTextRotation
+Include All Activity Mode,IncludeAllActivitiyMode
+Is Display Activity Group Without Type,IsDisplayActivityGroupWithoutType
+MS Excel headers background color:,ColumnsNameColor
+MS Excel matrix high risk Activities background color:,CriticalActivitiesColor
+Error Notification Body,ErrorNotificationBody
+Error Notification Subject,ErrorNotificationSubject
+Server Discrepancy Email Subject,ServerDiscrepancyEmailSubject
+Server Discrepancy Email Template,ServerDiscrepancyEmailTemplate
+Server Discrepancy Not In PTD,ServerDiscrepancyNotInPTD
+Server Discrepancy Not In System,ServerDiscrepancyNotInSystem
+Server Discrepany Email Astrisk Remark,ServerDiscrepanyEmailAstriskRemark
+System Stopped Body,SystemStoppedBody
+System Stopped Subject,SystemStoppedSubject
+Technical Information,TechnicalInformation
+Authorization Field Header,AuthorizationFieldHeader
+Auto Complete Limit,AutoCompleteLimit
+Auto Complete Minimum Prefix Length,AutoCompleteMinimumPrefixLength
+Custom Domain,CustomDomain
+Custom Field1 Text,CustomField1Text
+Custom Role For Usage,CustomRoleForUsage
+Display Risks Chart View,DisplayRisksChartView
+External User Enable Comments,ExternalUserEnableComments
+External User Role,ExternalUserRole
+Filter Control Width Long,FilterControlWidthLong
+Filter Control Width Short,FilterControlWidthShort
+Grid Page Size,GridPageSize
+Hide Derived Roles In Auto Complete,HideDerivedRolesInAutoComplete
+Hide Derived Roles In Search Window,HideDerivedRolesInSearchWindow
+Image Logo,Image_Logo
+Num Of Items In Org Object Tab,NumOfItemsInOrgObjectTab
+Page Size,PageSize
+Role To Edit Activity Card,RoleToEditActivityCard
+Show Authorization Field In Role Usage,ShowAuthorizationFieldInRoleUsage
+Show Creation Date In User Card,ShowCreationDateInUserCard
+Show Only Valid Users,ShowOnlyValidUsers
+Show Organization Unit Type In Tree,ShowOrganizationUnitTypeInTree
+Show Pathlock Header On External Page,ShowProfileTailorHeaderOnExternalPage
+Show Transaction Attribute1,ShowTransactionAttribute1
+Show Transaction Attribute10,ShowTransactionAttribute10
+Show Transaction Attribute2,ShowTransactionAttribute2
+Show Transaction Attribute3,ShowTransactionAttribute3
+Show Transaction Attribute4,ShowTransactionAttribute4
+Show Transaction Attribute5,ShowTransactionAttribute5
+Show Transaction Attribute6,ShowTransactionAttribute6
+Show Transaction Attribute7,ShowTransactionAttribute7
+Show Transaction Attribute8,ShowTransactionAttribute8
+Show Transaction Attribute9,ShowTransactionAttribute9
+Show Transaction Attributes On Reports,ShowTransactionAttributesOnReports
+Show Validity Date In User Card,ShowValidityDateInUserCard
+Slider Default Width,SliderDefaultWidth
+Transaction Attribute1 Column Header,TransactionAttribute1ColumnHeader
+Transaction Attribute10 Column Header,TransactionAttribute10ColumnHeader
+Transaction Attribute2 Column Header,TransactionAttribute2ColumnHeader
+Transaction Attribute3 Column Header,TransactionAttribute3ColumnHeader
+Transaction Attribute4 Column Header,TransactionAttribute4ColumnHeader
+Transaction Attribute5 Column Header,TransactionAttribute5ColumnHeader
+Transaction Attribute6 Column Header,TransactionAttribute6ColumnHeader
+Transaction Attribute7 Column Header,TransactionAttribute7ColumnHeader
+Transaction Attribute8 Column Header,TransactionAttribute8ColumnHeader
+Transaction Attribute9 Column Header,TransactionAttribute9ColumnHeader
+UICulture,UICulture
+Add More Parameters Header,AddMoreParametersHeader
+Application base URL:,SiteAddress
+Default 'start date' filter value:,StartDateSpasificDate
+Default time zone for reports:,DefaultReportRunMode
+Display default value for start date:,HasStartDateSpasificDate
+Get Role Completion List With Role Description,GetRoleCompletionListWithRoleDescription
+Number of days before 'end date' for default 'start date':,StartDateDaysBack
+Process Work Hour,ProcessWorkHour
+Start Hour Time Back,StartHourTimeBack
+Temporary files folder:,TempFolder
+Time Period Interval,TimePeriodInterval
+Update Cache Period,UpdateCachePeriod
+Update Cache Period For Code Tables,UpdateCachePeriodForCodeTables
+Maximum Employee Records Difference,MaximumEmployeeRecordsDifference
+Show Has Change Icon,ShowHasChangeIcon
+Active Directory Employee Id Minimum Length,ActiveDirectoryEmployeeIdMinimumLength
+Active Employees HR Query,ActiveEmployeesHRQuery
+Active Employees HR Query For PA0001,ActiveEmployeesHRQueryForPA0001
+Assign employee company codes:,AddCompanyCode
+Connect Users To Employee By Email,ConnectUsersToEmployee_ByEmail
+Disable Validity Check For HR Data,DisableValidityCheckForHRData
+Employee Number Length,EmployeeNumberLength
+Employee Number Prefix,EmployeeNumberPrefix
+Employees Not Saved Body,EmployeesNotSavedBody
+Employees Not Saved Email Address,EmployeesNotSavedEmailAddress
+Employees Not Saved Header,EmployeesNotSavedHeader
+Employment Status For Active Employee,EmploymentStatusForActiveEmployee
+Employment Status For Not Found,EmploymentStatusForNotFound
+Enable Active Directory Org Structure Based On Managers,EnableActiveDirectoryOrgStrctureBasedOnManagers
+Enable HR Static Authorization,EnableHRStaticAuthorization
+External Database Employees Select Query,ExternalDatabaseEmployeesSelectQuery
+External Database SQLInstance Name,ExternalDatabaseSQLInstanceName
+HR Mitigated Users,HRMitigatedUsers
+HR Movement For Work Start,HRMovementForWorkStart
+HR source system:,SystemWideSystemId
+Read Active Directory Employee,ReadActiveDirectoryEmployeeId
+Read Work Start Date,ReadWorkStartDate
+Sap HR Custom Org Assigment Field,SAP_HR_CustomOrgAssigmentField
+Sap HR Custom Org Assigment Table,SAP_HR_CustomOrgAssigmentTable
+Sap HR RELAT Between Person And Object,SAP_HR_RELAT_BetweenPersonAndObject
+Sap HR RELAT Between Position And Object,SAP_HR_RELAT_BetweenPositionAndObject
+Set User Email By Company Employee,SetUserEmailByCompanyEmployee
+Events Summary Mail - Footer,DailyEmailFooter
+Events Summary Mail - Formatted footer,DailyEmailFormatedFooter
+Events Summary Mail - Formatted header,DailyEmailFormatedHeader
+Events Summary Mail - Header,DailyEmailHeader
+Events Summary Mail - Subject,DailyEmailSubject
+Real Time Mail - Email body content,EmailBodyContentFileName
+Real Time Mail - Header subject,HeaderSubjectFileName
+Show local date and time for each event,ShowLocalTime
+Show system's date and time for each event,ShowSystemTime
+Waiting decision mail subject,EmailSubject
+Enable Apply Changes From Authorization Simulation in Activity to Role,EnableApplyChangesFromAuthorizationSimulation
+Enable Apply Changes From Authorization Simulation in Role to User,EnableApplyChangesFromAuthorizationSimulationRoleToUser
+Pathlock Role For Apply Changes in Role to User,ProfileTailorRoleForApplyChangesInAuthorizationSimulationRoleToUser
+Role Builder Systems Ids,RoleBuilder_SystemsIds
+Role Builder Workflow Type,RoleBuilder_WorkflowTypeId
+SoD Resolver Workflow Type,SodResolver_WorkflowTypeId
+Workflow Type to Add or Remove Activities from Role in Activity to Role,AddOrRemoveActivitiesFromRoleWorkflowTypeId
+Workflow Type to Add Roles to User,AddRolesWorkflowTypeId
+Workflow Type to Lock User Accounts,LockUserWorkflowTypeId
+Workflow Type to Remove Activities from Role,RemoveRolesActivitiesWorkflowTypeId
+Workflow Type to Remove Roles from User,RemoveRolesWorkflowTypeId
+Add Chars To Last Pattern Set Field,AddCharsToLastPatternSetField
+Add Chars To Pattern Set Field Index,AddCharsToPatternSetFieldIndex
+Business Partner Female,BusinessPartnerFemale
+Business Partner Male,BusinessPartnerMale
+Create New Doctor Sap System,CreateNewDoctorSapSystemId
+Create New Doctor Username Pattern For VMA,CreateNewDoctorUsernamePatternForVMA
+Create New User Action Text,CreateNewUserActionText
+Create New User Update Immediately,CreateNewUserUpdateImmediately
+Exchange User Creation Attempts,ExchangeUserCreationAttempts
+Gender Field,GenderField
+Gender Male Value,GenderMaleValue
+New User Account Header,NewUserAccountHeader
+New User Account Password,NewUserAccountPassword
+New User Account Username In System,NewUserAccountUsernameInSystem
+New Username Handle Spaces,NewUsernameHandleSpaces
+Password Length,PasswordLength
+Ranking For Business Role,RankingForBusinessRole
+Ranking For Org Unit,RankingForOrgUnit
+Send Password View Mail,SendPasswordViewMail
+Send Password View SMS,SendPasswordViewSMS
+Update Employee After Mailbox Creation,UpdateEmployeeAfterMailboxCreation
+Use One User Name For All,UseOneUserNameForAll
+User Account Expiration Days In Week,UserAccountExpirationDaysInWeek
+Additional activities factor,SodResolverConfig_ExtraFactor
+Additional high risk activities factor,SodResolverConfig_ExtraHighRiskFactor
+Coverage percentage factor,SodResolverConfig_CoveragePercentageFactor
+Number of roles in solution factor,SodResolverConfig_RolesInSolutionFactor
+Enable Maximum Password Age,NewPasswordRule_Enable_MaximumPasswordAge
+Enable Minimum Passowrd Age,NewPasswordRule_Enable_MinimumPasswordAge
+Enable Passowrd Must Not Contain Username,NewPasswordRule_Enable_PasswordMustNotContainUsername
+Enable Password History,NewPasswordRule_Enable_PasswordHistory
+Maximum Password Age (days),NewPasswordRule_MaximumPasswordDays
+Minimum Password Age (days),NewPasswordRule_MinimumPasswordDays
+Number of Historic Passwords to Compare with New Password,NewPasswordRule_NumberOfPasswordsInHistory
+Pathlock User Must Change Password When Login to a New Account or a Reset Account,NewPasswordRule_UserMustChangePasswordOnLoginWhenNewAccountOrResetAccount
+Portal - Font name,Portal_ItemFontName
+Portal - Font size,Portal_ItemFontSize
+Portal - Icon height,Portal_ItemIconHeight
+Portal - Icon width,Portal_ItemIconWidth
+Portal - Main page title,Portal_Header
+Portal - Show navigation path,Portal_ShowBreadCrumb
+Portal - Show page header,Portal_ShowPageHeader
+Portal - Show top banner,Portal_ShowProductHeader
+Portal - Text color,Portal_ItemFontColor
+Pathlock Remote Second Server,ProfileTailorRemoteSecondServer
+Data Display Option,RiskChartDataOption
+Number of months to display on Risk Chart,RiskChartDataNumberOfMonths
+Include composite roles,SodResolverConfig_UseCompositeRoles
+Include derived roles,SodResolverConfig_UseDerivedRoles
+Include SAP roles,SodResolverConfig_UseSapRoles
+Include unassigned roles,SodResolverConfig_UseUnassignedRoles
+CRM Role Prefix,CRM_RolePrefix
+HR Role Prefix,HR_RolePrefix
+Is Sap46 C,IsSAP46C
+POSITION Role Prefix,POSITION_RolePrefix
+Sap Application Server Postfix,SapApplicationServerPostfix
+Sap Download Data Buttons,SapDownloadDataButtons
+Sap Success Character,SapSuccessCharacter
+Sap User Exists Code,SapUserExistsCode
+Use Sap Profiles As Roles,UseSapProfilesAsRoles
+Use Sap Profiles As Roles Read Content,UseSapProfilesAsRolesReadContent
+Schedule Mail With Report,ScheduleMailWithReport
+Schedule Mail Without Report,ScheduleMailWithoutReport
+Schedule Report Body,ScheduleReportBody
+Schedule Report Body Empty Report,ScheduleReportBodyEmptyReport
+Schedule Report File Extension,ScheduleReportFileExtention
+Schedule Report Header,ScheduleReportHeader
+Send Empty Report,SendEmptyReport
+Backup File Date Format,BackupFileDateFormat
+Backup Folder Date Format,BackupFolderDateFormat
+Backup Root,BackupRoot
+Run Synchronize Authorizations In Separate Queue,RunSyncronizeAuthorizationsInSeperateQueue
+Service Name Pathlock Service,ServiceName_ProfileTailorService
+Service Name Pathlock Worker Process,ServiceName_ProfileTailorWorkerProcess
+SMS File Name Template,SMSFileNameTemplate
+SMS Folder,SMSFolder
+SMS New User Account Password,SMSNewUserAccountPassword
+Sms Sender Provider,SmsSenderProvider
+Enable SNC,EnableSNC
+Snc Mode,SncMode
+Snc Partner Name,SncPartnerName
+Snc QOP,SncQOP
+Authorization Review For SoD Activity Drill Down,AuthorizationReviewForSoDActivityDrillDown
+Authorization Review For SoD Show Dynamic Data,AuthorizationReviewForSoDShowDynamicData
+Authorization Review For SoD Show Mitigation Data,AuthorizationReviewForSoDShowMitigationData
+Automatic Workflow SoD Mitigated Fixed Day In Month,AutomaticWorkflowSoDMitigatedFixedDayInMonth
+Automatic Workflow SoD Mitigated Fixed Month In Year,AutomaticWorkflowSoDMitigatedFixedMonthInYear
+Automatic Workflow SoD Mitigated Period In Days,AutomaticWorkflowSoDMitigatedPeriodInDays
+Check Dynamic SoD On Log Records With Changes Only,CheckDynamicSoDOnLogRecordsWithChangesOnly
+Check SoD For Employees,CheckSodForEmployees
+Check SoD For Employees With Multi System Access,CheckSodForEmployeesWithMultiSystemAccess
+Compare SoD Risks Based On Causing Roles,CompareSoDRisksBasedOnCausingRoles
+Disable SoD Approval By Same User,DisableSoDApprovalBySameUser
+Dynamic SoD Check Days Back,DynamicSodCheckDaysBack
+Dynamic SoD Create Event For Single Use,DynamicSoDCreateEventForSingleUse
+Enable Async Approval For SoD Check Step,EnableAsyncApprovalForSodCheckStep
+Enable Granting Auth Object To Roles Simulation,EnableGrantingAuthObjectToRolesSimulation
+Enable Include Risk Description Column Activities Matrix Reports,EnableIncludeRiskDescriptionColumnActivitiesMatrixReports
+Enable SoD Calculation By Entity For Business Roles,EnableSoDCalculationByEntityForBusinessRoles
+Enable SoD For Object Level Only Roles,EnableSoDForObjectLevelOnlyRoles
+Enable SoD For Object Level Only Roles For Complete System Ids,EnableSoDForObjectLevelOnlyRolesForCompleteSystemIds
+Exclude Locked Activities From SoD,ExcludeLockedActivitiesFromSod
+Excluded Composite Roles From User SoD,ExcludedCompositeRolesFromUserSoD
+Impact Analysis Treat Sensitive Access Risk As SoD,ImpactAnalysisTreatSensitiveAccessRiskAsSod
+Include Authorization Objects In SoD,IncludeAuthorizationObjectsInSoD
+Include Only Dialog Users In SoD Simulation,IncludeOnlyDialogUsersInSoDSimulation
+Read Change Document When Detecting Dynamic SoD Violation,ReadChangeDocumentWhenDetectingDynamicSodViolation
+Read Change Document When Detecting Dynamic SoD Violation Min Level,ReadChangeDocumentWhenDetectingDynamicSodViolationMinLevel
+Remediation Workflows,RemediationWorkflowsSOD
+Role Advisor Number Of Rows To Calculate SoD Violation,RoleAdvisorNumberOfRowsToCalculateSodViolation
+Role Splitter Include SoD Risks With Groups,RoleSpliterIncludeSoDRisksWithGroups
+Run One Level SoD Check In Memory,RunOneLevelSoDCheckInMemory
+Run SoD Check,RunSoDCheck
+Run SoD Check For Employees,RunSoDCheckForEmployees
+Run SoD In Memory,RunSoDInMemory
+Show All Enhanced Risk Content,ShowAllEnhancedRiskContent
+Show Only End Users,ShowOnlyEndUsers
+Show SoD Combination Description,ShowSodCombinationDescription
+Show SoD Severity Description,ShowSodSeverityDescription
+Show Third Group In Dynamic SoD Violations,ShowThirdGroupInDynamicSodViolations
+So Check User SoD By Employee Authorizations,SoCheckUserSoDByEmployeeAuthorizations
+SoD Approval Step Action,SoDApprovalStepActionId
+SoD Approval Step Check SoD For Employee Level,SoDApprovalStepCheckSoDForEmployeeLevel
+SoD Check Display Text For New Transaction Role,SodCheckDisplayTextForNewTransactionRole
+SoD Check Employee SoD For Multi System Only,SoDCheckEmployeeSoDForMultiSystemOnly
+SoD Check For Automatic Activity Modes,SoDCheckForAutomaticActivityModes
+SoD Check For Company Codes By Roles,SodCheckForCompanyCodesByRoles
+SoD Check For Company Codes By Roles Org Object Name,SodCheckForCompanyCodesByRolesOrgObjectName
+SoD Check For Single System Only,SodCheckForSingleSystemOnly
+SoD Check Step Generate SoD Table With Description,SodCheckStep_GenerateSodTableWithDescription
+SoD Details Show Role Based Summary,SodDetailsShowRoleBasedSummary
+SoD Full Report Run Offline Enable,SodFullReportRunOfflineEnable
+SoD Full Report Run Offline Notifiy In Mail,SodFullReportRunOfflineNotifiyInMail
+SoD Full Report Run Offline Users,SodFullReportRunOfflineUsers
+SoD Full Report Run Offline Users Warn Threshold,SodFullReportRunOfflineUsersWarnThreshold
+SoD Full Report Show Auth Objects,SodFullReportShowAuthObjects
+SoD Full Report Show Source Role For Activities,SodFullReportShowSourceRoleForActivities
+SoD Full Report Show Source Role For Activities One Row For Each Role,SodFullReportShowSourceRoleForActivitiesOneRowForEachRole
+SoD Impact Analysis Calculator Exclude Sensitive Access,SoDImpactAnalysisCalculator_ExcludeSensitiveAccess
+SoD Impact Analysis Calculator Minimum Risk Level,SoDImpactAnalysisCalculator_MinimumRiskLevel
+SoD Mitigated Users Group,SodMitigatedUsersGroupId
+SoD Resolver Config Allowed Roles Prefix,SodResolverConfig_AllowedRolesPrefix
+SoD Resolver Config Exclude Roles With SoD,SodResolverConfig_ExcludeRolesWithSoD
+SoD Resolver Config Excluded Roles Prefix,SodResolverConfig_ExcludedRolesPrefix
+SoD Resolver Config Permissive Org Objects Mode,SodResolverConfig_PermissiveOrgObjectsMode
+SoD Resolver Config Relevent Org Object Types,SodResolverConfig_ReleventOrgObjectTypes
+SoD Resolver Max No Of Activities To Keep,SodResolver_MaxNoOfActivitiesToKeep
+SoD Resolver Max No Of Combinations To Show,SodResolver_MaxNoOfCombinationsToShow
+SoD Review Every Months,SoDReviewEveryMonths
+SoD Simulate Activities Ignore Org Level,SoDSimulateActivitiesIgnoreOrgLevel
+SoD Simulate For Authorization Sets,SoDSimulateForAuthorizationSets
+SoD Simulate For High Risk Activities,SoDSimulateForHighRiskActivities
+SoD Simulate For High Risk Roles,SoDSimulateForHighRiskRoles
+SoD Simulate For License Impact,SoDSimulateForLicenseImpact
+SoD Simulate Include Previous Violations,SoDSimulateIncludePreviousViolations
+SoD Simulate Template For Previous,SoDSimulateTemplateForPrevious
+SoD Violation Mitigation For User Will Expire Soon Days,SodViolationMitigationForUserWillExpireSoonDays
+Use Forbidden Combination With Schema Filter,UseForbiddenCombinationWithSchemaFilter
+Allow Multiple Emergency Access Requests,AllowMultipleEmergencyAccessRequests
+Display Logged Changes Drill Down,DisplayLoggedChangesDrillDown
+Emergency Access Report Template,EmergencyAccessReportTemplateId
+Notify Approver In Emergancy Access Step,NotifyApproverInEmergancyAccessStep
+Read Change Documents For Emergncy Access,ReadChangeDocumentsForEmergncyAccess
+Technical Name For Emergency Access Duration,TechnicalNameForEmergencyAccessDuration
+Technical Name For Activity Group,TechnicalNameForActivityGroup
+Technical Name For Activity Mode,TechnicalNameForActivityMode
+Technical Name For Approval Group,TechnicalNameForApprovalGroup
+Technical Name For Business Role,TechnicalNameForBusinessRole
+Technical Name For Days Until Expiration,TechnicalNameForDaysUntilExpiration
+Technical Name For Employee First Name,TechnicalNameForEmployeeFirstName
+Technical Name For Employee First Name Hebrew,TechnicalNameForEmployeeFirstNameHebrew
+Technical Name For Employee Last Name,TechnicalNameForEmployeeLastName
+Technical Name For Employee Last Name Hebrew,TechnicalNameForEmployeeLastNameHebrew
+Technical Name For Employee Organization Unit,TechnicalNameForEmployeeOrganizationUnit
+Technical Name For Employee Phone Number,TechnicalNameForEmployeePhoneNumber
+Technical Name For User Created Manually,TechnicalNameForUserCreatedManually
+Technical Name For User Group,TechnicalNameForUserGroup
+Workflow Form Managed By Technical Name,WorkflowFormManagedByTechnicalName
+Workflow Request Forward On Date Technical Name,WorkflowRequestForwardOnDateTechnicalName
+Workflow Request Replace Mode Technical Name,WorkflowRequestReplaceModeTechnicalName
+Add Role To User Action Text,AddRoleToUserActionText
+Apply Skip If Same Approver For All Previous Approvers,ApplySkipIfSameApproverForAllPreviousApprovers
+Automatic Submit Group Name,AutomaticSubmitGroupName
+Custom Action For Close User,CustomActionForCloseUser
+Disable User Name Selection,DisableUserNameSelection
+Enable Delete Action,EnableDeleteAction
+Enable Open Request By Manager,EnableOpenRequestByManager
+Locked User Cannot Submit Workflow Request,LockedUserCannotSubmitWorkflowRequest
+Manager Approved Step,ManagerApprovedStep
+New Password Forbidden Characters,NewPasswordForbiddenCharacters
+Start Step With Automatic Actions Foreach User,StartStepWithAutomaticActionsForeachUser
+Update User Role In Finish,UpdateUserRoleInFinish
+Use User Application Area Before Object Application Area,UseUserApplicationAreaBeforeObjectApplicationArea
+Workflow Debug Mode,WorkflowDebugMode
+Workflow Reminder Email Template,WorkflowRemainderEmailTemplateId
+Workflow Step Moved Back Template,WorkflowStepMovedBackTemplateId
+Workflow Wall Message Template,WorkflowWallMessageTemplate
+A Manager's Information Field As Template For User Group Description,ImportManagersToWFUserGroupDescriptionTemplate
+Create Approval Groups Of Type,ImportManagersToWFApprovalGroupTypeId
+Create One Approval Group For Each Approver,ImportManagersToWFBuildOneGroupForEachApproval
+Create User Groups Of Type,ImportManagersToWFUserGroupTypeId
+Delete Old Manager From Approval Groups,DeleteOldManagerFromApprovalGroups
+Direct Manager Dynamic Approval Group Type,DirectManagerDynamicApprovalGroupTypeId
+Enable Import Approvers,ImportManagersToWF
+Format Group Names For Each Approver As "OfficeBldg FullName HRDepartment",ParseDepartmentFields
+Ignore These Organization Unit Types,ImportManagersToWFIgnoreDepartmentTypes
+Import Managers To Workflow Based On Direct Manager Field,ImportManagersToWFBasedOnDirectManagerField
+Managers Groups In Active Directory,ImportManagersToWFActiveDirectoryManagersGroups
+#Organization Structure Provider,OrganizationStructureProvider
+Populate Workflow Approval Groups With Approvers,ImportApproversFromOrganizationStrcture
+Text For Inactive Workflow Approval Group,ImportManagersToWFApprovalGroupInactiveText
+User with Domain Template for New Approver,ImportManagersToWFUserWithDomainTemplate
+Allowed Upload Content Type,AllowedUploadContentType
+Allowed Upload File Types,AllowedUploadFileTypes
+Maximum Workflow Upload File Size,MaximumWorkflowUploadFileSize
+Not Allowed Characters Upload File,NotAllowedChractersUploadFile
+Show File Upload Technical Error,ShowFileUploadTechnicalError
+Workflow Upload Forbidden File Types,WorkflowUploadForbiddenFileTypes
+Comment For Approved After Step Finished,CommentForApprovedAfterStepFinished
+Daily EMail Add Link To Waiting Requests,DailyEMailAddLinkToWaitingRequests
+Daily EMail Link To Waiting Requests Text,DailyEMailLinkToWaitingRequestsText
+Help Desk Approval Group Type,HelpDeskApprovalGroupTypeId
+Help Desk Email Message Template,HelpDeskEmailMessageTemplateId
+Inform Requester Step Approved Email Template,InformRequesterStepApprovedEmailTemplateId
+Mail Listener Approved Keywords,MailListnerApprovedKeywords
+Mail Listener Check Emails Every XMinutes,MailListener_CheckEmailsEveryXMinutes
+Mail Listener Decline Keywords,MailListnerDeclineKeywords
+MailTemplateFormatting,MailTemplateFormating
+No Email Recipients Template,NoEmailRecipientsTemplateId
+Notify Approver Workflow Approved Template,NotifyApproverWorkflowApprovedTemplateId
+Notify Approver Workflow Declined Template,NotifyApproverWorkflowDeclinedTemplateId
+Request Approved Template,RequestApprovedTemplateId
+Request Declined,RequestDeclined
+Request Denied Template,RequestDeniedTemplateId
+Request Recieved Template,RequestRecievedTemplateId
+Send Approval Information To Requester,SendApprovalInformationToRequester
+Send Workflow Reminder,SendWorkflowReminder
+Send Workflow Reminder Every,SendWorkflowReminderEvery
+Take Mail From Employee Record,TakeMailFromEmployeeRecord
+Allow Edit Workflow Form Role,AllowEditWorkflowFormRole
+Allow Upload For Workflow Instance,AllowUploadForWorkflowInstance
+Allow Upload To Workflow By Any User,AllowUploadToWorkflowByAnyUser
+Authorization Request Additional Number Of Multiple Rows,AuthorizationRequestAdditionalNumberOfMultipleRows
+Authorization Request Comments Textbox Number Of Rows,AuthorizationRequestCommentsTextboxNumberOfRows
+Authorization Request Header,AuthorizationRequestHeader
+Authorization Request Initial Number Of Multiple Rows,AuthorizationRequestInitialNumberOfMultipleRows
+Authorization Request Maximum Number Of Multiple Rows,AuthorizationRequestMaximumNumberOfMultipleRows
+Authorization Request Override Username Text,AuthorizationRequestOverrideUsernameText
+Authorization Request Status,AuthorizationRequestStatus
+Authorization Request Text,AuthorizationRequestText
+Business Process Workflow Type,BusinessProcess_WorkflowTypeId
+Check Deleted Users By Attribute In Workflow Scheduled Actions,CheckDeletedUsersByAttributeInWorkflowScheduledActions
+Custom Roles That Allow Workflow Manager,CustomRolesThatAllowWorkflowManager
+Default User For Pathlock Workflow,DefaultUserForProfileTailorWorkflow
+Disable Delete Button On Upload Files For Workflow Instance,DisableDeleteButtonOnUploadFilesForWorkflowInstance
+Disable Delete Comment From Workflow,DisableDeleteCommentFromWorkflow
+Disable Free Request Validator,DisableFreeRequestValidator
+Disable Preview Of Workflow Form,DisablePreviewOfWorkflowForm
+Disable Role Request Type,DisableRoleRequestType
+Display Denied Workflow Step,DisplayDeniedWorkflowStep
+Display Role Type In Workflow Role Mapping,DisplayRoleTypeInWorkflowRoleMapping
+Display Workflow Assign Button,DisplayWorkflowAssignButton
+Display Workflow Form Viewer,DisplayWorkflowFormViewer
+Display Workflow Open Request Validation Popup,DisplayWorkflowOpenRequestValidationPopup
+Emergency Access Report Include Workflow Actions,EmergencyAccessReportIncludeWorkflowActions
+Emergency Access Take Only Workflow Affected Roles,EmergencyAccessTakeOnlyWorkflowAffectedRoles
+Enable Approved Emergency Access,EnableApprovedEmergencyAccess
+Enable Autosave Of Roles List On Role Update,EnableAutosaveOfRolesListOnRoleUpdate
+Enable Custom Workflow Approval Group Resolving,EnableCustomWorkflowApprovalGroupResolving
+Enable Digital Sign For Workflow,EnableDigitalSignForWorkflow
+Enable Rich Text Comment In Workflow Approval,EnableRichTextCommentInWorkflowApproval
+Enable Service Now Open Sub Ticket For Each Workflow,EnableServiceNowOpenSubTicketForEachWorkflow
+Enable Workflow Step Queue,EnableWorkflowStepQueue
+Force Workflow Role Update Display,ForceWorkflowRoleUpdateDisplay
+Hide Role Advisor In Workflow Screens,HideRoleAdvisorInWorkflowScreens
+Hide System Field In Workflow Requests,HideSystemFieldInWorkflowRequests
+Hide Workflow In Pathlock Header,HideWorkflowInProfileTailorHeader
+Include Employee ADUser Name In Workflow Parameters,IncludeEmployeeADUserNameInWorkflowParaemters
+Insert Workflow Headers To Mail Body,InsertWorkflowHeadersToMailBody
+Invalid Approver Text,InvalidApproverText
+Last Workflow Action To Perform,LastWorkflowActionToPerformId
+Log Workflow Requests From Email Accounts,LogWorkflowRequestsFromEmailAccounts
+Modern UIShow Workflows Menu,ModernUIShowWorkflowsMenu
+Moved Back,MovedBack
+Override Company Logo In Portal,OverrideCompanyLogoInPortal
+Override The Next Workflow Step,OverrideTheNextWorkflowStep
+Pathlock Role For Allow Decline Of Any Workflow,ProfileTailorRoleForAllowDeclineOfAnyWorkflow
+Pathlock Role For Allow Upload To Workflow,ProfileTailorRoleForAllowUploadToWorkflow
+Perform Manual Workflow Actions On Done,PerformManualWorkflowActionsOnDone
+Perform Workflow Actions In Background,PerformWorkflowActionsInBackground
+Ranking For Workflow Type,RankingForWorkflowType
+Reassess Workflow Risks Comment,ReassessWorkflowRisksComment
+Refresh User On Workflow Completed,RefreshUserOnWorkflowCompleted
+Replace Template For Workflow Parameter,ReplaceTemplateForWorkflowParameter
+Request Approved,RequestApproved
+Request Details Text For Actions To Add Delete Link,RequestDetailsTextForActionsToAddDeleteLink
+Run Impact Analysis On Workflow Role Owner Change,RunImpactAnalysisOnWorkflowRoleOwnerChange
+Sap Users System,SapUsersSystemId
+Send Mail On Workflow Approved,SendMailOnWorkflowApproved
+Send Mail On Workflow Declined,SendMailOnWorkflowDeclined
+Send Mail On Workflow Declined To Current Approvers,SendMailOnWorkflowDeclinedToCurrentApprovers
+Send Mail On Workflow Started,SendMailOnWorkflowStarted
+Send Workflow Admin Mail Template To Fallback Approval Group,SendWorkflowAdminMailTemplateToFallbackApprovalGroup
+Send Workflow Mails,SendWorkflowMails
+Send Workflow Reminder For Authorization Reviews,SendWorkflowReminderForAuthorizationReviews
+Send Workflow Reminder For Requests,SendWorkflowReminderForRequests
+Send Workflow Reminder On Days,SendWorkflowReminderOnDays
+Show Cancel Button On Workflow Request Form,ShowCancelButtonOnWorkflowRequestForm
+Show Default Text For Empty Workflow Form Fields,ShowDefaultTextForEmptyWorkflowFormFields
+Show Employee Info In Workflow Form,ShowEmployeeInfoInWorkflowForm
+Show Event Details In Workflow,ShowEventDetailsInWorkflow
+Show Open On On Workflow,ShowOpenOnOnWorkflow
+Show Print Workflow Requests,ShowPrintWorkflowRequests
+Show Workflow In Pathlock Header For All User Types,ShowWorkflowInProfileTailorHeaderForAllUserTypes
+Show Workflow Waiting For Approval Group,ShowWorkflowWaitingForApprovalGroup
+Show Workflow Waiting For Approvers,ShowWorkflowWaitingForApprovers
+Show Workflow Waiting For Approvers Separator,ShowWorkflowWaitingForApproversSeparator
+Skipped Steps In Workflow Flow Documention,SkippedStepsInWorkflowFlowDocumention
+Skipped Steps In Workflow Flow Documention Notation,SkippedStepsInWorkflowFlowDocumentionNotation
+Take Workflow Mail From Requester,TakeWorkflowMailFromRequester
+Use Default Workflow Mail Templates,UseDefaultWorkflowMailTemplates
+User Validity Remainder Workflow Type,UserValidityRemainderWorkflowTypeId
+Verify Workflow Actions By Failure Mode,VerifyWorkflowActionsByFailureMode
+Verify Workflow Actions Not Done Text,VerifyWorkflowActionsNotDoneText
+Verify Workflow Actions Not Verified Text,VerifyWorkflowActionsNotVerifiedText
+Workflow Action Include Workflow Type In Details Mail,WorkflowActionIncludeWorkflowTypeInDetailsMail
+Workflow Action Send Mail For Each Employee,WorkflowActionSendMailForEachEmployee
+Workflow Actions Disabled Color,WorkflowActionsDisabledColor
+Workflow Actions Form Active Color,WorkflowActionsFormActiveColor
+Workflow Actions Notifier Worker Process Open On,WorkflowActionsNotifierWorkerProcess_OpenOn
+Workflow Actions Notifier Worker Process System,WorkflowActionsNotifierWorkerProcess_System
+Workflow Actions Notifier Worker Process User Full Name,WorkflowActionsNotifierWorkerProcess_UserFullName
+Workflow Actions Notifier Worker Process User Name,WorkflowActionsNotifierWorkerProcess_UserName
+Workflow Actions Notifier Worker Process Waiting Since,WorkflowActionsNotifierWorkerProcess_WaitingSince
+Workflow Actions Notifier Worker Process Workflow Instance,WorkflowActionsNotifierWorkerProcess_WorkflowInstanceId
+Workflow Additional Recipient On Request Mail,WorkflowAdditionalRecipientOnRequestMail
+Workflow Admin,WorkflowAdmin
+Workflow Allow Return Request To Requester,WorkflowAllowReturnRequestToRequester
+Workflow Approval Group Type Id For Fallback,WorkflowApprovalGroupTypeIdForFallback
+Workflow Approval Group Type Id For VIP,WorkflowApprovalGroupTypeIdForVIP
+Workflow Approved,WorkflowApproved
+Workflow Attachments Files,WorkflowAttachmentsFiles
+Workflow Authorization Certification Notify Admin Format,WorkflowAuthorizationCertificationNotifyAdminFormat
+Workflow Authorization Review Reminder Container,WorkflowAuthorizationReviewReminderContainer
+Workflow Automatic Steps Approved By Text,WorkflowAutomaticStepsApprovedByText
+Workflow Comments Button Text Override,WorkflowCommentsButtonTextOverride
+Workflow Comments Email Template,WorkflowCommentsEmailTemplateId
+Workflow Declined,WorkflowDeclined
+Workflow Details Screen Tabs View,WorkflowDetailsScreenTabsView
+Workflow Display Date And Time Format,WorkflowDisplayDateAndTimeFormat
+Workflow Display Date Format,WorkflowDisplayDateFormat
+Workflow Employee Card,Workflow_EmployeeCard
+Workflow Export Include Approval Groups,WorkflowExportIncludeApprovalGroups
+Workflow Form Custom Procedure Backward Compatibility Mode,WorkflowFormCustomProcedureBackwordCompatabilityMode
+Workflow Form Field Title Width,WorkflowFormFieldTitleWidth
+Workflow Header Direction Left to Right,WorkflowHeaderDirectionLTR
+Workflow Inbox Group Items By Category,WorkflowInboxGroupItemsByCategory
+Workflow Inbox Show Request Data Template Text,WorkflowInboxShowRequestDataTemplateText
+Workflow Instance Data Sorted By Waiting Since,WorkflowInstanceDataSortedByWaitingSince
+Workflow Item Admin Notification Format,WorkflowItemAdminNotificationFormat
+Workflow Links Target,WorkflowLinksTarget
+Workflow Localization By Field,WorkflowLocalizationByFieldId
+Workflow Localization By Field Text,WorkflowLocalizationByFieldText
+Workflow Mail Include Child Requests In Approval Flow,WorkflowMailIncludeChildRequestsInApprovalFlow
+Workflow Reminder Authoirization Certification Format,WorkflowReminderAuthoirizationCertificationFormat
+Workflow Reminder Container,WorkflowReminderContainer
+Workflow Reminder Container As Table,WorkflowReminderContainerAsTable
+Workflow Reminder Item Bullet,WorkflowReminderItemBullet
+Workflow Reminder Item Format,WorkflowReminderItemFormat
+Workflow Replace Authorization Replace All Text,WorkflowReplaceAuthorizationReplaceAllText
+Workflow Report Default Query,WorkflowReportDefaultQuery
+Workflow Report Default Role,WorkflowReportDefaultRole
+Workflow Request Send Reminder On Date Technical Name,WorkflowRequestSendReminderOnDateTechnicalName
+Workflow Risk Mitigaton Name And Description,WorkflowRisk_MitigatonNameAndDescription
+Workflow Risk Use Risk Tag,WorkflowRisk_UseRiskTag
+Workflow Risks Disable Filter By Schema Owner,WorkflowRisksDisableFilterBySchemaOwner
+Workflow Risks Simple Mode,WorkflowRisksSimpleMode
+Workflow Role Updates Allow Copy In Multiple Systems,WorkflowRoleUpdatesAllowCopyInMultipleSystems
+Workflow Role Updates Disable Remove Current Roles,WorkflowRoleUpdatesDisableRemoveCurrentRoles
+Workflow Section Width,WorkflowSectionWidth
+Workflow Status,WorkflowStatus
+Workflow Technical Names For Shared Components,WorkflowTechnicalNamesForSharedComponents
+Workflow Type For Process Verification,WorkflowTypeForProcessVerification
+Workflow Type Upload Overwrite,WorkflowTypeUploadOverwrite
+Workflow Wall Post Comment,WorkflowWallPostComment

@@ -1,36 +1,28 @@
-# NewUserAccountUsernameInSystem Parameter Documentation
+# New User Account Username In System
 
-## Category
-New Employees Creation
+**Technical Name:** NewUserAccountUsernameInSystem
 
-## Default Value
-Not applicable (N/A)
+**Category:** User Management 
 
-## Impact Level
-Medium
+**Default Value:** None 
 
-## Description
-The `NewUserAccountUsernameInSystem` parameter is used to specify the username of a new user account within a specified system. It forms part of the automated workflows for creating new user accounts across various systems as managed by the Pathlock Cloud GRC platform. This parameter is dynamically populated based on the system in question and the username assigned to the new user.
+**Impact Level:** High 
 
-## Business Impact
-Proper configuration and usage of this parameter directly influence the efficiency and reliability of onboarding new employees into an organization's IT ecosystem. It ensures that user accounts are correctly set up with appropriate usernames, facilitating smooth access to necessary systems and resources. This can significantly reduce the time it takes for new employees to become productive and mitigate the risk of access-related issues that can arise from incorrect account setup.
+**Description:**
+This parameter specifies the username for newly created user accounts within the Pathlock Cloud GRC platform. It is essential for defining unique identifiers for new users in the system, ensuring that each account can be individually managed and audited.
 
-## Technical Impact when Configured
-When `NewUserAccountUsernameInSystem` is correctly configured:
-- New user accounts are automatically assigned usernames consistent with organizational naming conventions.
-- Reduces manual intervention and human error in the account creation process.
-- Enhances the security posture by ensuring that access rights and usernames are correctly aligned with organizational policies.
+**Business Impact:**
+Proper configuration of this parameter ensures that new user accounts are easily identifiable and traceable, simplifying user management and enhancing security posture. It also prevents potential conflicts by avoiding duplicate usernames, thereby supporting effective access control and compliance with security policies.
 
-## Examples Scenario
-Consider an organization that utilizes multiple systems (e.g., email, HR management system, and an internal communication platform). When a new employee is onboarded:
-- The `NewUserAccountUsernameInSystem` parameter is utilized within the Pathlock Cloud GRC platform to specify the employee's username in each of these systems.
-- For example, if the new employee's name is John Doe, the parameter could be configured to create usernames such as "jdoe" for the email system, "john.doe" for the HR management system, and "JDoe" for the internal communication platform.
+**Technical Impact when configured:** 
+Configuring this parameter affects the creation of new user accounts by setting a predetermined structure or naming convention for usernames. This can impact both the security and organization of user accounts within the system. 
 
-## Related Settings
-- `NewUserAccountPassword`: Configures the default password for new user accounts.
+**Examples Scenario:** 
+- During the onboarding of a new employee, the system automatically generates a username based on predefined criteria, ensuring it fits the organization's standard naming conventions.
+- In a scenario where batch user creation is required, this parameter ensures that all new accounts adhere to a uniform username format, facilitating easier management and integration.
 
-## Best Practices
-- **Configure when**: Setting up automated workflows for creating new user accounts. Ensure that the chosen usernames align with the organization's naming conventions and policies.
-- **Avoid when**: Usernames are to be manually assigned or when a system requires unique username configurations that cannot be standardized.
+**Related Settings:** None 
 
-**Note**: The specific implementation and configuration details for `NewUserAccountUsernameInSystem` will vary depending on the organizational requirements and the technical environment. It is crucial to collaborate with IT security, HR, and system administrators to ensure that this parameter is optimally configured.
+**Best Practices:** 
+- **Configure when:** Setting up the system for the first time or when revising user account creation policies to ensure consistency and adherence to security policies.
+- **Avoid when:** There is a need for highly customized user names that cannot follow a uniform pattern, or when such configurations might lead to conflicts with existing usernames or policies.

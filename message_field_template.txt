@@ -1,0 +1,35 @@
+# Message Fields Documentation for Pathlock Cloud 
+
+## Overview
+
+### Description
+Message Fields are template placeholders used in email notifications and workflow communications within the Pathlock Cloud platform. They allow dynamic content insertion into email templates and workflow messages, making communications contextual and personalized.
+
+### Business Usage
+These fields are primarily used when:
+- Configuring email notification templates
+- Setting up workflow approval communications
+- Creating custom messages for different workflow stages
+- Building links for user actions in emails
+
+### Example Template
+Here is a sample email template using message fields:
+
+    Subject: Access Request #$$requestId$$ Requires Your Approval
+    
+    Dear $$groupOrManager$$,
+    
+    A new access request requires your review and approval:
+    
+    Request ID: $$requestId$$
+    Requester: $$userName$$
+    Request Type: $$requestType$$
+    Comments: $$comment$$
+    
+    Click here to approve: $$beginApproveStepLink$$
+    Click here to reject: $$beginRejectStepLink$$
+    
+    Thank you,
+    $$adminName$$
+
+## Parameter Details

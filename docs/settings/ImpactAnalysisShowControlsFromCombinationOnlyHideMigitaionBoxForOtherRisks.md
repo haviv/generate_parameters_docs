@@ -1,36 +1,23 @@
+# Impact Analysis Show Controls From Combination Only Hide Migitaion Box For Other Risks
 
-# ImpactAnalysisShowControlsFromCombinationOnlyHideMigitaionBoxForOtherRisks Parameter Documentation
+**Technical Name:** ImpactAnalysisShowControlsFromCombinationOnlyHideMigitaionBoxForOtherRisks
 
-## Category:
-Security & Compliance
+**Category:** Workflow
 
-## Default Value:
-Not specified in the code provided. Please refer to the application's global settings or documentation for the default setting.
+**Default Value:** True
 
-## Impact Level:
-High
+**Impact Level:** Medium
 
-## Description:
-This parameter controls the visibility and behavior of UI elements related to mitigation controls and forbidden risk combinations within certain workflows. When enabled, it ensures that mitigation options are only displayed for risks associated with a specific forbidden combination, while hiding these options for all other types of risks.
+**Description:** This parameter controls the visibility of the mitigation options within the workflow for risks in the Pathlock Cloud GRC platform. When enabled, it limits the display of control options to only those that are part of a predefined combination, and hides the mitigation box for other unrelated risks.
 
-## Business Impact:
-Enabling this setting can streamline the workflow for users by showing only the relevant mitigation controls tied to specific risk combinations, potentially reducing confusion and ensuring that mitigation efforts are focused correctly. It helps in maintaining a clear and effective approach towards risk mitigation, making the user experience more intuitive in risk management tasks.
+**Business Impact:** Enhancing the focus on relevant mitigation measures streamlines the risk management process. This can lead to more effective and efficient control over potential security, compliance, or operational risks, directly impacting the organization's ability to safeguard its assets and reputation.
 
-## Technical Impact when configured:
-- The visibility of mitigation control dropdowns or options within the specified workflow context is conditional based on the presence of forbidden risk combinations.
-- Ensures that the system focuses on displaying controls only for configured risk combinations, making other risks appear less cluttered by hiding mitigation-related UI elements.
-- Can impact how users interact with the application's risk management features by either simplifying or limiting their options based on the context.
+**Technical Impact when configured:** Once configured, the drop-down list within the risk workflow will exclude generic mitigation options and instead, highlight specific controls related to the risk combination under assessment. This limitation aids in preventing the selection of irrelevant or ineffective controls.
 
-## Example Scenario:
-In a scenario where an organization has identified specific combinations of actions or permissions that pose a particular risk, this parameter can be activated to ensure that only those combinations receive focus in the workflow. For example, if a combination of "Access to Financial Records" and "Bank Account Modification" is flagged as a forbidden risk combination, enabling this setting would hide mitigation options for risks not part of this combination, thus highlighting and prioritizing the mitigation efforts for the critical risk combination.
+**Examples Scenario:** If an organization identifies a risk related to "Unapproved Access to Financial Records," this setting, when enabled, would ensure that the mitigation options presented are only those related to the specific access and security controls for financial records, rather than all potential access controls within the system.
 
-## Related Settings:
-- RiskIdentificationParameters: May influence what is considered a risk or a forbidden combination.
-- MitigationControlVisibilitySettings: General settings that may affect the visibility of mitigation controls across the application.
+**Related Settings:** ActiveDirectoryProviderCalculateEmploymentStatusBasedOnADStatus (It's important to ensure that employment status, which could affect mitigation strategies, is accurately calculated and considered when this feature is in use).
 
-## Best Practices:
-- **Configure when**: There is a clear distinction and understanding of which risk combinations require specific mitigation controls. It's especially useful in environments where risk management is prioritized, and certain risk combinations are identified as critical.
-- **Avoid when**: The determination of risky combinations is not clear, or if users require visibility into all available mitigation options to make informed decisions across a variety of risks.
-
-## Context:
-This parameter is part of the risk management configuration in the ProfileTailor GRC application. It plays a critical role in customizing the user experience and effectiveness of risk management workflows by tailoring the visibility of controls and mitigation options based on the configuration of risky combinations.
+**Best Practices:** 
+- **Configure when:** You have clearly defined risk-control combinations and want to ensure that the mitigation efforts are focused and relevant.
+- **Avoid when:** The organization's risk profile is highly dynamic, or when a broader set of potential mitigations could be relevant for review and consideration.

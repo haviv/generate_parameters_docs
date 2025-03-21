@@ -1,41 +1,37 @@
-# CheckProcessQueueEvery Parameter Documentation
+# Check Process Queue Every
 
-## Category
-- System Configuration
+**Technical Name:** CheckProcessQueueEvery
 
-## Default Value
-- `"m:10"` (Every 10 minutes)
+**Category:** Configuration
 
-## Impact Level
-- Medium
+**Default Value:** Not provided in the code references
 
-## Description
-The `CheckProcessQueueEvery` parameter is used to configure the frequency at which the system checks and processes its queue. This setting is critical for systems that require timely processing of queued tasks or events, such as job scheduling, event handling, and real-time data processing.
+**Impact Level:** Medium
 
-## Business Impact
-Adjusting this parameter impacts how quickly the system can respond to queued events or tasks. A lower value will make the system more responsive to new events at the potential cost of higher resource consumption. Conversely, a higher value reduces the workload on the system at the risk of delayed processing.
+**Description:**
 
-## Technical Impact when Configured
-- **Increased Responsiveness**: Lowering the time interval (`m:x`) makes the system check its queue more frequently, potentially leading to faster processing of tasks.
-- **Resource Utilization**: More frequent checks may lead to higher CPU and memory usage, impacting the overall system performance especially in resource-constrained environments.
-- **Throughput vs. Latency**: There's a trade-off between throughput (how much work is done over a period) and latency (how long it takes to respond to an event). Configuring this setting optimally requires balancing these two aspects based on the specific needs of the business.
+The `CheckProcessQueueEvery` parameter is designed to define the frequency at which the system checks the process queue for new tasks or jobs to execute. This is crucial for ensuring timely execution and processing within the Pathlock Cloud GRC platform's operational framework.
 
-## Example Scenario
-- **Real-Time Data Processing**: For an application processing real-time data, reducing the `CheckProcessQueueEvery` parameter to `m:5` ensures that data is processed and made available to users more quickly.
-- **Batch Jobs**: In contrast, for systems running batch jobs where immediate processing is not critical, increasing the parameter to `m:15` or higher reduces the system's load without significantly affecting user experience.
+**Business Impact:**
 
-## Related Settings
-- `InitTimerShortSampling`
-- `InitTimerReadSapLog`
-- Other scheduler-related settings that define specific task frequencies.
+Setting this parameter optimally ensures that tasks are processed efficiently, reducing delays and potential bottlenecks in system operations. It directly affects the system's responsiveness to new or pending tasks, impacting overall system performance and user satisfaction.
 
-## Best Practices
-- **Configure When**:
-  - Immediate or near-real-time processing is necessary.
-  - The system is underutilized, and resources are available for increased polling.
-- **Avoid When**:
-  - The system is resource-constrained.
-  - Tasks do not require immediate processing, allowing for longer intervals between checks to conserve resources.
+**Technical Impact: when configured**
 
-## Context
-The `CheckProcessQueueEvery` parameter plays a pivotal role in determining how the backend processes and workflows within PathlockGRC's ProfileTailor service and application behave, directly impacting performance and responsiveness. Adjusting this setting requires an understanding of the current system load, resource availability, and the business's temporal requirements for task processing.
+Properly configuring this parameter can help in balancing system load and improving the execution flow of tasks. A lower value might increase system responsiveness but could also lead to higher CPU usage, whereas a higher value might reduce system load at the cost of responsiveness.
+
+**Examples Scenario:**
+
+- **Scenario 1:** If the system is expected to handle a high volume of short, rapid tasks, setting a lower `CheckProcessQueueEvery` value could improve the throughput by reducing the wait time for each task to be picked up for processing.
+  
+- **Scenario 2:** In a less demanding environment, where tasks are less time-sensitive, setting a higher value could help in conserving system resources without significantly impacting user experience.
+
+**Related Settings:** 
+
+- `TimeSliceInHoursForReadLog`
+
+**Best Practices:** 
+
+- **configure when:** Adjust the `CheckProcessQueueEvery` parameter based on the operational workload and processing requirements of your organization to maintain an optimal balance between system responsiveness and resource utilization.
+  
+- **avoid when:** Avoid setting this parameter to an extremely low value in environments with low system resources or if the task queue is usually light, to prevent unnecessary system strain.

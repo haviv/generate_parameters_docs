@@ -28,7 +28,7 @@ def find_param_references(code_folder: str, param_name: str) -> List[dict]:
     """
     results = []
     MAX_CONTEXT_LENGTH = 500  # Maximum characters per context
-    CONTEXT_LINES = 20  # Number of lines before and after the match
+    CONTEXT_LINES = 40  # Number of lines before and after the match
     WORKFLOW_INTERFACES = ["IWorkflowAction", "IWorkflowActionWithVerify", "IWorkflowActionParameters"]
     
     try:
@@ -90,12 +90,23 @@ def find_param_references(code_folder: str, param_name: str) -> List[dict]:
                             
                             # Only take the first occurrence in each file to reduce context
                             break
-    except subprocess.CalledProcessError:
+    
+    except subprocess.CalledProcessError as e:
         # No matches found
-        pass
+        print(f"Error in grep command: {e}")
+        return results
+    except UnicodeDecodeError as e:
+        print(f"Unicode decode error: {e}")
+        print(f"File causing error: {file_path if 'file_path' in locals() else 'unknown'}")
+        return results
+    except Exception as e:
+        print(f"Unexpected error: {str(e)}")
+        print(f"Error type: {type(e).__name__}")
+        print(f"Current file being processed: {file_path if 'file_path' in locals() else 'unknown'}")
+        return results
     
     # Limit the number of files if we found too many
-    MAX_FILES = 5
+    MAX_FILES = 8
     if len(results) > MAX_FILES:
         print(f"Found {len(results)} files, limiting to {MAX_FILES} for token management")
         results = results[:MAX_FILES]
@@ -133,14 +144,23 @@ def generate_param_documentation(param_info: dict, references: List[dict]) -> st
     """
     Generate documentation for a parameter using OpenAI API.
     """
-    # Load environment variables
-    load_dotenv()
+    # Load environment variables from .env file directly
+    env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env')
+    if not os.path.exists(env_path):
+        raise ValueError(f".env file not found at {env_path}")
     
-    # Initialize OpenAI client with API key
-    api_key = os.getenv("OPENAI_API_KEY")
+    with open(env_path, 'r') as f:
+        for line in f:
+            if line.strip() and not line.startswith('#'):
+                key, value = line.strip().split('=', 1)
+                if key == 'OPENAI_API_KEY':
+                    api_key = value
+                    break
+    
     if not api_key:
-        raise ValueError("OPENAI_API_KEY not found in environment variables")
+        raise ValueError("OPENAI_API_KEY not found in .env file")
     
+    print(f"Using API key from .env file: {api_key[:10]}...")
     client = OpenAI(api_key=api_key)
     
     # Prepare the context from all references
@@ -230,9 +250,6 @@ def generate_doc(code_folder: str, params_file: str, output_folder: str):
         params_file (str): Path to the file containing parameter names and display names
         output_folder (str): Path where the generated documentation should be stored
     """
-    # Load environment variables
-    load_dotenv()
-    
     # Ensure output folder exists
     settings_docs_folder = os.path.join(output_folder, "settings")
     os.makedirs(settings_docs_folder, exist_ok=True)
@@ -253,7 +270,6 @@ def generate_doc(code_folder: str, params_file: str, output_folder: str):
             
             # Find all references to the parameter in the code
             references = find_param_references(code_folder, param_info['param_name'])
-            
             if not references:
                 print(f"No references found for parameter: {param_info['param_name']}")
                 # Save checkpoint even for skipped parameters
@@ -349,14 +365,23 @@ def generate_action_documentation(class_name: str, file_path: str, class_code: s
     """
     Generate documentation for a workflow action using OpenAI API.
     """
-    # Load environment variables
-    load_dotenv()
+    # Load environment variables from .env file directly
+    env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env')
+    if not os.path.exists(env_path):
+        raise ValueError(f".env file not found at {env_path}")
     
-    # Initialize OpenAI client with API key
-    api_key = os.getenv("OPENAI_API_KEY")
+    with open(env_path, 'r') as f:
+        for line in f:
+            if line.strip() and not line.startswith('#'):
+                key, value = line.strip().split('=', 1)
+                if key == 'OPENAI_API_KEY':
+                    api_key = value
+                    break
+    
     if not api_key:
-        raise ValueError("OPENAI_API_KEY not found in environment variables")
+        raise ValueError("OPENAI_API_KEY not found in .env file")
     
+    print(f"Using API key from .env file: {api_key[:10]}...")
     client = OpenAI(api_key=api_key)
     
     # Create the prompt for OpenAI
@@ -382,10 +407,28 @@ Action name: (header format)
     Mandatory: yes/no)
     Important: group the parametes into 2 buckets: basic and advanced. understand from the code what are the must have, mandatory params and what are not and they are extract config
     Important: when you write the descripiton, add the explanantion on how its being used in the code, what is the flow that uses it, under which context it is being used.
+
 **Business impact:** (describe the business impact of the action)
 **Example of usage:** (provide an example of usage of the action)
 **Prerequisites:** (Clearly state required pre-conditions or permissions the user must have to execute this action.)
 **Error Handling and Troubleshooting:** (List common error scenarios, their probable causes, and recommended solutions or workarounds.)
+
+Important:Parameters format example:
+**Parameters:**
+
+_Basic Parameters:_
+
+- Name: usernameParameter
+  - Description: The username or comma-separated usernames to be added to the specified approval group. The system first checks this parameter; if it is not provided, it uses the username associated with the current workflow instance.
+  - Default value: N/A
+  - Mandatory: No
+
+_Advanced Parameters:_
+
+- Name: ReplaceApprovers
+  - Description: Determines whether to replace all existing approvers in the target group with the new user(s) or to add the new user(s) alongside existing approvers. This boolean parameter enables flexibility in managing group memberships.
+  - Default value: false
+  - Mandatory: No
 
 the next is the code of the action:
 {class_code}
@@ -464,16 +507,193 @@ def generate_actions_doc(code_folder: str, actions_file: str, output_folder: str
     
     print("\nAll workflow actions processed successfully!")
 
+def generate_message_field_documentation(field_name: str, file_content: str) -> str:
+    """
+    Generate documentation for a message field using OpenAI API.
+    """
+    # Load environment variables from .env file directly
+    env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env')
+    if not os.path.exists(env_path):
+        raise ValueError(f".env file not found at {env_path}")
+    
+    with open(env_path, 'r') as f:
+        for line in f:
+            if line.strip() and not line.startswith('#'):
+                key, value = line.strip().split('=', 1)
+                if key == 'OPENAI_API_KEY':
+                    api_key = value
+                    break
+    
+    if not api_key:
+        raise ValueError("OPENAI_API_KEY not found in .env file")
+    
+    client = OpenAI(api_key=api_key)
+    
+    # Create the prompt for OpenAI
+    prompt = f"""
+You are documenting message fields used in email templates for Pathlock Cloud, an Identity and GRC platform.
+I will provide you with the code that uses this field, go over it and understand what this field is used for based on the code.
+Dont guess, you should be able to understand what this field is used for based on the code.
+The field {field_name} is used in email templates sent during workflow processes.
+****Super Important:When you provide example do it int the next format:
+    Approve directly: $$beginApproveStepLink$$
+
+    After rendering:
+
+    Approve directly:  
+    <a href="https://cloud.pathlock.com/approve?id=45321&action=1">Approve</a>
+After adding the example, dont add any other text, just the example.
+
+Based on the code context below, generate documentation for this message field in the following format:
+
+**Field Name:** {field_name}
+
+**Description:** (Explain what this field represents and its purpose in email templates)
+
+**Usage Context:** (Explain when and where this field is typically used)
+
+**Example:** 
+
+
+Here's the relevant code context:
+{file_content}
+
+Generate clear, concise documentation that helps template authors understand how to use this field effectively.
+Focus on practical usage and real-world examples.
+If you can't determine certain information from the code context, focus on what can be reasonably inferred.
+
+**Final Instructions**
+- Ensure markdown validity (no syntax errors)
+- Each section must be separated by a blank line (this is critical)
+- Only include information that can be reasonably determined or inferred
+- Don't add markdown code block markers
+"""
+    
+    # Call OpenAI API
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+            {"role": "system", "content": "You are a technical documentation expert specializing in email template systems."},
+            {"role": "user", "content": prompt}
+        ]
+    )
+    
+    return response.choices[0].message.content
+
+def read_template_content(template_path: str, stop_at_section: str = "## Parameter Details") -> str:
+    """
+    Read content from a template file up to a specified section.
+    
+    Args:
+        template_path (str): Path to the template file
+        stop_at_section (str): Section header where to stop reading (default: "## Parameter Details")
+    
+    Returns:
+        str: Content of the template file up to the specified section
+    
+    Raises:
+        FileNotFoundError: If template file is not found
+    """
+    with open(template_path, 'r') as f:
+        content = ""
+        for line in f:
+            if line.strip() == stop_at_section:
+                break
+            content += line
+    return content
+
+def generate_message_fields_doc(workflow_mail_path: str, output_folder: str):
+    """
+    Generate documentation for message fields used in email templates.
+    
+    Args:
+        workflow_mail_path (str): Path to the WorkflowMail.cs file
+        output_folder (str): Path where the generated documentation should be stored
+    """
+    # List of message fields to document
+    message_fields = [
+        "requestId", "userName"
+        , "adminName", "beginWaitingForApproveLink",
+        "beginRequestStatusLink", "endLink", "groupOrManager", "beginApproveStepLink",
+        "beginRejectStepLink", "beginMoveBackStepLink", "comment", "requestTransaction",
+        "requestRole", "requestType", "stepStart", "stepEnd", "stepTargetEndTime",
+        "requestInformation", "sapUserName", "beginDetailsLink", "previousApprover",
+        "previousApproverComments", "reapprove", "beginRequestsWaitingLink",
+        "beginRequestsWaitingLinkForCurrentInstance", "beginAuhtorizationReviewPortalLink",
+        "beginDetailsLinkWithThankYou", "requestOpenedOrReturned", "beginDetailsLinkGeneral",
+        "beginDetailsLinkWithThankYouGeneral", "beginApproveStepLinkGeneral",
+        "beginUserOpenRequestsLink", "beginUserOpenRequestsBootstrapLink",
+        "beginExtendStepLink", "beginDetailsLinkWithApproved", "beginDetailsLinkWithDeclined",
+        "beginApproveStepLinkThankYou", "beginApproveStepLinkGeneralForFF",
+        "beginCreateTasksLink", "delegatedBy"
+    ]
+    
+    # Ensure output folder exists
+    message_fields_docs_folder = os.path.join(output_folder, "message_fields")
+    os.makedirs(message_fields_docs_folder, exist_ok=True)
+    
+    try:
+        # Read the WorkflowMail.cs file
+        with open(workflow_mail_path, 'r') as f:
+            file_content = f.read()
+        
+        print(f"Found {len(message_fields)} message fields to process")
+        
+        # Read the template file for index content
+        template_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'message_field_template.txt')
+        index_content = read_template_content(template_path)
+        
+        # Process each message field
+        for i, field_name in enumerate(message_fields, 1):
+            print(f"\nProcessing field {i} of {len(message_fields)}: {field_name}")
+            
+            # Generate documentation
+            documentation = generate_message_field_documentation(field_name, file_content)
+            
+            # Save documentation to file
+            output_file = Path(message_fields_docs_folder) / f"{field_name}.md"
+            with open(output_file, 'w') as f:
+                f.write(documentation)
+            
+            # Add to index
+            index_content += f"{documentation}\n"
+            index_content += f"-----------------------------------\n"
+            
+            print(f"Documentation generated: {output_file}")
+        
+        # Save index file
+        index_file = Path(message_fields_docs_folder) / "index.md"
+        with open(index_file, 'w') as f:
+            f.write(index_content)
+        
+        print(f"\nIndex file generated: {index_file}")
+        
+    except FileNotFoundError as e:
+        if str(e).find('WorkflowMail.cs') != -1:
+            print(f"Error: WorkflowMail.cs file not found at: {workflow_mail_path}")
+        else:
+            print(f"Error: Template file not found at: {template_path}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"\nError occurred: {str(e)}")
+        sys.exit(1)
+    
+    print("\nAll message fields processed successfully!")
+
 if __name__ == "__main__":
     # Configuration
     code_folder = "/Users/haviv_rosh/work/PathlockGRC/"
     actions_folder = "/Users/haviv_rosh/work/PathlockGRC/Bl/WorkflowActions"
+    workflow_mail_path = "/Users/haviv_rosh/work/PathlockGRC/Bl/WorkflowMail.cs"
     params_file = "params.txt"
-    actions_file = "actions.txt"  # New file for workflow actions
+    actions_file = "actions.txt"
     output_folder = "docs/"
     
     # Generate parameter documentation
-    generate_doc(code_folder, params_file, output_folder)
+    #generate_doc(code_folder, params_file, output_folder)
     
     # Generate workflow action documentation
-    generate_actions_doc(code_folder, actions_file, output_folder) 
+    # generate_actions_doc(code_folder, actions_file, output_folder)
+    
+    # Generate message fields documentation
+    generate_message_fields_doc(workflow_mail_path, output_folder) 

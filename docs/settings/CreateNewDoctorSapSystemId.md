@@ -1,35 +1,31 @@
-# CreateNewDoctorSapSystemId Parameter Documentation
+# Create New Doctor Sap System
 
-## Category
-Configuration/Setup
+**Technical Name:** CreateNewDoctorSapSystemId
 
-## Default Value
-Not explicitly mentioned, but it uses a default value set in `CommonSettings`.
+**Category:** Workflow
 
-## Impact Level
-High
+**Default Value:** 
 
-## Description
-The `CreateNewDoctorSapSystemId` parameter defines the SAP System ID used when creating new doctor profiles within the Pathlock Cloud GRC platform. This ID is pivotal in determining the correct SAP system environment for which the new profiles will be configured.
+**Impact Level:** High
 
-## Business Impact
-- Ensures that new doctor profiles are created in the correct SAP system, aligning with organizational policies and system architectures.
-- Improves compliance and data integrity by ensuring that sensitive medical personnel data is handled in the designated secured environment.
-- Streamlines the process of onboarding new doctors by automatically configuring their profiles in the correct system, reducing manual errors and administrative overhead.
+**Description:**
 
-## Technical Impact when configured
-- Initializes the ProfileTailorContext with the specific SAP System ID, directing all subsequent actions (such as creating and configuring new doctor profiles) to the specified SAP system.
-- Helps in maintaining a centralized, consistent approach to handle SAP system connections across different workflow actions like `GetOrCreateVMAUser` and `CreateNewDoctor`.
+The 'CreateNewDoctorSapSystemId' parameter is used during workflow actions related to creating new SAP system entries for doctors within the Pathlock Cloud GRC platform. This parameter acts as an identifier for initiating and tracking the process of adding new doctor profiles to the SAP system, ensuring that the necessary user permissions and access controls are configured correctly according to compliance and governance rules.
 
-## Example Scenario
-An administrator wishes to onboard a new doctor into their healthcare organization's SAP system. By setting the `CreateNewDoctorSapSystemId` to their specific healthcare-related SAP system ID, they ensure that the onboarding process, including the creation of SAP roles and permissions for the new doctor, occurs in the correct SAP environment. This is especially critical in healthcare settings where access to specific patient data and medical systems is restricted and closely monitored for compliance with regulations like HIPAA.
+**Business Impact:**
 
-## Related Settings
-- `CommonSettings.Default` (for obtaining the default system-wide settings)
-- SAP Connector configurations (for setting up and managing connections to SAP systems)
+Incorporating the 'CreateNewDoctorSapSystemId' parameter into SAP system user creation workflows ensures that healthcare organizations maintain rigorous standards of access control and data protection. This is critical for protecting sensitive patient data and ensuring that only authorized medical personnel have access to their necessary systems, thus mitigating risks related to data breaches, unauthorized access, and non-compliance with healthcare regulations.
 
-## Best Practices
-- **Configure when:** Setting up the platform for the first time or adding new SAP systems that will involve the creation of new doctor profiles.
-- **Avoid when:** If there is no clear separation of SAP systems within your organization, or when the configured SAP System ID no longer exists or has been changed.
+**Technical Impact when configured:**
 
-Understanding and correctly setting the `CreateNewDoctorSapSystemId` ensures that the healthcare professionals' digital onboarding and subsequent data handling are executed within the correct system environment, thereby safeguarding compliance, data integrity, and operational efficiency.
+When configured, the 'CreateNewDoctorSapSystemId' parameter triggers additional logic in the workflow to accurately integrate the doctor's profile into the SAP system. This includes setting up specific roles, permissions, and access levels tailored to the individual's job requirements, ensuring that access governance policies are adhered to and that the system remains secure against potential threats.
+
+**Examples Scenario:**
+
+- When a new doctor joins a hospital, the admin initiates a 'CreateNewDoctor' workflow, where the 'CreateNewDoctorSapSystemId' parameter is used to create a new SAP system profile for the doctor, ensuring they have access to the necessary medical records and systems from day one.
+
+**Related Settings:**
+
+- None explicitly mentioned in the provided code references.
+
+**Best Practices:** configure when a new healthcare professional requires access to the SAP system, avoid when the user's role does not necessitate direct interaction with the SAP system.

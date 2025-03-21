@@ -1,41 +1,28 @@
-# CreateNewUserUpdateImmediately Parameter Documentation
+# Create New User Update Immediately
 
-## Category
-New Employees Creation
+**Technical Name:** CreateNewUserUpdateImmediately
 
-## Default Value
-The default behavior of the `CreateNewUserUpdateImmediately` parameter is not explicitly stated in the provided code. It depends on the configuration in `CommonSettings.Default`.
+**Category:** User Management
 
-## Impact Level
-Medium
+**Default Value:**
 
-## Description
-The `CreateNewUserUpdateImmediately` parameter controls whether new user information is immediately refreshed and applied in the system upon user creation or tied to a specific event or condition. This immediate update is crucial in scenarios where timely access and user data accuracy are critical, ensuring that new users have the correct permissions, roles, and access levels as soon as they are added to the Pathlock GRC platform.
+**Impact Level:** High
 
-## Business Impact
-- Ensures that new employees can immediately start working with the necessary system access without delays.
-- Minimizes the risk of access-related errors or security vulnerabilities that can occur if new users are not updated in the system in a timely manner.
-- Facilitates smoother onboarding experiences, contributing to operational efficiency and employee satisfaction.
+**Description:**
+The `CreateNewUserUpdateImmediately` parameter controls whether new user accounts are immediately active upon creation within the system. This setting is significant in systems that support or require immediate account provisioning following creation to allow users instant access to necessary resources.
 
-## Technical Impact when configured
-- Immediate propagation of user rights and roles, reducing the latency between user creation and access granting.
-- Potential increased load on the system during user creation due to additional processing requirements.
-- Reduction in administrative overhead by automating the immediate update process, rather than requiring manual intervention.
+**Business Impact:**
+Enabling this parameter ensures that new employees or users can begin their tasks without waiting for manual account activation, leading to a smoother onboarding experience and increased productivity. It is particularly beneficial in dynamic environments where immediate access to systems and applications is crucial.
 
-## Examples Scenario
-1. **Immediate Access for New Users**: When `CreateNewUserUpdateImmediately` is enabled, a new user added to the Pathlock GRC platform for compliance monitoring will have immediate access to their required tools and resources, facilitating a seamless start to their role.
-2. **Compliance Requirements**: In a scenario where compliance dictates that users must have access reviewed and applied as soon as they are onboarded, enabling this setting ensures the organization meets these requirements without manual follow-up.
+**Technical Impact when configured:**
+When enabled, user accounts are immediately activated upon creation, bypassing any potential delays associated with manual activation processes. This can be critical for maintaining operational efficiency and ensuring that users have access to required systems and tools without delay.
 
-## Related Settings
-- `ChangeInstanceUserForSystem`: Toggles whether the user instance should be changed for the system, impacting the refresh behavior.
-- `autoRefreshUserInformation`: Toggles automatic refreshing of user information, which can work in tandem with `CreateNewUserUpdateImmediately` for enhanced user data synchronization.
+**Examples Scenario:**
+- **Scenario:** A new employee joins the company and requires immediate access to the company's project management tool to start on a time-sensitive project. With `CreateNewUserUpdateImmediately` enabled, the employee's user account is created and activated instantly, allowing them to log in and access the project management tool without any delays.
 
-## Best Practices
-- **Configure when**:
-  - Immediate system access for new users is critical.
-  - Compliance and security policies require up-to-date user information and permissions.
-- **Avoid when**:
-  - System resources are limited, and the additional processing load can cause performance issues.
-  - Immediate access is not necessary, and delayed updates are preferable for batch processing or review.
+**Related Settings:**
+- ConnectUsersToEmployee_ByEmail
 
-This parameter is part of the Pathlock Cloud GRC platform's ecosystem, emphasizing the significance of timely user information updates in maintaining system security, compliance, and operational efficiency.
+**Best Practices:**
+- **Configure when:** Immediate access for new users to system resources is required.
+- **Avoid when:** The organization's security policy demands a review or waiting period before granting new users access to systems.

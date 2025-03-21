@@ -1,40 +1,31 @@
-# EnableAdvancedWorkflowTrace Parameter Documentation
+# Enable Advanced Workflow Trace
 
-## Category
-Workflow Configuration
+**Technical Name:** EnableAdvancedWorkflowTrace
 
-## Default Value
-`false`
+**Category:** Workflow
 
-## Impact Level
-High
+**Default Value:**
 
-## Description
-The `EnableAdvancedWorkflowTrace` parameter is designed to enable or disable advanced tracing features within the workflow components of the Pathlock Cloud GRC platform. When enabled, this setting triggers the logging of detailed information about workflow operations, including file uploads, role list modifications, folder permission changes, and error reporting which can significantly aid in debugging and monitoring the workflow processes.
+**Impact Level:** High
 
-## Business Impact
-Enabling advanced workflow trace can provide in-depth insights into the workflow processes, facilitating better audit trails, compliance monitoring, and operational visibility. This can be crucial for identifying inefficiencies, troubleshooting issues, and ensuring the integrity and security of workflow operations within the organization.
+**Description:**  
+Enables detailed tracing of workflow actions to aid in debugging and enhancing the performance of workflow-related processes.
 
-## Technical Impact when Configured
-- **Enhanced Debugging:** Detailed logging assists developers and system administrators in identifying and resolving issues more efficiently.
-- **Increased Logging Volume:** May result in larger log files, impacting storage resources.
-- **Performance Considerations:** While offering valuable insights, enabling this parameter might slightly impact system performance due to the increased logging activities.
+**Business Impact:**  
+Activating this parameter helps in identifying issues in workflow actions much more efficiently, leading to decreased downtime and smoother operations within Pathlock's cloud GRC platform. This can significantly impact an organization's ability to maintain tight security, risk management, and compliance processes.
 
-## Examples Scenario
-- **Troubleshooting Workflow Issues:** If workflows related to role modifications or file permissions fail without clear errors, enabling this trace can uncover the underlying issues by providing detailed logs of each operation.
-- **Audit and Compliance:** Organizations subject to strict compliance requirements can enable advanced tracing to ensure all workflow actions are logged, providing an audit trail for internal or regulatory reviews.
+**Technical Impact when configured:**  
+When enabled, the system begins to log detailed information about the execution of specific workflow actions such as file uploads, role assignments, and user creations. This includes data on the user performing the action, the specific files or roles being processed, and any errors or anomalies encountered during the action's execution.
 
-## Related Settings
-- `Logger.WriteInformationToLog`: The underlying method called for logging information when `EnableAdvancedWorkflowTrace` is enabled.
-- Other logging-related parameters within the Pathlock Cloud GRC platform settings.
+**Examples Scenario:**  
+A company notices irregularities in the permissions being assigned through workflow actions. By enabling the advanced workflow trace, administrators can pinpoint the exact step where the discrepancies occur, making it easier to implement fixes and ensure proper compliance and security postures are maintained.
 
-## Best Practices
-- **Configure when:**
-  - Detailed audit trails are required for compliance purposes.
-  - Troubleshooting complex workflow issues where standard logs do not provide sufficient information.
-- **Avoid when:**
-  - The system is under heavy load and performance impact is a concern.
-  - Log storage resources are limited, as enabled tracing will increase log file sizes.
+**Related Settings:**  
 
-## Context
-The `EnableAdvancedWorkflowTrace` parameter plays a vital role in the administration and maintenance of workflows within the Pathlock Cloud GRC environment. By providing an option to capture detailed logs of workflow operations, administrators can gain better visibility into the system's behavior, aiding in troubleshooting, security, and compliance efforts. However, careful consideration should be given to its impact on system performance and log management practices.
+- ListGroupTemplate
+- ListGroupOU
+- PermissionGroupTemplate
+- PermissionGroupOU
+- ListGroupPrefix
+
+**Best Practices:** configure when troubleshooting complex workflow issues to identify and resolve inefficiencies or errors; avoid when in regular operation mode to reduce unnecessary system load.
